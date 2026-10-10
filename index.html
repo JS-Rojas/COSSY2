@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>COSSY² — From Probability to Information</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>
+    COSSY² — From Probability to Information
+  </title>
 
   <meta
     name="description"
@@ -22,11 +29,11 @@
       --bg: #071018;
       --bg-soft: #0c1823;
 
-      --panel: rgba(9,18,28,0.78);
+      --panel: rgba(9, 18, 28, 0.78);
       --panel-solid: #0d1822;
 
-      --line: rgba(148,174,192,0.14);
-      --line-strong: rgba(148,174,192,0.25);
+      --line: rgba(148, 174, 192, 0.14);
+      --line-strong: rgba(148, 174, 192, 0.26);
 
       --text: #edf1f5;
       --muted: #a6b1bc;
@@ -37,11 +44,14 @@
       --gold: #c5b46a;
       --blue: #8ea7c2;
 
-      --header-bg: rgba(7,16,24,0.87);
+      --header-bg: rgba(7, 16, 24, 0.88);
 
-      --shadow: 0 20px 45px rgba(0,0,0,0.22);
+      --shadow:
+        0 20px 45px
+        rgba(0, 0, 0, 0.22);
 
       --radius: 20px;
+
       --max: 1160px;
     }
 
@@ -55,11 +65,11 @@
       --bg: #f3f1e9;
       --bg-soft: #e9eee9;
 
-      --panel: rgba(255,255,255,0.73);
-      --panel-solid: #f9faf7;
+      --panel: rgba(255, 255, 255, 0.74);
+      --panel-solid: #fafaf7;
 
-      --line: rgba(41,66,73,0.14);
-      --line-strong: rgba(41,66,73,0.26);
+      --line: rgba(41, 66, 73, 0.14);
+      --line-strong: rgba(41, 66, 73, 0.25);
 
       --text: #18272e;
       --muted: #607177;
@@ -67,12 +77,14 @@
       --accent: #4e9698;
       --accent-soft: #2f777a;
 
-      --gold: #9a8435;
+      --gold: #98813d;
       --blue: #637f9e;
 
-      --header-bg: rgba(243,241,233,0.88);
+      --header-bg: rgba(243, 241, 233, 0.90);
 
-      --shadow: 0 18px 42px rgba(50,65,65,0.09);
+      --shadow:
+        0 18px 42px
+        rgba(50, 65, 65, 0.09);
     }
 
 
@@ -99,15 +111,15 @@
         Arial,
         sans-serif;
 
-      color: var(--text);
-
       background:
         radial-gradient(
           circle at top,
-          rgba(126,199,204,0.055),
+          rgba(126, 199, 204, 0.055),
           transparent 30%
         ),
         var(--bg);
+
+      color: var(--text);
 
       line-height: 1.5;
 
@@ -116,11 +128,11 @@
         color 0.35s ease;
     }
 
+
     a {
       color: inherit;
       text-decoration: none;
     }
-
 
 
     /* =========================================================
@@ -130,13 +142,15 @@
     .topbar {
 
       position: sticky;
+
       top: 0;
 
       z-index: 1000;
 
       background: var(--header-bg);
 
-      border-bottom: 1px solid var(--line);
+      border-bottom:
+        1px solid var(--line);
 
       backdrop-filter: blur(16px);
 
@@ -152,12 +166,13 @@
 
       margin: auto;
 
-      padding: 18px 20px;
+      padding: 17px 20px;
 
       display: flex;
 
-      justify-content: space-between;
       align-items: center;
+
+      justify-content: space-between;
 
       gap: 24px;
 
@@ -165,7 +180,9 @@
     }
 
 
-    /* BRAND */
+    /* =========================================================
+       BRAND
+    ========================================================= */
 
     .brand {
 
@@ -182,28 +199,32 @@
       width: 46px;
       height: 46px;
 
+      flex-shrink: 0;
+
       border-radius: 50%;
 
       display: grid;
 
       place-items: center;
 
-      font-size: 1rem;
-      font-weight: 850;
-
       color: #071018;
 
+      font-size: 1rem;
+
+      font-weight: 850;
+
       background:
+
         linear-gradient(
           135deg,
-          #d4f0f1,
+          #d5f1f2,
           #7ec7cc 48%,
-          #6398b1
+          #659cb4
         );
 
       box-shadow:
         0 8px 22px
-        rgba(126,199,204,0.18);
+        rgba(126, 199, 204, 0.18);
     }
 
 
@@ -219,16 +240,17 @@
 
     .brand-subtitle {
 
+      margin-top: 2px;
+
       font-size: 0.9rem;
 
       color: var(--muted);
-
-      margin-top: 2px;
     }
 
 
-
-    /* NAV LINKS */
+    /* =========================================================
+       NAV
+    ========================================================= */
 
     .nav-right {
 
@@ -262,19 +284,18 @@
 
       font-weight: 650;
 
-      transition: color 0.2s ease;
+      transition:
+        color 0.2s ease;
     }
 
 
     .nav-links a:hover {
-
       color: var(--text);
     }
 
 
-
     /* =========================================================
-       THEME TOGGLE
+       THEME BUTTON
     ========================================================= */
 
     .theme-toggle {
@@ -284,21 +305,23 @@
 
       border-radius: 50%;
 
-      border: 1px solid var(--line-strong);
+      border:
+        1px solid var(--line-strong);
 
-      background: rgba(255,255,255,0.02);
+      background:
+        rgba(255, 255, 255, 0.02);
 
       color: var(--text);
 
       cursor: pointer;
 
       display: grid;
+
       place-items: center;
 
       transition:
         transform 0.2s ease,
-        background 0.2s ease,
-        border-color 0.2s ease;
+        background 0.2s ease;
     }
 
 
@@ -306,7 +329,8 @@
 
       transform: rotate(10deg);
 
-      background: rgba(126,199,204,0.08);
+      background:
+        rgba(126, 199, 204, 0.08);
     }
 
 
@@ -314,10 +338,7 @@
 
       width: 19px;
       height: 19px;
-
-      display: block;
     }
-
 
 
     /* =========================================================
@@ -329,67 +350,82 @@
       display: inline-flex;
 
       align-items: center;
+
       justify-content: center;
 
-      padding: 12px 20px;
+      padding:
+        12px 20px;
 
-      border-radius: 999px;
+      border-radius:
+        999px;
 
-      font-weight: 750;
+      border:
+        1px solid transparent;
 
-      border: 1px solid transparent;
+      font-weight:
+        750;
+
+      white-space:
+        nowrap;
 
       transition:
         transform 0.2s ease,
         filter 0.2s ease,
         background 0.2s ease;
-
-      white-space: nowrap;
     }
 
 
     .btn-primary {
 
       background:
+
         linear-gradient(
           135deg,
           #91d6d8,
           #72b4bf
         );
 
-      color: #071018;
+      color:
+        #071018;
 
       box-shadow:
+
         0 10px 26px
-        rgba(126,199,204,0.17);
+        rgba(126, 199, 204, 0.17);
     }
 
 
     .btn-primary:hover {
 
-      transform: translateY(-1px);
+      transform:
+        translateY(-1px);
 
-      filter: brightness(1.04);
+      filter:
+        brightness(1.04);
     }
 
 
     .btn-secondary {
 
-      color: var(--text);
+      color:
+        var(--text);
 
-      border-color: var(--line-strong);
+      background:
+        rgba(255, 255, 255, 0.018);
 
-      background: rgba(255,255,255,0.018);
+      border-color:
+        var(--line-strong);
     }
 
 
     .btn-secondary:hover {
 
-      transform: translateY(-1px);
+      transform:
+        translateY(-1px);
 
-      background: rgba(126,199,204,0.05);
+      background:
+        rgba(126, 199, 204, 0.05);
     }
-
 
 
     /* =========================================================
@@ -398,158 +434,240 @@
 
     .hero {
 
-      position: relative;
+      position:
+        relative;
 
-      min-height: 720px;
+      min-height:
+        720px;
 
-      overflow: hidden;
+      overflow:
+        hidden;
 
-      display: flex;
+      display:
+        flex;
 
-      align-items: center;
+      align-items:
+        center;
 
-      border-bottom: 1px solid var(--line);
+      border-bottom:
+        1px solid var(--line);
     }
 
 
     .hero-canvas {
 
-      position: absolute;
+      position:
+        absolute;
 
-      inset: 0;
+      inset:
+        0;
 
-      width: 100%;
-      height: 100%;
+      width:
+        100%;
 
-      z-index: 0;
+      height:
+        100%;
+
+      z-index:
+        0;
     }
 
 
     .hero-overlay {
 
-      position: absolute;
+      position:
+        absolute;
 
-      inset: 0;
+      inset:
+        0;
 
-      z-index: 1;
+      z-index:
+        1;
 
-      pointer-events: none;
+      pointer-events:
+        none;
 
       background:
+
         linear-gradient(
           90deg,
-          var(--bg) 0%,
-          rgba(7,16,24,0.91) 29%,
-          rgba(7,16,24,0.42) 53%,
-          rgba(7,16,24,0.03) 76%
+
+          rgba(7, 16, 24, 0.99)
+          0%,
+
+          rgba(7, 16, 24, 0.96)
+          27%,
+
+          rgba(7, 16, 24, 0.60)
+          46%,
+
+          rgba(7, 16, 24, 0.12)
+          65%,
+
+          rgba(7, 16, 24, 0.02)
+          100%
         );
     }
 
 
-    body[data-theme="light"] .hero-overlay {
+    body[data-theme="light"]
+    .hero-overlay {
 
       background:
+
         linear-gradient(
           90deg,
-          rgba(243,241,233,0.99) 0%,
-          rgba(243,241,233,0.93) 30%,
-          rgba(243,241,233,0.50) 54%,
-          rgba(243,241,233,0.03) 78%
+
+          rgba(243, 241, 233, 0.99)
+          0%,
+
+          rgba(243, 241, 233, 0.95)
+          28%,
+
+          rgba(243, 241, 233, 0.61)
+          47%,
+
+          rgba(243, 241, 233, 0.14)
+          67%,
+
+          rgba(243, 241, 233, 0.02)
+          100%
         );
     }
 
 
     .hero-inner {
 
-      position: relative;
+      position:
+        relative;
 
-      z-index: 2;
+      z-index:
+        2;
 
-      width: 100%;
+      width:
+        100%;
 
-      max-width: var(--max);
+      max-width:
+        var(--max);
 
-      margin: auto;
+      margin:
+        auto;
 
-      padding: 72px 20px 82px;
+      padding:
+        72px 20px 82px;
     }
 
 
     .hero-content {
 
-      max-width: 650px;
+      max-width:
+        660px;
     }
 
 
     .eyebrow {
 
-      display: inline-flex;
+      display:
+        inline-flex;
 
-      padding: 8px 15px;
+      padding:
+        8px 15px;
 
-      border-radius: 999px;
+      margin-bottom:
+        28px;
 
-      color: var(--gold);
+      border-radius:
+        999px;
 
-      border: 1px solid
-        color-mix(in srgb, var(--gold) 32%, transparent);
+      color:
+        var(--gold);
+
+      border:
+        1px solid
+        rgba(197, 180, 106, 0.28);
 
       background:
-        color-mix(in srgb, var(--gold) 6%, transparent);
+        rgba(197, 180, 106, 0.055);
 
-      font-size: 0.87rem;
+      font-size:
+        0.87rem;
 
-      font-weight: 800;
+      font-weight:
+        800;
 
-      letter-spacing: 0.08em;
+      letter-spacing:
+        0.08em;
 
-      text-transform: uppercase;
-
-      margin-bottom: 28px;
+      text-transform:
+        uppercase;
     }
 
 
     .hero h1 {
 
-      margin: 0 0 24px;
+      margin:
+        0 0 24px;
+
+      max-width:
+        9ch;
 
       font-size:
-        clamp(3.3rem, 7.2vw, 6.1rem);
+        clamp(
+          3.3rem,
+          7.2vw,
+          6.1rem
+        );
 
-      max-width: 8.8ch;
+      line-height:
+        0.92;
 
-      line-height: 0.95;
+      letter-spacing:
+        -0.055em;
 
-      letter-spacing: -0.055em;
+      font-weight:
+        760;
+    }
 
-      font-weight: 760;
+
+    .hero-line {
+      display: block;
     }
 
 
     .hero .lead {
 
-      color: var(--muted);
+      max-width:
+        34ch;
 
-      max-width: 34ch;
+      margin:
+        0 0 30px;
+
+      color:
+        var(--muted);
 
       font-size:
-        clamp(1.08rem, 1.7vw, 1.28rem);
+        clamp(
+          1.08rem,
+          1.7vw,
+          1.28rem
+        );
 
-      margin: 0 0 30px;
-
-      line-height: 1.65;
+      line-height:
+        1.65;
     }
 
 
     .hero-actions {
 
-      display: flex;
+      display:
+        flex;
 
-      gap: 12px;
+      gap:
+        12px;
 
-      flex-wrap: wrap;
+      flex-wrap:
+        wrap;
     }
-
 
 
     /* =========================================================
@@ -558,50 +676,67 @@
 
     .container {
 
-      max-width: var(--max);
+      max-width:
+        var(--max);
 
-      margin: auto;
+      margin:
+        auto;
 
-      padding: 78px 20px;
+      padding:
+        78px 20px;
     }
 
 
     .section-head {
 
-      margin-bottom: 26px;
+      margin-bottom:
+        26px;
     }
 
 
     .section-kicker {
 
-      color: var(--accent);
+      margin-bottom:
+        9px;
 
-      text-transform: uppercase;
+      color:
+        var(--accent);
 
-      font-weight: 800;
+      font-size:
+        0.82rem;
 
-      font-size: 0.82rem;
+      font-weight:
+        800;
 
-      letter-spacing: 0.13em;
+      letter-spacing:
+        0.13em;
 
-      margin-bottom: 9px;
+      text-transform:
+        uppercase;
     }
 
 
     .section-title {
 
-      margin: 0;
+      margin:
+        0;
 
       font-size:
-        clamp(1.8rem,4vw,2.65rem);
+        clamp(
+          1.8rem,
+          4vw,
+          2.65rem
+        );
 
-      line-height: 1.05;
+      font-weight:
+        780;
 
-      letter-spacing: -0.035em;
+      letter-spacing:
+        -0.035em;
 
-      font-weight: 780;
+      line-height:
+        1.05;
     }
-
 
 
     /* =========================================================
@@ -610,72 +745,91 @@
 
     .schedule-wrap {
 
-      overflow-x: auto;
+      overflow-x:
+        auto;
 
-      border-radius: var(--radius);
+      border:
+        1px solid var(--line);
 
-      border: 1px solid var(--line);
+      border-radius:
+        var(--radius);
 
-      background: var(--panel);
+      background:
+        var(--panel);
 
-      box-shadow: var(--shadow);
+      box-shadow:
+        var(--shadow);
     }
 
 
     table {
 
-      width: 100%;
+      width:
+        100%;
 
-      border-collapse: collapse;
+      min-width:
+        980px;
 
-      min-width: 980px;
+      border-collapse:
+        collapse;
     }
 
 
     th,
     td {
 
-      padding: 15px 16px;
+      padding:
+        15px 16px;
 
-      border: 1px solid var(--line);
+      border:
+        1px solid var(--line);
 
-      vertical-align: middle;
+      vertical-align:
+        middle;
     }
 
 
     thead th {
 
+      text-align:
+        center;
+
+      font-weight:
+        800;
+
+      color:
+        #f7f4f6;
+
       background:
+
         linear-gradient(
           180deg,
-          rgba(71,46,74,0.95),
-          rgba(82,39,63,0.95)
+          rgba(71, 46, 74, 0.95),
+          rgba(82, 39, 63, 0.95)
         );
-
-      color: #f7f4f6;
-
-      font-weight: 800;
-
-      text-align: center;
     }
 
 
     thead th:first-child {
 
+      color:
+        #071018;
+
       background:
+
         linear-gradient(
           180deg,
           #548f89,
           #427973
         );
-
-      color: #071018;
     }
 
 
-    body[data-theme="light"] thead th {
+    body[data-theme="light"]
+    thead th {
 
       background:
+
         linear-gradient(
           180deg,
           #75576d,
@@ -684,9 +838,11 @@
     }
 
 
-    body[data-theme="light"] thead th:first-child {
+    body[data-theme="light"]
+    thead th:first-child {
 
       background:
+
         linear-gradient(
           180deg,
           #81b5ad,
@@ -697,53 +853,56 @@
 
     tbody td:first-child {
 
-      white-space: nowrap;
+      white-space:
+        nowrap;
 
-      font-weight: 800;
+      font-weight:
+        800;
     }
 
 
     tbody tr:nth-child(even) td {
 
       background:
-        rgba(126,199,204,0.018);
+        rgba(126, 199, 204, 0.018);
     }
 
 
     tbody tr:hover td {
 
       background:
-        rgba(126,199,204,0.045);
+        rgba(126, 199, 204, 0.045);
     }
 
 
     .cell-core {
-
       font-weight: 760;
     }
 
 
     .cell-talk {
 
-      color: var(--blue);
+      color:
+        var(--blue);
 
-      font-weight: 760;
+      font-weight:
+        760;
     }
 
 
     .cell-break {
-
       color: var(--muted);
     }
 
 
     .cell-lunch {
 
-      color: var(--gold);
+      color:
+        var(--gold);
 
-      font-weight: 760;
+      font-weight:
+        760;
     }
-
 
 
     /* =========================================================
@@ -752,32 +911,45 @@
 
     .speaker-grid {
 
-      display: grid;
+      display:
+        grid;
 
       grid-template-columns:
-        repeat(3,minmax(0,1fr));
+        repeat(
+          3,
+          minmax(0, 1fr)
+        );
 
-      gap: 18px;
+      gap:
+        18px;
     }
 
 
     .speaker-card {
 
-      padding: 20px;
+      padding:
+        20px;
 
-      background: var(--panel);
+      display:
+        flex;
 
-      border: 1px solid var(--line);
+      align-items:
+        flex-start;
 
-      border-radius: var(--radius);
+      gap:
+        16px;
 
-      box-shadow: var(--shadow);
+      background:
+        var(--panel);
 
-      display: flex;
+      border:
+        1px solid var(--line);
 
-      gap: 16px;
+      border-radius:
+        var(--radius);
 
-      align-items: flex-start;
+      box-shadow:
+        var(--shadow);
 
       transition:
         transform 0.2s ease,
@@ -787,30 +959,42 @@
 
     .speaker-card:hover {
 
-      transform: translateY(-3px);
+      transform:
+        translateY(-3px);
 
-      border-color: var(--line-strong);
+      border-color:
+        var(--line-strong);
     }
 
 
     .speaker-photo {
 
-      width: 68px;
-      height: 68px;
+      width:
+        68px;
 
-      border-radius: 50%;
+      height:
+        68px;
 
-      flex-shrink: 0;
+      flex-shrink:
+        0;
 
-      display: grid;
+      border-radius:
+        50%;
 
-      place-items: center;
+      display:
+        grid;
 
-      color: #071018;
+      place-items:
+        center;
 
-      font-weight: 850;
+      color:
+        #071018;
+
+      font-weight:
+        850;
 
       background:
+
         linear-gradient(
           135deg,
           #d6eff0,
@@ -822,61 +1006,81 @@
 
     .speaker-card h4 {
 
-      margin: 2px 0 4px;
+      margin:
+        2px 0 4px;
 
-      font-size: 1.06rem;
+      font-size:
+        1.06rem;
 
-      font-weight: 780;
+      font-weight:
+        780;
     }
 
 
     .speaker-role {
 
-      color: var(--accent);
+      margin-bottom:
+        9px;
 
-      font-size: 0.9rem;
+      color:
+        var(--accent);
 
-      font-weight: 700;
+      font-size:
+        0.9rem;
 
-      margin-bottom: 9px;
+      font-weight:
+        700;
     }
 
 
     .speaker-bio {
 
-      color: var(--muted);
+      margin:
+        0 0 12px;
 
-      font-size: 0.92rem;
+      color:
+        var(--muted);
 
-      margin: 0 0 12px;
+      font-size:
+        0.92rem;
     }
 
 
     .speaker-links {
 
-      display: flex;
+      display:
+        flex;
 
-      flex-wrap: wrap;
+      flex-wrap:
+        wrap;
 
-      gap: 7px;
+      gap:
+        7px;
     }
 
 
     .link-chip {
 
-      display: inline-flex;
+      display:
+        inline-flex;
 
-      align-items: center;
+      align-items:
+        center;
 
-      border-radius: 999px;
+      padding:
+        7px 11px;
 
-      padding: 7px 11px;
+      border:
+        1px solid var(--line-strong);
 
-      border: 1px solid var(--line-strong);
+      border-radius:
+        999px;
 
-      font-size: 0.8rem;
+      font-size:
+        0.8rem;
 
-      font-weight: 650;
+      font-weight:
+        650;
 
       transition:
         background 0.2s ease;
@@ -886,9 +1090,8 @@
     .link-chip:hover {
 
       background:
-        rgba(126,199,204,0.07);
+        rgba(126, 199, 204, 0.07);
     }
-
 
 
     /* =========================================================
@@ -897,43 +1100,54 @@
 
     .simple-grid {
 
-      display: grid;
+      display:
+        grid;
 
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns:
+        1fr 1fr;
 
-      gap: 18px;
+      gap:
+        18px;
     }
 
 
     .panel {
 
-      padding: 26px;
+      padding:
+        26px;
 
-      background: var(--panel);
+      background:
+        var(--panel);
 
-      border-radius: var(--radius);
+      border:
+        1px solid var(--line);
 
-      border: 1px solid var(--line);
+      border-radius:
+        var(--radius);
 
-      box-shadow: var(--shadow);
+      box-shadow:
+        var(--shadow);
     }
 
 
     .panel h3 {
 
-      margin: 0 0 10px;
+      margin:
+        0 0 10px;
 
-      font-size: 1.13rem;
+      font-size:
+        1.13rem;
     }
 
 
     .panel p {
 
-      color: var(--muted);
+      margin:
+        0;
 
-      margin: 0;
+      color:
+        var(--muted);
     }
-
 
 
     /* =========================================================
@@ -942,2130 +1156,3411 @@
 
     footer {
 
-      border-top: 1px solid var(--line);
+      padding:
+        32px 20px 46px;
 
-      color: var(--muted);
+      border-top:
+        1px solid var(--line);
 
-      padding: 32px 20px 46px;
+      color:
+        var(--muted);
     }
 
 
     .footer-inner {
 
-      max-width: var(--max);
+      max-width:
+        var(--max);
 
-      margin: auto;
+      margin:
+        auto;
     }
-
 
 
     /* =========================================================
        RESPONSIVE
     ========================================================= */
 
-    @media(max-width:1000px) {
+    @media
+    (max-width: 1000px) {
 
       .speaker-grid {
-        grid-template-columns: 1fr 1fr;
+
+        grid-template-columns:
+          1fr 1fr;
       }
 
       .simple-grid {
-        grid-template-columns: 1fr;
-      }
 
+        grid-template-columns:
+          1fr;
+      }
     }
 
 
-    @media(max-width:720px) {
+    @media
+    (max-width: 720px) {
 
       .brand-subtitle {
         display: none;
       }
 
       .nav {
-        padding: 14px 18px;
+
+        padding:
+          14px 18px;
       }
 
       .nav-links {
-        gap: 11px;
+
+        gap:
+          11px;
       }
 
       .nav-links a {
-        font-size: 0.87rem;
+
+        font-size:
+          0.87rem;
       }
 
       .hero {
-        min-height: 680px;
+
+        min-height:
+          680px;
       }
 
       .hero-inner {
-        padding-top: 60px;
+
+        padding-top:
+          60px;
       }
 
       .hero h1 {
-        font-size: clamp(3rem,15vw,4.7rem);
+
+        font-size:
+          clamp(
+            3rem,
+            15vw,
+            4.7rem
+          );
+      }
+
+      .hero-overlay {
+
+        background:
+
+          linear-gradient(
+            90deg,
+
+            rgba(7, 16, 24, 0.98)
+            0%,
+
+            rgba(7, 16, 24, 0.91)
+            60%,
+
+            rgba(7, 16, 24, 0.30)
+            100%
+          );
+      }
+
+      body[data-theme="light"]
+      .hero-overlay {
+
+        background:
+
+          linear-gradient(
+            90deg,
+
+            rgba(243, 241, 233, 0.98)
+            0%,
+
+            rgba(243, 241, 233, 0.91)
+            60%,
+
+            rgba(243, 241, 233, 0.30)
+            100%
+          );
       }
 
       .speaker-grid {
-        grid-template-columns: 1fr;
-      }
 
-      .speaker-card {
-        flex-direction: row;
+        grid-template-columns:
+          1fr;
       }
 
       .container {
-        padding: 60px 18px;
-      }
 
+        padding:
+          60px 18px;
+      }
     }
 
   </style>
 </head>
 
 
-
 <body data-theme="dark">
 
 
-<!-- =========================================================
-     HEADER
-========================================================= -->
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
 
-<header class="topbar">
+  <header class="topbar">
 
-  <nav class="nav">
+    <nav class="nav">
 
-    <a class="brand" href="#home">
-
-      <div class="brand-mark">
-        C²
-      </div>
-
-      <div>
-
-        <div class="brand-title">
-          COSSY²
-        </div>
-
-        <div class="brand-subtitle">
-          From Probability to Information: Modeling Complex Systems
-        </div>
-
-      </div>
-
-    </a>
-
-
-    <div class="nav-right">
-
-      <div class="nav-links">
-
-        <a href="#schedule">Schedule</a>
-
-        <a href="#speakers">Speakers</a>
-
-        <a href="#venue">Venue</a>
-
-        <a href="#register">Register</a>
-
-      </div>
-
-
-      <button
-        id="themeToggle"
-        class="theme-toggle"
-        aria-label="Switch theme"
-        title="Switch theme"
+      <a
+        class="brand"
+        href="#home"
       >
 
-        <svg
-          id="themeIcon"
-          class="theme-icon"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-
-          <circle cx="12" cy="12" r="4"></circle>
-
-          <path d="M12 2v2"></path>
-          <path d="M12 20v2"></path>
-          <path d="M4.93 4.93l1.41 1.41"></path>
-          <path d="M17.66 17.66l1.41 1.41"></path>
-          <path d="M2 12h2"></path>
-          <path d="M20 12h2"></path>
-          <path d="M6.34 17.66l-1.41 1.41"></path>
-          <path d="M19.07 4.93l-1.41 1.41"></path>
-
-        </svg>
-
-      </button>
-
-    </div>
-
-  </nav>
-
-</header>
-
-
-
-<!-- =========================================================
-     HERO
-========================================================= -->
-
-<section class="hero" id="home">
-
-  <canvas id="heroCanvas" class="hero-canvas"></canvas>
-
-  <div class="hero-overlay"></div>
-
-
-  <div class="hero-inner">
-
-    <div class="hero-content">
-
-      <div class="eyebrow">
-
-        COSSY² · Yachay Tech · 14–16 December 2026
-
-      </div>
-
-
-      <h1>
-
-        From Probability to Information
-
-      </h1>
-
-
-      <p class="lead">
-
-        A compact 3-day school on building models from
-        information and probability principles.
-
-      </p>
-
-
-      <div class="hero-actions">
-
-        <a
-          class="btn btn-primary"
-          href="https://forms.gle/REPLACE_WITH_REGISTRATION_LINK"
-          target="_blank"
-        >
-
-          Registration link
-
-        </a>
-
-
-        <a
-          class="btn btn-secondary"
-          href="#speakers"
-        >
-
-          Meet the speakers
-
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     SCHEDULE
-========================================================= -->
-
-<section
-  class="container"
-  id="schedule"
->
-
-  <div class="section-head">
-
-    <div class="section-kicker">
-      Program
-    </div>
-
-    <h2 class="section-title">
-      Tentative schedule
-    </h2>
-
-  </div>
-
-
-  <div class="schedule-wrap">
-
-    <table>
-
-      <thead>
-
-        <tr>
-
-          <th>Schedule</th>
-
-          <th>14 December</th>
-
-          <th>15 December</th>
-
-          <th>16 December</th>
-
-        </tr>
-
-      </thead>
-
-
-      <tbody>
-
-        <tr>
-
-          <td>08h00 – 08h30</td>
-
-          <td class="cell-core">
-            Inauguration
-          </td>
-
-          <td></td>
-
-          <td></td>
-
-        </tr>
-
-
-        <tr>
-
-          <td>08h30 – 10h00</td>
-
-          <td class="cell-core">
-            Intro to Probability: Antonio Villagomez
-          </td>
-
-          <td class="cell-core">
-            Intro to Probability: Antonio Villagomez
-          </td>
-
-          <td class="cell-core">
-            Intro to Probability: Antonio Villagomez
-          </td>
-
-        </tr>
-
-
-        <tr>
-
-          <td>10h00 – 10h30</td>
-
-          <td class="cell-break">
-            Coffee Break
-          </td>
-
-          <td class="cell-break">
-            Coffee Break
-          </td>
-
-          <td class="cell-break">
-            Coffee Break
-          </td>
-
-        </tr>
-
-
-        <tr>
-
-          <td>10h30 – 12h00</td>
-
-          <td class="cell-core">
-            Building Models from Information Principles:
-            Juan Velez
-          </td>
-
-          <td class="cell-core">
-            Building Models from Information Principles:
-            Juan Velez
-          </td>
-
-          <td class="cell-core">
-            Building Models from Information Principles:
-            Juan Velez
-          </td>
-
-        </tr>
-
-
-        <tr>
-
-          <td>12h00 – 14h00</td>
-
-          <td class="cell-lunch">Lunch</td>
-
-          <td class="cell-lunch">Lunch</td>
-
-          <td class="cell-lunch">Lunch</td>
-
-        </tr>
-
-
-        <tr>
-
-          <td>14h00 – 14h50</td>
-
-          <td class="cell-talk">
-            Talk 1: Vinod Menon
-          </td>
-
-          <td class="cell-talk">
-            Talk 2: Matteo Marsili
-          </td>
-
-          <td class="cell-talk">
-            Talk 3: Mateo Carpio
-          </td>
-
-        </tr>
-
-
-        <tr>
-
-          <td>14h50 – 15h10</td>
-
-          <td class="cell-break">
-            Coffee Break
-          </td>
-
-          <td class="cell-break">
-            Coffee Break
-          </td>
-
-          <td class="cell-break">
-            Coffee Break
-          </td>
-
-        </tr>
-
-
-        <tr>
-
-          <td>15h10 – 16h00</td>
-
-          <td class="cell-talk">
-            Talk 4: Arianna Paredes
-          </td>
-
-          <td class="cell-talk">
-            Talk 5: Maria Jose
-          </td>
-
-          <td class="cell-talk">
-            Talk 6: Mario Cosenza
-          </td>
-
-        </tr>
-
-      </tbody>
-
-    </table>
-
-  </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     SPEAKERS
-========================================================= -->
-
-<section
-  class="container"
-  id="speakers"
->
-
-  <div class="section-head">
-
-    <div class="section-kicker">
-      People
-    </div>
-
-    <h2 class="section-title">
-      Instructors & speakers
-    </h2>
-
-  </div>
-
-
-
-  <div class="speaker-grid">
-
-
-    <!-- ANTONIO -->
-
-    <article class="speaker-card">
-
-      <div class="speaker-photo">
-        AV
-      </div>
-
-      <div>
-
-        <h4>
-          Antonio Villagomez
-        </h4>
-
-        <div class="speaker-role">
-          Intro to Probability
+        <div class="brand-mark">
+          C²
         </div>
 
-        <p class="speaker-bio">
-          Probability, fluctuations, large deviations,
-          and open quantum systems.
+
+        <div>
+
+          <div class="brand-title">
+            COSSY²
+          </div>
+
+          <div class="brand-subtitle">
+            From Probability to Information: Modeling Complex Systems
+          </div>
+
+        </div>
+
+      </a>
+
+
+      <div class="nav-right">
+
+        <div class="nav-links">
+
+          <a href="#schedule">
+            Schedule
+          </a>
+
+          <a href="#speakers">
+            Speakers
+          </a>
+
+          <a href="#venue">
+            Venue
+          </a>
+
+          <a href="#register">
+            Register
+          </a>
+
+        </div>
+
+
+        <button
+          id="themeToggle"
+          class="theme-toggle"
+          aria-label="Switch between dark and light mode"
+          title="Switch theme"
+        >
+
+          <svg
+            class="theme-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+
+            <circle
+              cx="12"
+              cy="12"
+              r="4"
+            ></circle>
+
+            <path d="M12 2v2"></path>
+            <path d="M12 20v2"></path>
+
+            <path
+              d="M4.93 4.93l1.41 1.41"
+            ></path>
+
+            <path
+              d="M17.66 17.66l1.41 1.41"
+            ></path>
+
+            <path d="M2 12h2"></path>
+
+            <path d="M20 12h2"></path>
+
+            <path
+              d="M6.34 17.66l-1.41 1.41"
+            ></path>
+
+            <path
+              d="M19.07 4.93l-1.41 1.41"
+            ></path>
+
+          </svg>
+
+        </button>
+
+      </div>
+
+    </nav>
+
+  </header>
+
+
+
+  <!-- =====================================================
+       HERO
+  ====================================================== -->
+
+  <section
+    class="hero"
+    id="home"
+  >
+
+    <canvas
+      id="heroCanvas"
+      class="hero-canvas"
+      aria-hidden="true"
+    ></canvas>
+
+
+    <div class="hero-overlay"></div>
+
+
+    <div class="hero-inner">
+
+      <div class="hero-content">
+
+
+        <div class="eyebrow">
+
+          COSSY² · Yachay Tech · 14–16 December 2026
+
+        </div>
+
+
+        <h1>
+
+          <span class="hero-line">
+            From
+          </span>
+
+          <span class="hero-line">
+            Probability to
+          </span>
+
+          <span class="hero-line">
+            Information
+          </span>
+
+        </h1>
+
+
+        <p class="lead">
+
+          A compact 3-day school on building models from
+          information and probability principles.
+
         </p>
 
-        <div class="speaker-links">
+
+        <div class="hero-actions">
+
 
           <a
-            class="link-chip"
-            href="https://www.linkedin.com/in/ntno2627/"
+            class="btn btn-primary"
+            href="https://forms.gle/REPLACE_WITH_REGISTRATION_LINK"
             target="_blank"
+            rel="noopener"
           >
-            LinkedIn
-          </a>
 
-        </div>
+            Registration link
 
-      </div>
-
-    </article>
-
-
-
-    <!-- JUAN -->
-
-    <article class="speaker-card">
-
-      <div class="speaker-photo">
-        JV
-      </div>
-
-      <div>
-
-        <h4>
-          Juan Velez
-        </h4>
-
-        <div class="speaker-role">
-          Information Principles
-        </div>
-
-        <p class="speaker-bio">
-          Information-theoretic principles,
-          probabilistic modeling and learning.
-        </p>
-
-        <div class="speaker-links">
-
-          <a
-            class="link-chip"
-            href="https://scholar.google.com/citations?user=m6uf3cEAAAAJ&hl=es"
-            target="_blank"
-          >
-            Google Scholar
           </a>
 
 
           <a
-            class="link-chip"
-            href="https://js-rojas.github.io/jsrojas.github.io/?v=2"
-            target="_blank"
+            class="btn btn-secondary"
+            href="#speakers"
           >
-            Website
+
+            Meet the speakers
+
           </a>
 
-        </div>
-
-      </div>
-
-    </article>
-
-
-
-    <!-- MENON -->
-
-    <article class="speaker-card">
-
-      <div class="speaker-photo">
-        VM
-      </div>
-
-      <div>
-
-        <h4>
-          Vinod Menon
-        </h4>
-
-        <div class="speaker-role">
-          Invited Talk
-        </div>
-
-        <div class="speaker-links">
-
-          <a
-            class="link-chip"
-            href="https://scholar.google.com/citations?user=QzqctJgAAAAJ&hl=es&oi=sra"
-            target="_blank"
-          >
-            Google Scholar
-          </a>
 
         </div>
 
       </div>
 
-    </article>
-
-
-
-    <!-- MARSILI -->
-
-    <article class="speaker-card">
-
-      <div class="speaker-photo">
-        MM
-      </div>
-
-      <div>
-
-        <h4>
-          Matteo Marsili
-        </h4>
-
-        <div class="speaker-role">
-          Invited Talk
-        </div>
-
-        <div class="speaker-links">
-
-          <a
-            class="link-chip"
-            href="https://scholar.google.com/citations?user=utY1nToAAAAJ&hl=es&oi=ao"
-            target="_blank"
-          >
-            Google Scholar
-          </a>
-
-        </div>
-
-      </div>
-
-    </article>
-
-
-
-    <!-- MATEO -->
-
-    <article class="speaker-card">
-
-      <div class="speaker-photo">
-        MC
-      </div>
-
-      <div>
-
-        <h4>
-          Mateo Carpio
-        </h4>
-
-        <div class="speaker-role">
-          Invited Talk
-        </div>
-
-        <div class="speaker-links">
-
-          <a
-            class="link-chip"
-            href="https://scholar.google.com/citations?user=bn6xDbwAAAAJ&hl=es&oi=ao"
-            target="_blank"
-          >
-            Google Scholar
-          </a>
-
-        </div>
-
-      </div>
-
-    </article>
-
-
-
-    <!-- ARIANNA -->
-
-    <article class="speaker-card">
-
-      <div class="speaker-photo">
-        AP
-      </div>
-
-      <div>
-
-        <h4>
-          Arianna Paredes
-        </h4>
-
-        <div class="speaker-role">
-          Invited Talk
-        </div>
-
-      </div>
-
-    </article>
-
-
-
-    <!-- MARIA -->
-
-    <article class="speaker-card">
-
-      <div class="speaker-photo">
-        MJ
-      </div>
-
-      <div>
-
-        <h4>
-          Maria Jose
-        </h4>
-
-        <div class="speaker-role">
-          Invited Talk
-        </div>
-
-        <div class="speaker-links">
-
-          <a
-            class="link-chip"
-            href="https://scholar.google.com/citations?user=ceoZZdcAAAAJ&hl=es&oi=ao"
-            target="_blank"
-          >
-            Google Scholar
-          </a>
-
-        </div>
-
-      </div>
-
-    </article>
-
-
-
-    <!-- MARIO -->
-
-    <article class="speaker-card">
-
-      <div class="speaker-photo">
-        MC
-      </div>
-
-      <div>
-
-        <h4>
-          Mario Cosenza
-        </h4>
-
-        <div class="speaker-role">
-          Invited Talk
-        </div>
-
-        <div class="speaker-links">
-
-          <a
-            class="link-chip"
-            href="https://scholar.google.com/citations?user=wmSC_7EAAAAJ&hl=es&oi=sra"
-            target="_blank"
-          >
-            Google Scholar
-          </a>
-
-        </div>
-
-      </div>
-
-    </article>
-
-
-  </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     VENUE
-========================================================= -->
-
-<section
-  class="container"
-  id="venue"
->
-
-  <div class="section-head">
-
-    <div class="section-kicker">
-      Venue
     </div>
 
-    <h2 class="section-title">
-      Yachay Tech
-    </h2>
-
-  </div>
+  </section>
 
 
-  <div class="simple-grid">
+
+  <!-- =====================================================
+       SCHEDULE
+  ====================================================== -->
+
+  <section
+    class="container"
+    id="schedule"
+  >
+
+
+    <div class="section-head">
+
+      <div class="section-kicker">
+        Program
+      </div>
+
+      <h2 class="section-title">
+        Tentative schedule
+      </h2>
+
+    </div>
+
+
+    <div class="schedule-wrap">
+
+      <table>
+
+
+        <thead>
+
+          <tr>
+
+            <th>
+              Schedule
+            </th>
+
+            <th>
+              14 December
+            </th>
+
+            <th>
+              15 December
+            </th>
+
+            <th>
+              16 December
+            </th>
+
+          </tr>
+
+        </thead>
+
+
+
+        <tbody>
+
+
+          <tr>
+
+            <td>
+              08h00 – 08h30
+            </td>
+
+            <td class="cell-core">
+              Inauguration
+            </td>
+
+            <td></td>
+
+            <td></td>
+
+          </tr>
+
+
+
+          <tr>
+
+            <td>
+              08h30 – 10h00
+            </td>
+
+            <td class="cell-core">
+              Intro to Probability:
+              Antonio Villagomez
+            </td>
+
+            <td class="cell-core">
+              Intro to Probability:
+              Antonio Villagomez
+            </td>
+
+            <td class="cell-core">
+              Intro to Probability:
+              Antonio Villagomez
+            </td>
+
+          </tr>
+
+
+
+          <tr>
+
+            <td>
+              10h00 – 10h30
+            </td>
+
+            <td class="cell-break">
+              Coffee Break
+            </td>
+
+            <td class="cell-break">
+              Coffee Break
+            </td>
+
+            <td class="cell-break">
+              Coffee Break
+            </td>
+
+          </tr>
+
+
+
+          <tr>
+
+            <td>
+              10h30 – 12h00
+            </td>
+
+            <td class="cell-core">
+              Building Models from Information Principles:
+              Juan Velez
+            </td>
+
+            <td class="cell-core">
+              Building Models from Information Principles:
+              Juan Velez
+            </td>
+
+            <td class="cell-core">
+              Building Models from Information Principles:
+              Juan Velez
+            </td>
+
+          </tr>
+
+
+
+          <tr>
+
+            <td>
+              12h00 – 14h00
+            </td>
+
+            <td class="cell-lunch">
+              Lunch
+            </td>
+
+            <td class="cell-lunch">
+              Lunch
+            </td>
+
+            <td class="cell-lunch">
+              Lunch
+            </td>
+
+          </tr>
+
+
+
+          <tr>
+
+            <td>
+              14h00 – 14h50
+            </td>
+
+            <td class="cell-talk">
+              Talk 1: Vinod Menon
+            </td>
+
+            <td class="cell-talk">
+              Talk 2: Matteo Marsili
+            </td>
+
+            <td class="cell-talk">
+              Talk 3: Mateo Carpio
+            </td>
+
+          </tr>
+
+
+
+          <tr>
+
+            <td>
+              14h50 – 15h10
+            </td>
+
+            <td class="cell-break">
+              Coffee Break
+            </td>
+
+            <td class="cell-break">
+              Coffee Break
+            </td>
+
+            <td class="cell-break">
+              Coffee Break
+            </td>
+
+          </tr>
+
+
+
+          <tr>
+
+            <td>
+              15h10 – 16h00
+            </td>
+
+            <td class="cell-talk">
+              Talk 4: Arianna Paredes
+            </td>
+
+            <td class="cell-talk">
+              Talk 5: Maria Jose
+            </td>
+
+            <td class="cell-talk">
+              Talk 6: Mario Cosenza
+            </td>
+
+          </tr>
+
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       SPEAKERS
+  ====================================================== -->
+
+  <section
+    class="container"
+    id="speakers"
+  >
+
+
+    <div class="section-head">
+
+      <div class="section-kicker">
+        People
+      </div>
+
+      <h2 class="section-title">
+        Instructors & speakers
+      </h2>
+
+    </div>
+
+
+
+    <div class="speaker-grid">
+
+
+
+      <!-- ANTONIO -->
+
+      <article class="speaker-card">
+
+        <div class="speaker-photo">
+          AV
+        </div>
+
+
+        <div>
+
+          <h4>
+            Antonio Villagomez
+          </h4>
+
+
+          <div class="speaker-role">
+            Intro to Probability
+          </div>
+
+
+          <p class="speaker-bio">
+
+            Probability, fluctuations,
+            large deviations, and open
+            quantum systems.
+
+          </p>
+
+
+          <div class="speaker-links">
+
+            <a
+              class="link-chip"
+              href="https://www.linkedin.com/in/ntno2627/"
+              target="_blank"
+              rel="noopener"
+            >
+
+              LinkedIn
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- JUAN -->
+
+      <article class="speaker-card">
+
+        <div class="speaker-photo">
+          JV
+        </div>
+
+
+        <div>
+
+          <h4>
+            Juan Velez
+          </h4>
+
+
+          <div class="speaker-role">
+            Information Principles
+          </div>
+
+
+          <p class="speaker-bio">
+
+            Information-theoretic principles,
+            probabilistic modeling and learning.
+
+          </p>
+
+
+          <div class="speaker-links">
+
+
+            <a
+              class="link-chip"
+              href="https://scholar.google.com/citations?user=m6uf3cEAAAAJ&hl=es"
+              target="_blank"
+              rel="noopener"
+            >
+
+              Google Scholar
+
+            </a>
+
+
+            <a
+              class="link-chip"
+              href="https://js-rojas.github.io/jsrojas.github.io/?v=2"
+              target="_blank"
+              rel="noopener"
+            >
+
+              Website
+
+            </a>
+
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- VINOD MENON -->
+
+      <article class="speaker-card">
+
+        <div class="speaker-photo">
+          VM
+        </div>
+
+
+        <div>
+
+          <h4>
+            Vinod Menon
+          </h4>
+
+
+          <div class="speaker-role">
+            Invited Talk
+          </div>
+
+
+          <div class="speaker-links">
+
+            <a
+              class="link-chip"
+              href="https://scholar.google.com/citations?user=QzqctJgAAAAJ&hl=es&oi=sra"
+              target="_blank"
+              rel="noopener"
+            >
+
+              Google Scholar
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- MATTEO -->
+
+      <article class="speaker-card">
+
+        <div class="speaker-photo">
+          MM
+        </div>
+
+
+        <div>
+
+          <h4>
+            Matteo Marsili
+          </h4>
+
+
+          <div class="speaker-role">
+            Invited Talk
+          </div>
+
+
+          <div class="speaker-links">
+
+            <a
+              class="link-chip"
+              href="https://scholar.google.com/citations?user=utY1nToAAAAJ&hl=es&oi=ao"
+              target="_blank"
+              rel="noopener"
+            >
+
+              Google Scholar
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- MATEO -->
+
+      <article class="speaker-card">
+
+        <div class="speaker-photo">
+          MC
+        </div>
+
+
+        <div>
+
+          <h4>
+            Mateo Carpio
+          </h4>
+
+
+          <div class="speaker-role">
+            Invited Talk
+          </div>
+
+
+          <div class="speaker-links">
+
+            <a
+              class="link-chip"
+              href="https://scholar.google.com/citations?user=bn6xDbwAAAAJ&hl=es&oi=ao"
+              target="_blank"
+              rel="noopener"
+            >
+
+              Google Scholar
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- ARIANNA -->
+
+      <article class="speaker-card">
+
+        <div class="speaker-photo">
+          AP
+        </div>
+
+
+        <div>
+
+          <h4>
+            Arianna Paredes
+          </h4>
+
+
+          <div class="speaker-role">
+            Invited Talk
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- MARIA JOSE -->
+
+      <article class="speaker-card">
+
+        <div class="speaker-photo">
+          MJ
+        </div>
+
+
+        <div>
+
+          <h4>
+            Maria Jose
+          </h4>
+
+
+          <div class="speaker-role">
+            Invited Talk
+          </div>
+
+
+          <div class="speaker-links">
+
+            <a
+              class="link-chip"
+              href="https://scholar.google.com/citations?user=ceoZZdcAAAAJ&hl=es&oi=ao"
+              target="_blank"
+              rel="noopener"
+            >
+
+              Google Scholar
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- MARIO -->
+
+      <article class="speaker-card">
+
+        <div class="speaker-photo">
+          MC
+        </div>
+
+
+        <div>
+
+          <h4>
+            Mario Cosenza
+          </h4>
+
+
+          <div class="speaker-role">
+            Invited Talk
+          </div>
+
+
+          <div class="speaker-links">
+
+            <a
+              class="link-chip"
+              href="https://scholar.google.com/citations?user=wmSC_7EAAAAJ&hl=es&oi=sra"
+              target="_blank"
+              rel="noopener"
+            >
+
+              Google Scholar
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       VENUE
+  ====================================================== -->
+
+  <section
+    class="container"
+    id="venue"
+  >
+
+
+    <div class="section-head">
+
+      <div class="section-kicker">
+        Venue
+      </div>
+
+      <h2 class="section-title">
+        Yachay Tech
+      </h2>
+
+    </div>
+
+
+
+    <div class="simple-grid">
+
+
+      <div class="panel">
+
+        <h3>
+          Location
+        </h3>
+
+
+        <p>
+
+          Yachay Tech University
+
+          <br>
+
+          Urcuquí, Imbabura, Ecuador
+
+        </p>
+
+      </div>
+
+
+
+      <div class="panel">
+
+        <h3>
+          Map & contact
+        </h3>
+
+
+        <div
+          style="
+            display:flex;
+            gap:10px;
+            flex-wrap:wrap;
+            margin-top:18px;
+          "
+        >
+
+          <a
+            class="btn btn-primary"
+            href="https://www.google.com/maps/search/?api=1&query=Yachay+Tech+Urcuqui+Ecuador"
+            target="_blank"
+            rel="noopener"
+          >
+
+            Open map
+
+          </a>
+
+
+          <a
+            class="btn btn-secondary"
+            href="mailto:REPLACE_WITH_CONTACT_EMAIL"
+          >
+
+            Contact
+
+          </a>
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       REGISTER
+  ====================================================== -->
+
+  <section
+    class="container"
+    id="register"
+    style="padding-top: 0;"
+  >
 
 
     <div class="panel">
 
-      <h3>
-        Location
-      </h3>
 
-      <p>
-
-        Yachay Tech University
-        <br>
-
-        Urcuquí, Imbabura, Ecuador
-
-      </p>
-
-    </div>
-
-
-
-    <div class="panel">
-
-      <h3>
-        Map & contact
-      </h3>
-
-      <div
-        style="
-          display:flex;
-          gap:10px;
-          flex-wrap:wrap;
-          margin-top:18px;
-        "
-      >
-
-        <a
-          class="btn btn-primary"
-          href="https://www.google.com/maps/search/?api=1&query=Yachay+Tech+Urcuqui+Ecuador"
-          target="_blank"
-        >
-
-          Open map
-
-        </a>
-
-
-        <a
-          class="btn btn-secondary"
-          href="mailto:REPLACE_WITH_CONTACT_EMAIL"
-        >
-
-          Contact
-
-        </a>
-
+      <div class="section-kicker">
+        Registration
       </div>
 
+
+      <h2
+        class="section-title"
+        style="margin-bottom: 22px;"
+      >
+
+        Apply to COSSY²
+
+      </h2>
+
+
+      <a
+        class="btn btn-primary"
+        href="https://forms.gle/REPLACE_WITH_REGISTRATION_LINK"
+        target="_blank"
+        rel="noopener"
+      >
+
+        Registration form
+
+      </a>
+
+
     </div>
 
-
-  </div>
-
-</section>
+  </section>
 
 
 
-<!-- =========================================================
-     REGISTER
-========================================================= -->
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
 
-<section
-  class="container"
-  id="register"
-  style="padding-top:0"
->
+  <footer>
 
-  <div class="panel">
+    <div class="footer-inner">
 
-    <div class="section-kicker">
-      Registration
+      <strong
+        style="color: var(--accent);"
+      >
+        COSSY²
+      </strong>
+
+      — From Probability to Information:
+      Modeling Complex Systems
+
+      <br>
+
+      Yachay Tech · Urcuquí, Ecuador ·
+      14–16 December 2026
+
     </div>
 
-    <h2
-      class="section-title"
-      style="margin-bottom:22px"
-    >
+  </footer>
 
-      Apply to COSSY²
 
-    </h2>
 
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
 
-    <a
-      class="btn btn-primary"
-      href="https://forms.gle/REPLACE_WITH_REGISTRATION_LINK"
-      target="_blank"
-    >
+  <script>
 
-      Registration form
+    /* =====================================================
+       DARK / LIGHT MODE
+    ====================================================== */
 
-    </a>
+    const body =
+      document.body;
 
-  </div>
 
-</section>
-
-
-
-<footer>
-
-  <div class="footer-inner">
-
-    <strong style="color:var(--accent)">
-      COSSY²
-    </strong>
-
-    — From Probability to Information:
-    Modeling Complex Systems
-
-    <br>
-
-    Yachay Tech · Urcuquí, Ecuador ·
-    14–16 December 2026
-
-  </div>
-
-</footer>
-
-
-
-
-<!-- =========================================================
-     JAVASCRIPT
-========================================================= -->
-
-<script>
-
-/* =========================================================
-   LIGHT / DARK MODE
-========================================================= */
-
-const body = document.body;
-
-const themeButton =
-  document.getElementById("themeToggle");
-
-const savedTheme =
-  localStorage.getItem("cossy-theme");
-
-if (savedTheme) {
-
-  body.dataset.theme = savedTheme;
-
-}
-
-
-themeButton.addEventListener("click", () => {
-
-  const current =
-    body.dataset.theme;
-
-  const next =
-    current === "dark"
-      ? "light"
-      : "dark";
-
-  body.dataset.theme = next;
-
-  localStorage.setItem(
-    "cossy-theme",
-    next
-  );
-
-});
-
-
-
-
-/* =========================================================
-   HERO ANIMATION
-
-   Sequence:
-
-   1. Sampling
-   2. Gaussian distribution
-   3. Zoom-out into neural system
-
-========================================================= */
-
-
-const canvas =
-  document.getElementById("heroCanvas");
-
-const hero =
-  document.querySelector(".hero");
-
-const ctx =
-  canvas.getContext("2d");
-
-
-let width;
-let height;
-let dpr;
-
-
-let particles = [];
-
-const SAMPLE_COUNT = 150;
-
-
-/* ---------------------------------------------------------
-   Gaussian random generator
---------------------------------------------------------- */
-
-function randn() {
-
-  let u = 0;
-  let v = 0;
-
-  while (u === 0)
-    u = Math.random();
-
-  while (v === 0)
-    v = Math.random();
-
-  return (
-    Math.sqrt(
-      -2 * Math.log(u)
-    )
-    *
-    Math.cos(
-      2 * Math.PI * v
-    )
-  );
-
-}
-
-
-
-/* ---------------------------------------------------------
-   Helpers
---------------------------------------------------------- */
-
-function clamp(x,a,b) {
-
-  return Math.max(
-    a,
-    Math.min(b,x)
-  );
-
-}
-
-
-function smoothstep(a,b,x) {
-
-  let t =
-    clamp(
-      (x-a)/(b-a),
-      0,
-      1
-    );
-
-  return t*t*(3-2*t);
-
-}
-
-
-function lerp(a,b,t) {
-
-  return a+(b-a)*t;
-
-}
-
-
-
-/* ---------------------------------------------------------
-   Canvas setup
---------------------------------------------------------- */
-
-function resize() {
-
-  const rect =
-    hero.getBoundingClientRect();
-
-  width =
-    rect.width;
-
-  height =
-    rect.height;
-
-  dpr =
-    window.devicePixelRatio || 1;
-
-
-  canvas.width =
-    width*dpr;
-
-  canvas.height =
-    height*dpr;
-
-
-  canvas.style.width =
-    width+"px";
-
-  canvas.style.height =
-    height+"px";
-
-
-  ctx.setTransform(
-    dpr,0,0,dpr,0,0
-  );
-
-
-  resetParticles();
-
-}
-
-
-window.addEventListener(
-  "resize",
-  resize
-);
-
-
-
-/* ---------------------------------------------------------
-   Sampling particles
---------------------------------------------------------- */
-
-function resetParticles() {
-
-  particles = [];
-
-
-  const centerX =
-    width*0.73;
-
-
-  const baseline =
-    height*0.76;
-
-
-  const sigma =
-    width*0.075;
-
-
-  for (
-    let i=0;
-    i<SAMPLE_COUNT;
-    i++
-  ) {
-
-    const targetX =
-      centerX
-      +
-      randn()*sigma;
-
-
-    const targetY =
-      baseline
-      -
-      Math.random()*35;
-
-
-    particles.push({
-
-      x:
-        centerX
-        +
-        (Math.random()-0.5)
-        *
-        width*0.5,
-
-      y:
-        -40
-        -
-        Math.random()*height*0.5,
-
-      targetX,
-
-      targetY,
-
-      radius:
-        1.5
-        +
-        Math.random()*2.2,
-
-      delay:
-        Math.random()*0.9,
-
-      drift:
-        (Math.random()-0.5)
-        *
-        0.7
-
-    });
-
-  }
-
-}
-
-
-
-/* ---------------------------------------------------------
-   Theme-dependent colors
---------------------------------------------------------- */
-
-function colors() {
-
-  const light =
-    body.dataset.theme
-    ===
-    "light";
-
-
-  return light
-  ? {
-
-      particle:
-        "rgba(53,126,132,0.55)",
-
-      faint:
-        "rgba(45,94,102,0.12)",
-
-      gaussian:
-        "rgba(143,119,39,0.85)",
-
-      brain:
-        "rgba(56,109,113,0.40)",
-
-      brainStrong:
-        "rgba(56,109,113,0.72)",
-
-      neuron:
-        "rgba(70,137,142,0.68)"
-
-    }
-
-  : {
-
-      particle:
-        "rgba(126,199,204,0.55)",
-
-      faint:
-        "rgba(126,199,204,0.10)",
-
-      gaussian:
-        "rgba(197,180,106,0.82)",
-
-      brain:
-        "rgba(126,199,204,0.34)",
-
-      brainStrong:
-        "rgba(150,218,220,0.66)",
-
-      neuron:
-        "rgba(126,199,204,0.62)"
-
-    };
-
-}
-
-
-
-/* =========================================================
-   DRAW GAUSSIAN
-========================================================= */
-
-function drawGaussian(
-  opacity,
-  centerX,
-  baseline,
-  sigma,
-  amplitude
-) {
-
-  const c =
-    colors();
-
-
-  ctx.save();
-
-
-  ctx.globalAlpha =
-    opacity;
-
-
-  ctx.beginPath();
-
-
-  for (
-    let x=centerX-4*sigma;
-    x<=centerX+4*sigma;
-    x+=2
-  ) {
-
-    const z =
-      (x-centerX)/sigma;
-
-
-    const y =
-      baseline
-      -
-      amplitude
-      *
-      Math.exp(
-        -0.5*z*z
+    const themeButton =
+      document.getElementById(
+        "themeToggle"
       );
 
 
-    if (
-      x===centerX-4*sigma
+    const savedTheme =
+      localStorage.getItem(
+        "cossy-theme"
+      );
+
+
+    if (savedTheme) {
+
+      body.dataset.theme =
+        savedTheme;
+
+    }
+
+
+    themeButton.addEventListener(
+      "click",
+      () => {
+
+        const nextTheme =
+
+          body.dataset.theme
+          ===
+          "dark"
+
+          ? "light"
+
+          : "dark";
+
+
+        body.dataset.theme =
+          nextTheme;
+
+
+        localStorage.setItem(
+          "cossy-theme",
+          nextTheme
+        );
+
+      }
+    );
+
+
+
+    /* =====================================================
+       HERO CANVAS
+    ====================================================== */
+
+    const canvas =
+      document.getElementById(
+        "heroCanvas"
+      );
+
+
+    const hero =
+      document.querySelector(
+        ".hero"
+      );
+
+
+    const ctx =
+      canvas.getContext("2d");
+
+
+    let width =
+      0;
+
+
+    let height =
+      0;
+
+
+    let dpr =
+      1;
+
+
+    let particles =
+      [];
+
+
+    let zones =
+      [];
+
+
+    let brain =
+      {};
+
+
+    const PARTICLE_COUNT =
+      360;
+
+
+
+    /* =====================================================
+       HELPERS
+    ====================================================== */
+
+    function clamp(
+      x,
+      a,
+      b
     ) {
 
-      ctx.moveTo(x,y);
+      return Math.max(
+        a,
+        Math.min(
+          b,
+          x
+        )
+      );
 
     }
 
-    else {
 
-      ctx.lineTo(x,y);
-
-    }
-
-  }
-
-
-  ctx.strokeStyle =
-    c.gaussian;
-
-
-  ctx.lineWidth =
-    3;
-
-
-  ctx.stroke();
-
-
-  ctx.restore();
-
-}
-
-
-
-/* =========================================================
-   DRAW HISTOGRAM
-========================================================= */
-
-function drawHistogram(opacity) {
-
-  if (
-    opacity<=0
-  )
-    return;
-
-
-  const centerX =
-    width*0.73;
-
-
-  const baseline =
-    height*0.76;
-
-
-  const sigma =
-    width*0.075;
-
-
-  const bins =
-    30;
-
-
-  const range =
-    sigma*4;
-
-
-  const start =
-    centerX-range;
-
-
-  const binWidth =
-    (range*2)/bins;
-
-
-  const counts =
-    new Array(bins)
-    .fill(0);
-
-
-  particles.forEach(p=>{
-
-    const i =
-      Math.floor(
-        (p.targetX-start)
-        /
-        binWidth
-      );
-
-
-    if (
-      i>=0
-      &&
-      i<bins
-    )
-
-      counts[i]++;
-
-  });
-
-
-  const max =
-    Math.max(...counts);
-
-
-  ctx.save();
-
-  ctx.globalAlpha =
-    opacity;
-
-
-  for (
-    let i=0;
-    i<bins;
-    i++
-  ) {
-
-    const h =
-      140
-      *
-      counts[i]
-      /
-      max;
-
-
-    ctx.fillStyle =
-      colors().faint;
-
-
-    ctx.fillRect(
-
-      start
-      +
-      i*binWidth,
-
-      baseline-h,
-
-      binWidth-2,
-
-      h
-
-    );
-
-  }
-
-
-  ctx.restore();
-
-}
-
-
-
-/* =========================================================
-   BRAIN OUTLINE
-========================================================= */
-
-function brainPath(cx,cy,scale) {
-
-  ctx.beginPath();
-
-
-  ctx.moveTo(
-    cx,
-    cy-150*scale
-  );
-
-
-  ctx.bezierCurveTo(
-    cx-95*scale,
-    cy-180*scale,
-
-    cx-190*scale,
-    cy-100*scale,
-
-    cx-188*scale,
-    cy
-  );
-
-
-  ctx.bezierCurveTo(
-    cx-200*scale,
-    cy+80*scale,
-
-    cx-125*scale,
-    cy+150*scale,
-
-    cx-60*scale,
-    cy+145*scale
-  );
-
-
-  ctx.bezierCurveTo(
-    cx-40*scale,
-    cy+185*scale,
-
-    cx+10*scale,
-    cy+190*scale,
-
-    cx+30*scale,
-    cy+148*scale
-  );
-
-
-  ctx.bezierCurveTo(
-    cx+115*scale,
-    cy+165*scale,
-
-    cx+200*scale,
-    cy+95*scale,
-
-    cx+190*scale,
-    cy+10*scale
-  );
-
-
-  ctx.bezierCurveTo(
-    cx+215*scale,
-    cy-70*scale,
-
-    cx+110*scale,
-    cy-175*scale,
-
-    cx,
-    cy-150*scale
-  );
-
-}
-
-
-
-/* =========================================================
-   NEURAL NETWORK INSIDE BRAIN
-========================================================= */
-
-const neuronTemplate = [
-
-  [-0.55,-0.45],
-  [-0.18,-0.63],
-  [0.25,-0.57],
-  [0.56,-0.34],
-
-  [-0.68,-0.05],
-  [-0.31,-0.14],
-  [0.08,-0.19],
-  [0.43,-0.06],
-  [0.69,0.09],
-
-  [-0.54,0.33],
-  [-0.19,0.24],
-  [0.18,0.22],
-  [0.49,0.41],
-
-  [-0.26,0.56],
-  [0.18,0.59]
-
-];
-
-
-const neuronLinks = [
-
-  [0,1],
-  [0,4],
-  [0,5],
-
-  [1,2],
-  [1,5],
-  [1,6],
-
-  [2,3],
-  [2,6],
-  [2,7],
-
-  [3,7],
-  [3,8],
-
-  [4,5],
-  [4,9],
-
-  [5,6],
-  [5,9],
-  [5,10],
-
-  [6,7],
-  [6,10],
-  [6,11],
-
-  [7,8],
-  [7,11],
-  [7,12],
-
-  [9,10],
-  [9,13],
-
-  [10,11],
-  [10,13],
-
-  [11,12],
-  [11,14],
-
-  [13,14]
-
-];
-
-
-
-function drawBrain(
-  opacity,
-  zoom
-) {
-
-  if (
-    opacity<=0
-  )
-    return;
-
-
-  const c =
-    colors();
-
-
-  const cx =
-    width*0.73;
-
-
-  const cy =
-    height*0.48;
-
-
-  const scale =
-    zoom;
-
-
-  ctx.save();
-
-
-  ctx.globalAlpha =
-    opacity;
-
-
-  /* brain contour */
-
-  brainPath(
-    cx,
-    cy,
-    scale
-  );
-
-
-  ctx.strokeStyle =
-    c.brainStrong;
-
-
-  ctx.lineWidth =
-    2;
-
-
-  ctx.stroke();
-
-
-
-  /* center line */
-
-  ctx.beginPath();
-
-  ctx.moveTo(
-    cx,
-    cy-145*scale
-  );
-
-  ctx.bezierCurveTo(
-
-    cx-20*scale,
-    cy-70*scale,
-
-    cx+18*scale,
-    cy+35*scale,
-
-    cx,
-    cy+145*scale
-
-  );
-
-
-  ctx.strokeStyle =
-    c.brain;
-
-
-  ctx.lineWidth =
-    1.2;
-
-
-  ctx.stroke();
-
-
-
-  const nodes =
-    neuronTemplate.map(
-
-      ([nx,ny]) => ({
-
-        x:
-          cx
-          +
-          nx*165*scale,
-
-        y:
-          cy
-          +
-          ny*210*scale
-
-      })
-
-    );
-
-
-  /* neuronal connections */
-
-  neuronLinks.forEach(
-
-    ([a,b]) => {
-
-      ctx.beginPath();
-
-      ctx.moveTo(
-        nodes[a].x,
-        nodes[a].y
-      );
-
-      ctx.lineTo(
-        nodes[b].x,
-        nodes[b].y
-      );
-
-      ctx.strokeStyle =
-        c.brain;
-
-      ctx.lineWidth =
-        0.8;
-
-      ctx.stroke();
-
-    }
-
-  );
-
-
-
-  /* neurons */
-
-  nodes.forEach(
-    (n,i) => {
-
-      const pulse =
-
-        1
+    function lerp(
+      a,
+      b,
+      t
+    ) {
+
+      return (
+        a
         +
-        0.08
+        (b - a)
         *
-        Math.sin(
-          performance.now()*0.002
-          +
-          i
-        );
-
-
-      ctx.beginPath();
-
-
-      ctx.arc(
-
-        n.x,
-        n.y,
-
-        4.5
-        *
-        scale
-        *
-        pulse,
-
-        0,
-        Math.PI*2
-
+        t
       );
 
-
-      ctx.fillStyle =
-        c.neuron;
-
-
-      ctx.fill();
-
     }
-  );
 
 
-  ctx.restore();
+    function easeOutCubic(t) {
 
-}
-
-
-
-/* =========================================================
-   ANIMATION LOOP
-========================================================= */
-
-const DURATION =
-  12000;
-
-
-let startTime =
-  performance.now();
-
-
-
-function animate(now) {
-
-  ctx.clearRect(
-    0,
-    0,
-    width,
-    height
-  );
-
-
-  const elapsed =
-    (now-startTime)
-    %
-    DURATION;
-
-
-  const t =
-    elapsed
-    /
-    DURATION;
-
-
-  /*
-
-  TIMELINE
-
-  0.00 – 0.30  Sampling falling
-  0.20 – 0.48  Strong Gaussian
-  0.48 – 0.78  Zoom out into brain
-  0.78 – 1.00  Brain visible
-
-  */
-
-
-  const samplingPhase =
-    smoothstep(
-      0.00,
-      0.28,
-      t
-    );
-
-
-  const gaussianIn =
-    smoothstep(
-      0.18,
-      0.31,
-      t
-    );
-
-
-  const gaussianOut =
-    1
-    -
-    smoothstep(
-      0.50,
-      0.66,
-      t
-    );
-
-
-  const gaussianOpacity =
-    gaussianIn
-    *
-    gaussianOut;
-
-
-
-  const brainOpacity =
-    smoothstep(
-      0.50,
-      0.70,
-      t
-    )
-    *
-    (
-      1
-      -
-      smoothstep(
-        0.94,
-        1,
-        t
-      )
-    );
-
-
-
-  const centerX =
-    width*0.73;
-
-
-  const baseline =
-    height*0.76;
-
-
-  const sigma =
-    width*0.075;
-
-
-
-  /* -------------------------------------------------------
-     falling samples
-  ------------------------------------------------------- */
-
-  particles.forEach(
-
-    p => {
-
-      const localT =
-
-        clamp(
-          (
-            samplingPhase
-            -
-            p.delay*0.30
-          )
-          /
-          0.70,
-          0,
-          1
-        );
-
-
-      const eased =
+      return (
         1
         -
         Math.pow(
-          1-localT,
+          1 - t,
           3
+        )
+      );
+
+    }
+
+
+    function randn() {
+
+      let u = 0;
+
+      let v = 0;
+
+
+      while (u === 0) {
+
+        u =
+          Math.random();
+
+      }
+
+
+      while (v === 0) {
+
+        v =
+          Math.random();
+
+      }
+
+
+      return (
+
+        Math.sqrt(
+          -2
+          *
+          Math.log(u)
+        )
+
+        *
+
+        Math.cos(
+          2
+          *
+          Math.PI
+          *
+          v
+        )
+
+      );
+
+    }
+
+
+    function exponentialSample(
+      lambda
+    ) {
+
+      return (
+
+        -Math.log(
+          1
+          -
+          Math.random()
+        )
+
+        /
+
+        lambda
+
+      );
+
+    }
+
+
+    function poissonSample(
+      lambda
+    ) {
+
+      const L =
+        Math.exp(
+          -lambda
         );
+
+
+      let k =
+        0;
+
+
+      let p =
+        1;
+
+
+      do {
+
+        k++;
+
+        p *=
+          Math.random();
+
+      }
+
+      while (
+        p > L
+      );
+
+
+      return (
+        k - 1
+      );
+
+    }
+
+
+    function factorial(n) {
+
+      let f =
+        1;
+
+
+      for (
+        let i = 2;
+        i <= n;
+        i++
+      ) {
+
+        f *= i;
+
+      }
+
+
+      return f;
+
+    }
+
+
+
+    /* =====================================================
+       COLORS
+    ====================================================== */
+
+    function colors() {
+
+      const light =
+        body.dataset.theme
+        ===
+        "light";
+
+
+      if (light) {
+
+        return {
+
+          particle:
+            "rgba(53,126,132,0.66)",
+
+          particleSoft:
+            "rgba(53,126,132,0.10)",
+
+          distribution:
+            "rgba(49,105,204,0.94)",
+
+          connector:
+            "rgba(95,108,114,0.64)",
+
+          brainStroke:
+            "rgba(51,112,118,0.94)",
+
+          brainInner:
+            "rgba(51,112,118,0.45)",
+
+          brainFill:
+            "rgba(51,112,118,0.045)",
+
+          brainNode:
+            "rgba(252,252,248,0.97)",
+
+          brainNodeStroke:
+            "rgba(51,112,118,0.76)"
+
+        };
+
+      }
+
+
+      return {
+
+        particle:
+          "rgba(126,199,204,0.67)",
+
+        particleSoft:
+          "rgba(126,199,204,0.10)",
+
+        distribution:
+          "rgba(46,108,255,0.95)",
+
+        connector:
+          "rgba(226,235,240,0.62)",
+
+        brainStroke:
+          "rgba(61,120,255,0.96)",
+
+        brainInner:
+          "rgba(126,199,204,0.46)",
+
+        brainFill:
+          "rgba(46,108,255,0.045)",
+
+        brainNode:
+          "rgba(248,249,250,0.97)",
+
+        brainNodeStroke:
+          "rgba(61,120,255,0.76)"
+
+      };
+
+    }
+
+
+
+    /* =====================================================
+       CANVAS SETUP
+    ====================================================== */
+
+    function resize() {
+
+      const rect =
+        hero.getBoundingClientRect();
+
+
+      width =
+        rect.width;
+
+
+      height =
+        rect.height;
+
+
+      dpr =
+        window.devicePixelRatio
+        ||
+        1;
+
+
+      canvas.width =
+        Math.floor(
+          width
+          *
+          dpr
+        );
+
+
+      canvas.height =
+        Math.floor(
+          height
+          *
+          dpr
+        );
+
+
+      canvas.style.width =
+        width + "px";
+
+
+      canvas.style.height =
+        height + "px";
+
+
+      ctx.setTransform(
+        dpr,
+        0,
+        0,
+        dpr,
+        0,
+        0
+      );
+
+
+      buildScene();
+
+      buildParticles();
+
+    }
+
+
+    window.addEventListener(
+      "resize",
+      resize
+    );
+
+
+
+    /* =====================================================
+       SCENE
+    ====================================================== */
+
+    function buildScene() {
+
+      const mobile =
+        width < 850;
+
+
+      brain = {
+
+        x:
+          mobile
+          ? width * 0.76
+          : width * 0.76,
+
+        y:
+          height * 0.49,
+
+        scale:
+          Math.min(
+            width,
+            height
+          )
+          *
+          (
+            mobile
+            ? 0.00082
+            : 0.00105
+          )
+
+      };
+
+
+      zones = [
+
+        {
+
+          type:
+            "gaussian",
+
+          x:
+            width * 0.61,
+
+          y:
+            height * 0.19,
+
+          w:
+            120,
+
+          h:
+            88,
+
+          anchor: {
+            x:
+              brain.x - 67,
+            y:
+              brain.y - 80
+          }
+
+        },
+
+
+        {
+
+          type:
+            "poisson",
+
+          x:
+            width * 0.84,
+
+          y:
+            height * 0.18,
+
+          w:
+            110,
+
+          h:
+            84,
+
+          anchor: {
+            x:
+              brain.x + 53,
+            y:
+              brain.y - 78
+          }
+
+        },
+
+
+        {
+
+          type:
+            "gaussian",
+
+          x:
+            width * 0.92,
+
+          y:
+            height * 0.51,
+
+          w:
+            115,
+
+          h:
+            86,
+
+          anchor: {
+            x:
+              brain.x + 85,
+            y:
+              brain.y
+          }
+
+        },
+
+
+        {
+
+          type:
+            "exponential",
+
+          x:
+            width * 0.60,
+
+          y:
+            height * 0.74,
+
+          w:
+            124,
+
+          h:
+            88,
+
+          anchor: {
+            x:
+              brain.x - 68,
+            y:
+              brain.y + 72
+          }
+
+        },
+
+
+        {
+
+          type:
+            "poisson",
+
+          x:
+            width * 0.87,
+
+          y:
+            height * 0.79,
+
+          w:
+            112,
+
+          h:
+            84,
+
+          anchor: {
+            x:
+              brain.x + 55,
+            y:
+              brain.y + 78
+          }
+
+        }
+
+      ];
+
+    }
+
+
+
+    /* =====================================================
+       PARTICLES
+    ====================================================== */
+
+    function buildParticles() {
+
+      particles =
+        [];
+
+
+      for (
+        let i = 0;
+        i < PARTICLE_COUNT;
+        i++
+      ) {
+
+        particles.push(
+          makeParticle(
+            i
+            %
+            zones.length
+          )
+        );
+
+      }
+
+    }
+
+
+    function makeParticle(
+      zoneIndex
+    ) {
+
+      const zone =
+        zones[
+          zoneIndex
+        ];
+
+
+      const fromLeft =
+        Math.random()
+        <
+        0.5;
+
+
+      const startX =
+
+        fromLeft
+
+        ? (
+            -30
+            -
+            Math.random()
+            *
+            170
+          )
+
+        : (
+            width
+            +
+            30
+            +
+            Math.random()
+            *
+            170
+          );
+
+
+      const startY =
+
+        zone.y
+        +
+        (
+          Math.random()
+          -
+          0.5
+        )
+        *
+        190;
+
+
+      const target =
+        sampleTargetForZone(
+          zone
+        );
+
+
+      return {
+
+        zoneIndex,
+
+        startX,
+
+        startY,
+
+        x:
+          startX,
+
+        y:
+          startY,
+
+        tx:
+          target.x,
+
+        ty:
+          target.y,
+
+        size:
+          1.2
+          +
+          Math.random()
+          *
+          2.0,
+
+        progress:
+          -Math.random()
+          *
+          1.5,
+
+        speed:
+          0.006
+          +
+          Math.random()
+          *
+          0.008,
+
+        linger:
+          70
+          +
+          Math.random()
+          *
+          150,
+
+        state:
+          "moving"
+
+      };
+
+    }
+
+
+
+    /* =====================================================
+       DISTRIBUTION SAMPLING
+    ====================================================== */
+
+    function sampleTargetForZone(
+      zone
+    ) {
+
+
+      /* GAUSSIAN */
+
+      if (
+        zone.type
+        ===
+        "gaussian"
+      ) {
+
+        const sigma =
+          zone.w
+          *
+          0.22;
+
+
+        const localX =
+
+          clamp(
+            randn()
+            *
+            sigma,
+
+            -zone.w
+            *
+            0.43,
+
+            zone.w
+            *
+            0.43
+          );
+
+
+        const x =
+          zone.x
+          +
+          localX;
+
+
+        const baseline =
+          zone.y
+          +
+          zone.h
+          *
+          0.34;
+
+
+        const curveY =
+
+          baseline
+
+          -
+
+          zone.h
+          *
+          0.72
+          *
+          Math.exp(
+
+            -0.5
+
+            *
+
+            Math.pow(
+              localX
+              /
+              sigma,
+              2
+            )
+
+          );
+
+
+        return {
+
+          x,
+
+          y:
+            curveY
+            +
+            randn()
+            *
+            6
+
+        };
+
+      }
+
+
+
+      /* POISSON */
+
+      if (
+        zone.type
+        ===
+        "poisson"
+      ) {
+
+        const lambda =
+          3.1;
+
+
+        const k =
+
+          clamp(
+            poissonSample(
+              lambda
+            ),
+            0,
+            7
+          );
+
+
+        const start =
+          zone.x
+          -
+          zone.w
+          *
+          0.40;
+
+
+        const step =
+          (
+            zone.w
+            *
+            0.80
+          )
+          /
+          8;
+
+
+        const x =
+
+          start
+
+          +
+          k
+          *
+          step
+
+          +
+          step
+          *
+          0.5
+
+          +
+          randn()
+          *
+          1.8;
+
+
+        const pmf =
+
+          Math.exp(
+            -lambda
+          )
+
+          *
+
+          Math.pow(
+            lambda,
+            k
+          )
+
+          /
+
+          factorial(k);
+
+
+        const baseline =
+          zone.y
+          +
+          zone.h
+          *
+          0.34;
+
+
+        const top =
+          baseline
+          -
+          pmf
+          *
+          370;
+
+
+        return {
+
+          x,
+
+          y:
+            lerp(
+              top,
+              baseline,
+              Math.random()
+            )
+
+            +
+            randn()
+            *
+            2
+
+        };
+
+      }
+
+
+
+      /* EXPONENTIAL */
+
+      const lambda =
+        1
+        /
+        29;
+
+
+      const ex =
+
+        clamp(
+          exponentialSample(
+            lambda
+          ),
+          0,
+          zone.w
+          *
+          0.82
+        );
+
+
+      const startX =
+        zone.x
+        -
+        zone.w
+        *
+        0.43;
 
 
       const x =
-        lerp(
-          p.x,
-          p.targetX,
-          eased
-        )
+        startX
         +
-        Math.sin(
-          now*0.002
-          +
-          p.targetX
-        )
+        ex;
+
+
+      const baseline =
+        zone.y
+        +
+        zone.h
         *
-        p.drift;
+        0.34;
 
 
-      const y =
-        lerp(
-          p.y,
-          p.targetY,
-          eased
+      const curveY =
+
+        baseline
+
+        -
+
+        zone.h
+        *
+        0.77
+        *
+        Math.exp(
+          -ex
+          /
+          31
         );
+
+
+      return {
+
+        x,
+
+        y:
+          curveY
+          +
+          randn()
+          *
+          6
+
+      };
+
+    }
+
+
+
+    /* =====================================================
+       DRAW GAUSSIAN
+    ====================================================== */
+
+    function drawGaussianZone(
+      zone
+    ) {
+
+      const c =
+        colors();
+
+
+      const sigma =
+        zone.w
+        *
+        0.22;
+
+
+      const baseline =
+        zone.y
+        +
+        zone.h
+        *
+        0.34;
+
+
+      ctx.save();
+
+
+      ctx.strokeStyle =
+        c.distribution;
+
+
+      ctx.lineWidth =
+        4.5;
+
+
+      ctx.lineCap =
+        "round";
 
 
       ctx.beginPath();
 
 
-      ctx.arc(
+      for (
+        let x =
+          -zone.w * 0.44;
 
-        x,
-        y,
+        x <=
+          zone.w * 0.44;
 
-        p.radius,
+        x += 2
+      ) {
 
-        0,
-        Math.PI*2
+        const y =
+
+          baseline
+
+          -
+
+          zone.h
+          *
+          0.72
+          *
+          Math.exp(
+
+            -0.5
+
+            *
+
+            Math.pow(
+              x / sigma,
+              2
+            )
+
+          );
+
+
+        if (
+          x
+          ===
+          -zone.w * 0.44
+        ) {
+
+          ctx.moveTo(
+            zone.x + x,
+            y
+          );
+
+        }
+
+        else {
+
+          ctx.lineTo(
+            zone.x + x,
+            y
+          );
+
+        }
+
+      }
+
+
+      ctx.stroke();
+
+      ctx.restore();
+
+    }
+
+
+
+    /* =====================================================
+       DRAW POISSON
+    ====================================================== */
+
+    function drawPoissonZone(
+      zone
+    ) {
+
+      const c =
+        colors();
+
+
+      const lambda =
+        3.1;
+
+
+      const start =
+        zone.x
+        -
+        zone.w
+        *
+        0.40;
+
+
+      const step =
+        (
+          zone.w
+          *
+          0.80
+        )
+        /
+        8;
+
+
+      const baseline =
+        zone.y
+        +
+        zone.h
+        *
+        0.34;
+
+
+      ctx.save();
+
+
+      ctx.strokeStyle =
+        c.distribution;
+
+
+      ctx.lineWidth =
+        3.4;
+
+
+      ctx.lineCap =
+        "round";
+
+
+      for (
+        let k = 0;
+        k < 8;
+        k++
+      ) {
+
+        const pmf =
+
+          Math.exp(
+            -lambda
+          )
+
+          *
+
+          Math.pow(
+            lambda,
+            k
+          )
+
+          /
+
+          factorial(k);
+
+
+        const barHeight =
+          pmf
+          *
+          370;
+
+
+        const x =
+          start
+          +
+          k
+          *
+          step
+          +
+          step
+          *
+          0.5;
+
+
+        ctx.beginPath();
+
+
+        ctx.moveTo(
+          x,
+          baseline
+        );
+
+
+        ctx.lineTo(
+          x,
+          baseline
+          -
+          barHeight
+        );
+
+
+        ctx.stroke();
+
+
+        ctx.beginPath();
+
+
+        ctx.arc(
+          x,
+          baseline
+          -
+          barHeight,
+          3.2,
+          0,
+          Math.PI
+          *
+          2
+        );
+
+
+        ctx.fillStyle =
+          c.distribution;
+
+
+        ctx.fill();
+
+      }
+
+
+      ctx.restore();
+
+    }
+
+
+
+    /* =====================================================
+       DRAW EXPONENTIAL
+    ====================================================== */
+
+    function drawExponentialZone(
+      zone
+    ) {
+
+      const c =
+        colors();
+
+
+      const startX =
+        zone.x
+        -
+        zone.w
+        *
+        0.43;
+
+
+      const endX =
+        zone.x
+        +
+        zone.w
+        *
+        0.43;
+
+
+      const baseline =
+        zone.y
+        +
+        zone.h
+        *
+        0.34;
+
+
+      ctx.save();
+
+
+      ctx.strokeStyle =
+        c.distribution;
+
+
+      ctx.lineWidth =
+        4.5;
+
+
+      ctx.lineCap =
+        "round";
+
+
+      ctx.beginPath();
+
+
+      for (
+        let x = startX;
+        x <= endX;
+        x += 2
+      ) {
+
+        const dx =
+          x
+          -
+          startX;
+
+
+        const y =
+
+          baseline
+
+          -
+
+          zone.h
+          *
+          0.77
+          *
+          Math.exp(
+            -dx
+            /
+            31
+          );
+
+
+        if (
+          x
+          ===
+          startX
+        ) {
+
+          ctx.moveTo(
+            x,
+            y
+          );
+
+        }
+
+        else {
+
+          ctx.lineTo(
+            x,
+            y
+          );
+
+        }
+
+      }
+
+
+      ctx.stroke();
+
+      ctx.restore();
+
+    }
+
+
+
+    function drawZones() {
+
+      zones.forEach(
+        zone => {
+
+          if (
+            zone.type
+            ===
+            "gaussian"
+          ) {
+
+            drawGaussianZone(
+              zone
+            );
+
+          }
+
+
+          else if (
+            zone.type
+            ===
+            "poisson"
+          ) {
+
+            drawPoissonZone(
+              zone
+            );
+
+          }
+
+
+          else {
+
+            drawExponentialZone(
+              zone
+            );
+
+          }
+
+        }
+      );
+
+    }
+
+
+
+    /* =====================================================
+       CONNECTORS
+    ====================================================== */
+
+    function drawConnectors() {
+
+      const c =
+        colors();
+
+
+      ctx.save();
+
+
+      ctx.strokeStyle =
+        c.connector;
+
+
+      ctx.lineWidth =
+        1.55;
+
+
+      ctx.setLineDash(
+        [8, 10]
+      );
+
+
+      zones.forEach(
+        zone => {
+
+          const dx =
+            zone.anchor.x
+            -
+            zone.x;
+
+
+          const dy =
+            zone.anchor.y
+            -
+            zone.y;
+
+
+          const controlX =
+            zone.x
+            +
+            dx
+            *
+            0.54;
+
+
+          const controlY =
+            zone.y
+            +
+            dy
+            *
+            0.42;
+
+
+          ctx.beginPath();
+
+
+          ctx.moveTo(
+            zone.x,
+            zone.y
+          );
+
+
+          ctx.quadraticCurveTo(
+
+            controlX,
+            controlY,
+
+            zone.anchor.x,
+            zone.anchor.y
+
+          );
+
+
+          ctx.stroke();
+
+        }
+      );
+
+
+      ctx.setLineDash([]);
+
+      ctx.restore();
+
+    }
+
+
+
+    /* =====================================================
+       BRAIN
+    ====================================================== */
+
+    function drawBrain() {
+
+      const c =
+        colors();
+
+
+      const cx =
+        brain.x;
+
+
+      const cy =
+        brain.y;
+
+
+      const s =
+        brain.scale;
+
+
+      ctx.save();
+
+
+      /*
+        Main brain silhouette
+      */
+
+      ctx.beginPath();
+
+
+      ctx.moveTo(
+        cx - 25 * s,
+        cy - 103 * s
+      );
+
+
+      ctx.bezierCurveTo(
+
+        cx - 78 * s,
+        cy - 137 * s,
+
+        cx - 132 * s,
+        cy - 94 * s,
+
+        cx - 129 * s,
+        cy - 25 * s
 
       );
 
 
+      ctx.bezierCurveTo(
+
+        cx - 150 * s,
+        cy + 33 * s,
+
+        cx - 107 * s,
+        cy + 112 * s,
+
+        cx - 52 * s,
+        cy + 119 * s
+
+      );
+
+
+      ctx.bezierCurveTo(
+
+        cx - 17 * s,
+        cy + 124 * s,
+
+        cx - 11 * s,
+        cy + 92 * s,
+
+        cx - 9 * s,
+        cy + 65 * s
+
+      );
+
+
+      ctx.bezierCurveTo(
+
+        cx + 31 * s,
+        cy + 76 * s,
+
+        cx + 92 * s,
+        cy + 42 * s,
+
+        cx + 104 * s,
+        cy - 7 * s
+
+      );
+
+
+      ctx.bezierCurveTo(
+
+        cx + 129 * s,
+        cy - 59 * s,
+
+        cx + 88 * s,
+        cy - 123 * s,
+
+        cx + 25 * s,
+        cy - 108 * s
+
+      );
+
+
+      ctx.bezierCurveTo(
+
+        cx + 3 * s,
+        cy - 101 * s,
+
+        cx - 8 * s,
+        cy - 91 * s,
+
+        cx - 25 * s,
+        cy - 103 * s
+
+      );
+
+
+      ctx.closePath();
+
+
       ctx.fillStyle =
-        colors().particle;
-
-
-      ctx.globalAlpha =
-
-        1
-        -
-        smoothstep(
-          0.50,
-          0.65,
-          t
-        );
+        c.brainFill;
 
 
       ctx.fill();
 
-    }
 
-  );
-
-
-  ctx.globalAlpha = 1;
+      ctx.strokeStyle =
+        c.brainStroke;
 
 
-
-  /* histogram + gaussian */
-
-  drawHistogram(
-    gaussianOpacity
-    *
-    0.9
-  );
+      ctx.lineWidth =
+        3;
 
 
-  drawGaussian(
-
-    gaussianOpacity,
-
-    centerX,
-
-    baseline,
-
-    sigma,
-
-    155
-
-  );
+      ctx.stroke();
 
 
 
-  /* -------------------------------------------------------
-     Gaussian becomes one component of brain
+      /*
+        Central division / folds
+      */
 
-     zoom: large -> normal
-  ------------------------------------------------------- */
-
-  const zoomProgress =
-    smoothstep(
-      0.50,
-      0.78,
-      t
-    );
+      ctx.beginPath();
 
 
-  const brainZoom =
-    lerp(
-      2.15,
-      1,
-      zoomProgress
-    );
-
-
-  drawBrain(
-
-    brainOpacity,
-
-    brainZoom
-
-  );
-
-
-
-  /* tiny Gaussian retained at one neural region */
-
-  if (
-    brainOpacity>0.1
-  ) {
-
-    const localOpacity =
-      smoothstep(
-        0.60,
-        0.75,
-        t
-      )
-      *
-      (
-        1
-        -
-        smoothstep(
-          0.91,
-          1,
-          t
-        )
+      ctx.moveTo(
+        cx - 8 * s,
+        cy - 96 * s
       );
 
 
-    drawGaussian(
+      ctx.bezierCurveTo(
 
-      localOpacity*0.65,
+        cx + 12 * s,
+        cy - 57 * s,
 
-      width*0.73,
+        cx - 11 * s,
+        cy - 10 * s,
 
-      height*0.48,
+        cx + 9 * s,
+        cy + 18 * s
 
-      28,
+      );
 
-      32
 
+      ctx.bezierCurveTo(
+
+        cx + 20 * s,
+        cy + 40 * s,
+
+        cx + 2 * s,
+        cy + 73 * s,
+
+        cx - 8 * s,
+        cy + 105 * s
+
+      );
+
+
+      ctx.strokeStyle =
+        c.brainInner;
+
+
+      ctx.lineWidth =
+        1.25;
+
+
+      ctx.stroke();
+
+
+
+      /*
+        Small internal folds
+      */
+
+      const folds = [
+
+        [
+          [-77, -64],
+          [-52, -82],
+          [-29, -69]
+        ],
+
+        [
+          [-101, -23],
+          [-75, -37],
+          [-50, -20]
+        ],
+
+        [
+          [-99, 28],
+          [-69, 12],
+          [-45, 30]
+        ],
+
+        [
+          [36, -69],
+          [64, -83],
+          [79, -56]
+        ],
+
+        [
+          [36, -22],
+          [71, -36],
+          [84, -11]
+        ],
+
+        [
+          [31, 31],
+          [64, 18],
+          [79, 38]
+        ]
+
+      ];
+
+
+      ctx.strokeStyle =
+        c.brainInner;
+
+
+      ctx.lineWidth =
+        1;
+
+
+      folds.forEach(
+        f => {
+
+          ctx.beginPath();
+
+
+          ctx.moveTo(
+            cx + f[0][0] * s,
+            cy + f[0][1] * s
+          );
+
+
+          ctx.quadraticCurveTo(
+
+            cx + f[1][0] * s,
+            cy + f[1][1] * s,
+
+            cx + f[2][0] * s,
+            cy + f[2][1] * s
+
+          );
+
+
+          ctx.stroke();
+
+        }
+      );
+
+
+
+      /*
+        Highlighted projected zones
+      */
+
+      const brainRegions = [
+
+        {
+          x: cx - 65 * s,
+          y: cy - 51 * s,
+          r: 10 * s
+        },
+
+        {
+          x: cx + 43 * s,
+          y: cy - 61 * s,
+          r: 11 * s
+        },
+
+        {
+          x: cx + 65 * s,
+          y: cy + 2 * s,
+          r: 9 * s
+        },
+
+        {
+          x: cx - 50 * s,
+          y: cy + 57 * s,
+          r: 10 * s
+        },
+
+        {
+          x: cx + 28 * s,
+          y: cy + 69 * s,
+          r: 10 * s
+        }
+
+      ];
+
+
+      brainRegions.forEach(
+        region => {
+
+          ctx.beginPath();
+
+
+          ctx.arc(
+
+            region.x,
+            region.y,
+            region.r,
+
+            0,
+            Math.PI * 2
+
+          );
+
+
+          ctx.fillStyle =
+            c.brainNode;
+
+
+          ctx.fill();
+
+
+          ctx.strokeStyle =
+            c.brainNodeStroke;
+
+
+          ctx.lineWidth =
+            2;
+
+
+          ctx.stroke();
+
+        }
+      );
+
+
+      ctx.restore();
+
+    }
+
+
+
+    /* =====================================================
+       PARTICLE MOTION
+    ====================================================== */
+
+    function updateAndDrawParticles() {
+
+      const c =
+        colors();
+
+
+      particles.forEach(
+        particle => {
+
+
+          if (
+            particle.state
+            ===
+            "moving"
+          ) {
+
+            particle.progress +=
+              particle.speed;
+
+
+            if (
+              particle.progress
+              <
+              0
+            ) {
+
+              return;
+
+            }
+
+
+            const t =
+
+              easeOutCubic(
+
+                clamp(
+                  particle.progress,
+                  0,
+                  1
+                )
+
+              );
+
+
+            particle.x =
+
+              lerp(
+                particle.startX,
+                particle.tx,
+                t
+              );
+
+
+            particle.y =
+
+              lerp(
+                particle.startY,
+                particle.ty,
+                t
+              );
+
+
+            if (
+              particle.progress
+              >=
+              1
+            ) {
+
+              particle.state =
+                "linger";
+
+            }
+
+          }
+
+
+          else {
+
+            particle.linger -=
+              1;
+
+
+            particle.x +=
+
+              Math.sin(
+                particle.linger
+                *
+                0.045
+              )
+              *
+              0.045;
+
+
+            particle.y +=
+
+              Math.cos(
+                particle.linger
+                *
+                0.037
+              )
+              *
+              0.045;
+
+
+            if (
+              particle.linger
+              <=
+              0
+            ) {
+
+              const replacement =
+
+                makeParticle(
+                  particle.zoneIndex
+                );
+
+
+              Object.assign(
+                particle,
+                replacement
+              );
+
+            }
+
+          }
+
+
+          ctx.beginPath();
+
+
+          ctx.arc(
+
+            particle.x,
+            particle.y,
+
+            particle.size,
+
+            0,
+            Math.PI * 2
+
+          );
+
+
+          ctx.fillStyle =
+            c.particle;
+
+
+          ctx.fill();
+
+        }
+      );
+
+    }
+
+
+
+    /* =====================================================
+       AMBIENT PARTICLES
+    ====================================================== */
+
+    const ambient =
+      Array.from(
+        {
+          length: 35
+        }
+      )
+      .map(
+        () => ({
+
+          x:
+            Math.random(),
+
+          y:
+            Math.random(),
+
+          r:
+            0.8
+            +
+            Math.random()
+            *
+            2,
+
+          alpha:
+            0.04
+            +
+            Math.random()
+            *
+            0.09
+
+        })
+      );
+
+
+    function drawAmbient() {
+
+      const c =
+        colors();
+
+
+      ctx.save();
+
+
+      ambient.forEach(
+        particle => {
+
+          ctx.globalAlpha =
+            particle.alpha;
+
+
+          ctx.beginPath();
+
+
+          ctx.arc(
+
+            particle.x
+            *
+            width,
+
+            particle.y
+            *
+            height,
+
+            particle.r,
+
+            0,
+            Math.PI
+            *
+            2
+
+          );
+
+
+          ctx.fillStyle =
+            c.particle;
+
+
+          ctx.fill();
+
+        }
+      );
+
+
+      ctx.globalAlpha =
+        1;
+
+
+      ctx.restore();
+
+    }
+
+
+
+    /* =====================================================
+       ANIMATION LOOP
+    ====================================================== */
+
+    function loop() {
+
+      ctx.clearRect(
+        0,
+        0,
+        width,
+        height
+      );
+
+
+      drawAmbient();
+
+
+      /*
+        Back layer:
+        dashed mappings
+      */
+
+      drawConnectors();
+
+
+      /*
+        Distribution curves
+      */
+
+      drawZones();
+
+
+      /*
+        Central brain
+      */
+
+      drawBrain();
+
+
+      /*
+        Samples continuously arriving
+        and constructing the distributions
+      */
+
+      updateAndDrawParticles();
+
+
+      requestAnimationFrame(
+        loop
+      );
+
+    }
+
+
+
+    resize();
+
+    requestAnimationFrame(
+      loop
     );
 
-  }
-
-
-
-  requestAnimationFrame(
-    animate
-  );
-
-}
-
-
-
-resize();
-
-requestAnimationFrame(
-  animate
-);
-
-</script>
-
+  </script>
 
 </body>
+
 </html>
