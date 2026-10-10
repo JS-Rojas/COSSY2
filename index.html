@@ -3,7 +3,6 @@
 
 <head>
   <meta charset="UTF-8" />
-
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0"
@@ -20,77 +19,41 @@
 
   <style>
 
-    /* =========================================================
-       DARK THEME
-    ========================================================= */
-
     :root {
-
       --bg: #071018;
       --bg-soft: #0c1823;
-
       --panel: rgba(9, 18, 28, 0.78);
       --panel-solid: #0d1822;
-
       --line: rgba(148, 174, 192, 0.14);
       --line-strong: rgba(148, 174, 192, 0.26);
-
       --text: #edf1f5;
       --muted: #a6b1bc;
-
       --accent: #7ec7cc;
       --accent-soft: #a9e1e3;
-
       --gold: #c5b46a;
       --blue: #8ea7c2;
-
       --header-bg: rgba(7, 16, 24, 0.88);
-
-      --shadow:
-        0 20px 45px
-        rgba(0, 0, 0, 0.22);
-
+      --shadow: 0 20px 45px rgba(0, 0, 0, 0.22);
       --radius: 20px;
-
       --max: 1160px;
     }
 
-
-    /* =========================================================
-       LIGHT THEME
-    ========================================================= */
-
     body[data-theme="light"] {
-
       --bg: #f3f1e9;
       --bg-soft: #e9eee9;
-
       --panel: rgba(255, 255, 255, 0.74);
       --panel-solid: #fafaf7;
-
       --line: rgba(41, 66, 73, 0.14);
       --line-strong: rgba(41, 66, 73, 0.25);
-
       --text: #18272e;
       --muted: #607177;
-
       --accent: #4e9698;
       --accent-soft: #2f777a;
-
       --gold: #98813d;
       --blue: #637f9e;
-
       --header-bg: rgba(243, 241, 233, 0.90);
-
-      --shadow:
-        0 18px 42px
-        rgba(50, 65, 65, 0.09);
+      --shadow: 0 18px 42px rgba(50, 65, 65, 0.09);
     }
-
-
-    /* =========================================================
-       GENERAL
-    ========================================================= */
 
     * {
       box-sizing: border-box;
@@ -101,1227 +64,549 @@
     }
 
     body {
-
       margin: 0;
-
-      font-family:
-        Inter,
-        "Helvetica Neue",
-        Helvetica,
-        Arial,
-        sans-serif;
-
+      font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
       background:
-        radial-gradient(
-          circle at top,
-          rgba(126, 199, 204, 0.055),
-          transparent 30%
-        ),
+        radial-gradient(circle at top, rgba(126, 199, 204, 0.055), transparent 30%),
         var(--bg);
-
       color: var(--text);
-
       line-height: 1.5;
-
-      transition:
-        background 0.35s ease,
-        color 0.35s ease;
+      transition: background 0.35s ease, color 0.35s ease;
     }
-
 
     a {
       color: inherit;
       text-decoration: none;
     }
 
-
-    /* =========================================================
-       HEADER
-    ========================================================= */
-
     .topbar {
-
       position: sticky;
-
       top: 0;
-
       z-index: 1000;
-
       background: var(--header-bg);
-
-      border-bottom:
-        1px solid var(--line);
-
+      border-bottom: 1px solid var(--line);
       backdrop-filter: blur(16px);
-
-      transition:
-        background 0.35s ease,
-        border-color 0.35s ease;
+      transition: background 0.35s ease, border-color 0.35s ease;
     }
 
-
     .nav {
-
       max-width: var(--max);
-
       margin: auto;
-
       padding: 17px 20px;
-
       display: flex;
-
       align-items: center;
-
       justify-content: space-between;
-
       gap: 24px;
-
       flex-wrap: wrap;
     }
 
-
-    /* =========================================================
-       BRAND
-    ========================================================= */
-
     .brand {
-
       display: flex;
-
       align-items: center;
-
       gap: 14px;
     }
 
-
     .brand-mark {
-
       width: 46px;
       height: 46px;
-
       flex-shrink: 0;
-
       border-radius: 50%;
-
       display: grid;
-
       place-items: center;
-
       color: #071018;
-
       font-size: 1rem;
-
       font-weight: 850;
-
-      background:
-
-        linear-gradient(
-          135deg,
-          #d5f1f2,
-          #7ec7cc 48%,
-          #659cb4
-        );
-
-      box-shadow:
-        0 8px 22px
-        rgba(126, 199, 204, 0.18);
+      background: linear-gradient(135deg, #d5f1f2, #7ec7cc 48%, #659cb4);
+      box-shadow: 0 8px 22px rgba(126, 199, 204, 0.18);
     }
 
-
     .brand-title {
-
       font-size: 1rem;
-
       font-weight: 800;
-
       letter-spacing: 0.02em;
     }
 
-
     .brand-subtitle {
-
       margin-top: 2px;
-
       font-size: 0.9rem;
-
       color: var(--muted);
     }
-
-
-    /* =========================================================
-       NAV
-    ========================================================= */
 
     .nav-right {
-
       display: flex;
-
       align-items: center;
-
       gap: 18px;
-
       flex-wrap: wrap;
     }
-
 
     .nav-links {
-
       display: flex;
-
       align-items: center;
-
       gap: 18px;
-
       flex-wrap: wrap;
     }
 
-
     .nav-links a {
-
       color: var(--muted);
-
       font-size: 0.96rem;
-
       font-weight: 650;
-
-      transition:
-        color 0.2s ease;
+      transition: color 0.2s ease;
     }
-
 
     .nav-links a:hover {
       color: var(--text);
     }
 
-
-    /* =========================================================
-       THEME BUTTON
-    ========================================================= */
-
     .theme-toggle {
-
       width: 42px;
       height: 42px;
-
       border-radius: 50%;
-
-      border:
-        1px solid var(--line-strong);
-
-      background:
-        rgba(255, 255, 255, 0.02);
-
+      border: 1px solid var(--line-strong);
+      background: rgba(255, 255, 255, 0.02);
       color: var(--text);
-
       cursor: pointer;
-
       display: grid;
-
       place-items: center;
-
-      transition:
-        transform 0.2s ease,
-        background 0.2s ease;
+      transition: transform 0.2s ease, background 0.2s ease;
     }
-
 
     .theme-toggle:hover {
-
       transform: rotate(10deg);
-
-      background:
-        rgba(126, 199, 204, 0.08);
+      background: rgba(126, 199, 204, 0.08);
     }
 
-
     .theme-icon {
-
       width: 19px;
       height: 19px;
     }
 
-
-    /* =========================================================
-       BUTTONS
-    ========================================================= */
-
     .btn {
-
       display: inline-flex;
-
       align-items: center;
-
       justify-content: center;
-
-      padding:
-        12px 20px;
-
-      border-radius:
-        999px;
-
-      border:
-        1px solid transparent;
-
-      font-weight:
-        750;
-
-      white-space:
-        nowrap;
-
-      transition:
-        transform 0.2s ease,
-        filter 0.2s ease,
-        background 0.2s ease;
+      padding: 12px 20px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 750;
+      white-space: nowrap;
+      transition: transform 0.2s ease, filter 0.2s ease, background 0.2s ease;
     }
-
 
     .btn-primary {
-
-      background:
-
-        linear-gradient(
-          135deg,
-          #91d6d8,
-          #72b4bf
-        );
-
-      color:
-        #071018;
-
-      box-shadow:
-
-        0 10px 26px
-        rgba(126, 199, 204, 0.17);
+      background: linear-gradient(135deg, #91d6d8, #72b4bf);
+      color: #071018;
+      box-shadow: 0 10px 26px rgba(126, 199, 204, 0.17);
     }
-
 
     .btn-primary:hover {
-
-      transform:
-        translateY(-1px);
-
-      filter:
-        brightness(1.04);
+      transform: translateY(-1px);
+      filter: brightness(1.04);
     }
-
 
     .btn-secondary {
-
-      color:
-        var(--text);
-
-      background:
-        rgba(255, 255, 255, 0.018);
-
-      border-color:
-        var(--line-strong);
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.018);
+      border-color: var(--line-strong);
     }
-
 
     .btn-secondary:hover {
-
-      transform:
-        translateY(-1px);
-
-      background:
-        rgba(126, 199, 204, 0.05);
+      transform: translateY(-1px);
+      background: rgba(126, 199, 204, 0.05);
     }
-
-
-    /* =========================================================
-       HERO
-    ========================================================= */
 
     .hero {
-
-      position:
-        relative;
-
-      min-height:
-        720px;
-
-      overflow:
-        hidden;
-
-      display:
-        flex;
-
-      align-items:
-        center;
-
-      border-bottom:
-        1px solid var(--line);
+      position: relative;
+      min-height: 720px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
     }
-
 
     .hero-canvas {
-
-      position:
-        absolute;
-
-      inset:
-        0;
-
-      width:
-        100%;
-
-      height:
-        100%;
-
-      z-index:
-        0;
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
     }
 
-
     .hero-overlay {
-
-      position:
-        absolute;
-
-      inset:
-        0;
-
-      z-index:
-        1;
-
-      pointer-events:
-        none;
-
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
       background:
-
         linear-gradient(
           90deg,
-
-          rgba(7, 16, 24, 0.99)
-          0%,
-
-          rgba(7, 16, 24, 0.96)
-          27%,
-
-          rgba(7, 16, 24, 0.60)
-          46%,
-
-          rgba(7, 16, 24, 0.12)
-          65%,
-
-          rgba(7, 16, 24, 0.02)
-          100%
+          rgba(7, 16, 24, 0.99) 0%,
+          rgba(7, 16, 24, 0.96) 27%,
+          rgba(7, 16, 24, 0.60) 46%,
+          rgba(7, 16, 24, 0.12) 65%,
+          rgba(7, 16, 24, 0.02) 100%
         );
     }
 
-
-    body[data-theme="light"]
-    .hero-overlay {
-
+    body[data-theme="light"] .hero-overlay {
       background:
-
         linear-gradient(
           90deg,
-
-          rgba(243, 241, 233, 0.99)
-          0%,
-
-          rgba(243, 241, 233, 0.95)
-          28%,
-
-          rgba(243, 241, 233, 0.61)
-          47%,
-
-          rgba(243, 241, 233, 0.14)
-          67%,
-
-          rgba(243, 241, 233, 0.02)
-          100%
+          rgba(243, 241, 233, 0.99) 0%,
+          rgba(243, 241, 233, 0.95) 28%,
+          rgba(243, 241, 233, 0.61) 47%,
+          rgba(243, 241, 233, 0.14) 67%,
+          rgba(243, 241, 233, 0.02) 100%
         );
     }
-
 
     .hero-inner {
-
-      position:
-        relative;
-
-      z-index:
-        2;
-
-      width:
-        100%;
-
-      max-width:
-        var(--max);
-
-      margin:
-        auto;
-
-      padding:
-        72px 20px 82px;
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: var(--max);
+      margin: auto;
+      padding: 72px 20px 82px;
     }
-
 
     .hero-content {
-
-      max-width:
-        660px;
+      max-width: 660px;
     }
-
 
     .eyebrow {
-
-      display:
-        inline-flex;
-
-      padding:
-        8px 15px;
-
-      margin-bottom:
-        28px;
-
-      border-radius:
-        999px;
-
-      color:
-        var(--gold);
-
-      border:
-        1px solid
-        rgba(197, 180, 106, 0.28);
-
-      background:
-        rgba(197, 180, 106, 0.055);
-
-      font-size:
-        0.87rem;
-
-      font-weight:
-        800;
-
-      letter-spacing:
-        0.08em;
-
-      text-transform:
-        uppercase;
+      display: inline-flex;
+      padding: 8px 15px;
+      margin-bottom: 28px;
+      border-radius: 999px;
+      color: var(--gold);
+      border: 1px solid rgba(197, 180, 106, 0.28);
+      background: rgba(197, 180, 106, 0.055);
+      font-size: 0.87rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
-
 
     .hero h1 {
-
-      margin:
-        0 0 24px;
-
-      max-width:
-        9ch;
-
-      font-size:
-        clamp(
-          3.3rem,
-          7.2vw,
-          6.1rem
-        );
-
-      line-height:
-        0.92;
-
-      letter-spacing:
-        -0.055em;
-
-      font-weight:
-        760;
+      margin: 0 0 24px;
+      max-width: none;
+      font-size: clamp(3.3rem, 7.2vw, 6.1rem);
+      line-height: 0.92;
+      letter-spacing: -0.055em;
+      font-weight: 760;
     }
-
 
     .hero-line {
       display: block;
+      white-space: nowrap;
     }
-
 
     .hero .lead {
-
-      max-width:
-        34ch;
-
-      margin:
-        0 0 30px;
-
-      color:
-        var(--muted);
-
-      font-size:
-        clamp(
-          1.08rem,
-          1.7vw,
-          1.28rem
-        );
-
-      line-height:
-        1.65;
+      max-width: 34ch;
+      margin: 0 0 30px;
+      color: var(--muted);
+      font-size: clamp(1.08rem, 1.7vw, 1.28rem);
+      line-height: 1.65;
     }
-
 
     .hero-actions {
-
-      display:
-        flex;
-
-      gap:
-        12px;
-
-      flex-wrap:
-        wrap;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
     }
-
-
-    /* =========================================================
-       SECTIONS
-    ========================================================= */
 
     .container {
-
-      max-width:
-        var(--max);
-
-      margin:
-        auto;
-
-      padding:
-        78px 20px;
+      max-width: var(--max);
+      margin: auto;
+      padding: 78px 20px;
     }
-
 
     .section-head {
-
-      margin-bottom:
-        26px;
+      margin-bottom: 26px;
     }
-
 
     .section-kicker {
-
-      margin-bottom:
-        9px;
-
-      color:
-        var(--accent);
-
-      font-size:
-        0.82rem;
-
-      font-weight:
-        800;
-
-      letter-spacing:
-        0.13em;
-
-      text-transform:
-        uppercase;
+      margin-bottom: 9px;
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
     }
-
 
     .section-title {
-
-      margin:
-        0;
-
-      font-size:
-        clamp(
-          1.8rem,
-          4vw,
-          2.65rem
-        );
-
-      font-weight:
-        780;
-
-      letter-spacing:
-        -0.035em;
-
-      line-height:
-        1.05;
+      margin: 0;
+      font-size: clamp(1.8rem, 4vw, 2.65rem);
+      font-weight: 780;
+      letter-spacing: -0.035em;
+      line-height: 1.05;
     }
-
-
-    /* =========================================================
-       SCHEDULE
-    ========================================================= */
 
     .schedule-wrap {
-
-      overflow-x:
-        auto;
-
-      border:
-        1px solid var(--line);
-
-      border-radius:
-        var(--radius);
-
-      background:
-        var(--panel);
-
-      box-shadow:
-        var(--shadow);
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+      box-shadow: var(--shadow);
     }
-
 
     table {
-
-      width:
-        100%;
-
-      min-width:
-        980px;
-
-      border-collapse:
-        collapse;
+      width: 100%;
+      min-width: 980px;
+      border-collapse: collapse;
     }
-
 
     th,
     td {
-
-      padding:
-        15px 16px;
-
-      border:
-        1px solid var(--line);
-
-      vertical-align:
-        middle;
+      padding: 15px 16px;
+      border: 1px solid var(--line);
+      vertical-align: middle;
     }
-
 
     thead th {
-
-      text-align:
-        center;
-
-      font-weight:
-        800;
-
-      color:
-        #f7f4f6;
-
-      background:
-
-        linear-gradient(
-          180deg,
-          rgba(71, 46, 74, 0.95),
-          rgba(82, 39, 63, 0.95)
-        );
+      text-align: center;
+      font-weight: 800;
+      color: #f7f4f6;
+      background: linear-gradient(180deg, rgba(71, 46, 74, 0.95), rgba(82, 39, 63, 0.95));
     }
-
 
     thead th:first-child {
-
-      color:
-        #071018;
-
-      background:
-
-        linear-gradient(
-          180deg,
-          #548f89,
-          #427973
-        );
+      color: #071018;
+      background: linear-gradient(180deg, #548f89, #427973);
     }
 
-
-    body[data-theme="light"]
-    thead th {
-
-      background:
-
-        linear-gradient(
-          180deg,
-          #75576d,
-          #64465c
-        );
+    body[data-theme="light"] thead th {
+      background: linear-gradient(180deg, #75576d, #64465c);
     }
 
-
-    body[data-theme="light"]
-    thead th:first-child {
-
-      background:
-
-        linear-gradient(
-          180deg,
-          #81b5ad,
-          #68a098
-        );
+    body[data-theme="light"] thead th:first-child {
+      background: linear-gradient(180deg, #81b5ad, #68a098);
     }
-
 
     tbody td:first-child {
-
-      white-space:
-        nowrap;
-
-      font-weight:
-        800;
+      white-space: nowrap;
+      font-weight: 800;
     }
-
 
     tbody tr:nth-child(even) td {
-
-      background:
-        rgba(126, 199, 204, 0.018);
+      background: rgba(126, 199, 204, 0.018);
     }
-
 
     tbody tr:hover td {
-
-      background:
-        rgba(126, 199, 204, 0.045);
+      background: rgba(126, 199, 204, 0.045);
     }
-
 
     .cell-core {
       font-weight: 760;
     }
 
-
     .cell-talk {
-
-      color:
-        var(--blue);
-
-      font-weight:
-        760;
+      color: var(--blue);
+      font-weight: 760;
     }
-
 
     .cell-break {
       color: var(--muted);
     }
 
-
     .cell-lunch {
-
-      color:
-        var(--gold);
-
-      font-weight:
-        760;
+      color: var(--gold);
+      font-weight: 760;
     }
-
-
-    /* =========================================================
-       SPEAKERS
-    ========================================================= */
 
     .speaker-grid {
-
-      display:
-        grid;
-
-      grid-template-columns:
-        repeat(
-          3,
-          minmax(0, 1fr)
-        );
-
-      gap:
-        18px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
     }
-
 
     .speaker-card {
-
-      padding:
-        20px;
-
-      display:
-        flex;
-
-      align-items:
-        flex-start;
-
-      gap:
-        16px;
-
-      background:
-        var(--panel);
-
-      border:
-        1px solid var(--line);
-
-      border-radius:
-        var(--radius);
-
-      box-shadow:
-        var(--shadow);
-
-      transition:
-        transform 0.2s ease,
-        border-color 0.2s ease;
+      padding: 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease, border-color 0.2s ease;
     }
-
 
     .speaker-card:hover {
-
-      transform:
-        translateY(-3px);
-
-      border-color:
-        var(--line-strong);
+      transform: translateY(-3px);
+      border-color: var(--line-strong);
     }
-
 
     .speaker-photo {
-
-      width:
-        68px;
-
-      height:
-        68px;
-
-      flex-shrink:
-        0;
-
-      border-radius:
-        50%;
-
-      display:
-        grid;
-
-      place-items:
-        center;
-
-      color:
-        #071018;
-
-      font-weight:
-        850;
-
-      background:
-
-        linear-gradient(
-          135deg,
-          #d6eff0,
-          #88c7ca 50%,
-          #749ab3
-        );
+      width: 68px;
+      height: 68px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #071018;
+      font-weight: 850;
+      background: linear-gradient(135deg, #d6eff0, #88c7ca 50%, #749ab3);
     }
-
 
     .speaker-card h4 {
-
-      margin:
-        2px 0 4px;
-
-      font-size:
-        1.06rem;
-
-      font-weight:
-        780;
+      margin: 2px 0 4px;
+      font-size: 1.06rem;
+      font-weight: 780;
     }
-
 
     .speaker-role {
-
-      margin-bottom:
-        9px;
-
-      color:
-        var(--accent);
-
-      font-size:
-        0.9rem;
-
-      font-weight:
-        700;
+      margin-bottom: 9px;
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 700;
     }
-
 
     .speaker-bio {
-
-      margin:
-        0 0 12px;
-
-      color:
-        var(--muted);
-
-      font-size:
-        0.92rem;
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 0.92rem;
     }
-
 
     .speaker-links {
-
-      display:
-        flex;
-
-      flex-wrap:
-        wrap;
-
-      gap:
-        7px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
     }
-
 
     .link-chip {
-
-      display:
-        inline-flex;
-
-      align-items:
-        center;
-
-      padding:
-        7px 11px;
-
-      border:
-        1px solid var(--line-strong);
-
-      border-radius:
-        999px;
-
-      font-size:
-        0.8rem;
-
-      font-weight:
-        650;
-
-      transition:
-        background 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 11px;
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 650;
+      transition: background 0.2s ease;
     }
-
 
     .link-chip:hover {
-
-      background:
-        rgba(126, 199, 204, 0.07);
+      background: rgba(126, 199, 204, 0.07);
     }
-
-
-    /* =========================================================
-       VENUE
-    ========================================================= */
 
     .simple-grid {
-
-      display:
-        grid;
-
-      grid-template-columns:
-        1fr 1fr;
-
-      gap:
-        18px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
     }
-
 
     .panel {
-
-      padding:
-        26px;
-
-      background:
-        var(--panel);
-
-      border:
-        1px solid var(--line);
-
-      border-radius:
-        var(--radius);
-
-      box-shadow:
-        var(--shadow);
+      padding: 26px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
     }
-
 
     .panel h3 {
-
-      margin:
-        0 0 10px;
-
-      font-size:
-        1.13rem;
+      margin: 0 0 10px;
+      font-size: 1.13rem;
     }
-
 
     .panel p {
-
-      margin:
-        0;
-
-      color:
-        var(--muted);
+      margin: 0;
+      color: var(--muted);
     }
-
-
-    /* =========================================================
-       FOOTER
-    ========================================================= */
 
     footer {
-
-      padding:
-        32px 20px 46px;
-
-      border-top:
-        1px solid var(--line);
-
-      color:
-        var(--muted);
+      padding: 32px 20px 46px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
     }
-
 
     .footer-inner {
-
-      max-width:
-        var(--max);
-
-      margin:
-        auto;
+      max-width: var(--max);
+      margin: auto;
     }
 
-
-    /* =========================================================
-       RESPONSIVE
-    ========================================================= */
-
-    @media
-    (max-width: 1000px) {
-
+    @media (max-width: 1000px) {
       .speaker-grid {
-
-        grid-template-columns:
-          1fr 1fr;
+        grid-template-columns: 1fr 1fr;
       }
 
       .simple-grid {
-
-        grid-template-columns:
-          1fr;
+        grid-template-columns: 1fr;
       }
     }
 
-
-    @media
-    (max-width: 720px) {
-
+    @media (max-width: 720px) {
       .brand-subtitle {
         display: none;
       }
 
       .nav {
-
-        padding:
-          14px 18px;
+        padding: 14px 18px;
       }
 
       .nav-links {
-
-        gap:
-          11px;
+        gap: 11px;
       }
 
       .nav-links a {
-
-        font-size:
-          0.87rem;
+        font-size: 0.87rem;
       }
 
       .hero {
-
-        min-height:
-          680px;
+        min-height: 680px;
       }
 
       .hero-inner {
-
-        padding-top:
-          60px;
+        padding-top: 60px;
       }
 
       .hero h1 {
-
-        font-size:
-          clamp(
-            3rem,
-            15vw,
-            4.7rem
-          );
+        font-size: clamp(3rem, 15vw, 4.7rem);
       }
 
       .hero-overlay {
-
         background:
-
           linear-gradient(
             90deg,
-
-            rgba(7, 16, 24, 0.98)
-            0%,
-
-            rgba(7, 16, 24, 0.91)
-            60%,
-
-            rgba(7, 16, 24, 0.30)
-            100%
+            rgba(7, 16, 24, 0.98) 0%,
+            rgba(7, 16, 24, 0.91) 60%,
+            rgba(7, 16, 24, 0.30) 100%
           );
       }
 
-      body[data-theme="light"]
-      .hero-overlay {
-
+      body[data-theme="light"] .hero-overlay {
         background:
-
           linear-gradient(
             90deg,
-
-            rgba(243, 241, 233, 0.98)
-            0%,
-
-            rgba(243, 241, 233, 0.91)
-            60%,
-
-            rgba(243, 241, 233, 0.30)
-            100%
+            rgba(243, 241, 233, 0.98) 0%,
+            rgba(243, 241, 233, 0.91) 60%,
+            rgba(243, 241, 233, 0.30) 100%
           );
       }
 
       .speaker-grid {
-
-        grid-template-columns:
-          1fr;
+        grid-template-columns: 1fr;
       }
 
       .container {
-
-        padding:
-          60px 18px;
+        padding: 60px 18px;
       }
     }
 
   </style>
 </head>
 
-
 <body data-theme="dark">
 
-
-  <!-- =====================================================
-       HEADER
-  ====================================================== -->
-
   <header class="topbar">
-
     <nav class="nav">
-
       <a
         class="brand"
         href="#home"
       >
-
         <div class="brand-mark">
           C²
         </div>
 
-
         <div>
-
           <div class="brand-title">
             COSSY²
           </div>
@@ -1329,34 +614,16 @@
           <div class="brand-subtitle">
             From Probability to Information: Modeling Complex Systems
           </div>
-
         </div>
-
       </a>
 
-
       <div class="nav-right">
-
         <div class="nav-links">
-
-          <a href="#schedule">
-            Schedule
-          </a>
-
-          <a href="#speakers">
-            Speakers
-          </a>
-
-          <a href="#venue">
-            Venue
-          </a>
-
-          <a href="#register">
-            Register
-          </a>
-
+          <a href="#schedule">Schedule</a>
+          <a href="#speakers">Speakers</a>
+          <a href="#venue">Venue</a>
+          <a href="#register">Register</a>
         </div>
-
 
         <button
           id="themeToggle"
@@ -1364,7 +631,6 @@
           aria-label="Switch between dark and light mode"
           title="Switch theme"
         >
-
           <svg
             class="theme-icon"
             viewBox="0 0 24 24"
@@ -1374,151 +640,80 @@
             stroke-linecap="round"
             stroke-linejoin="round"
           >
-
             <circle
               cx="12"
               cy="12"
               r="4"
             ></circle>
-
             <path d="M12 2v2"></path>
             <path d="M12 20v2"></path>
-
-            <path
-              d="M4.93 4.93l1.41 1.41"
-            ></path>
-
-            <path
-              d="M17.66 17.66l1.41 1.41"
-            ></path>
-
+            <path d="M4.93 4.93l1.41 1.41"></path>
+            <path d="M17.66 17.66l1.41 1.41"></path>
             <path d="M2 12h2"></path>
-
             <path d="M20 12h2"></path>
-
-            <path
-              d="M6.34 17.66l-1.41 1.41"
-            ></path>
-
-            <path
-              d="M19.07 4.93l-1.41 1.41"
-            ></path>
-
+            <path d="M6.34 17.66l-1.41 1.41"></path>
+            <path d="M19.07 4.93l-1.41 1.41"></path>
           </svg>
-
         </button>
-
       </div>
-
     </nav>
-
   </header>
-
-
-
-  <!-- =====================================================
-       HERO
-  ====================================================== -->
 
   <section
     class="hero"
     id="home"
   >
-
     <canvas
       id="heroCanvas"
       class="hero-canvas"
       aria-hidden="true"
     ></canvas>
 
-
     <div class="hero-overlay"></div>
 
-
     <div class="hero-inner">
-
       <div class="hero-content">
-
-
         <div class="eyebrow">
-
           COSSY² · Yachay Tech · 14–16 December 2026
-
         </div>
 
-
         <h1>
-
-          <span class="hero-line">
-            From
-          </span>
-
-          <span class="hero-line">
-            Probability to
-          </span>
-
-          <span class="hero-line">
-            Information
-          </span>
-
+          <span class="hero-line">From</span>
+          <span class="hero-line">Probability to</span>
+          <span class="hero-line">Information</span>
         </h1>
 
-
         <p class="lead">
-
           A compact 3-day school on building models from
           information and probability principles.
-
         </p>
 
-
         <div class="hero-actions">
-
-
           <a
             class="btn btn-primary"
             href="https://forms.gle/REPLACE_WITH_REGISTRATION_LINK"
             target="_blank"
             rel="noopener"
           >
-
             Registration link
-
           </a>
-
 
           <a
             class="btn btn-secondary"
             href="#speakers"
           >
-
             Meet the speakers
-
           </a>
-
-
         </div>
-
       </div>
-
     </div>
-
   </section>
-
-
-
-  <!-- =====================================================
-       SCHEDULE
-  ====================================================== -->
 
   <section
     class="container"
     id="schedule"
   >
-
-
     <div class="section-head">
-
       <div class="section-kicker">
         Program
       </div>
@@ -1526,243 +721,85 @@
       <h2 class="section-title">
         Tentative schedule
       </h2>
-
     </div>
-
 
     <div class="schedule-wrap">
-
       <table>
-
-
         <thead>
-
           <tr>
-
-            <th>
-              Schedule
-            </th>
-
-            <th>
-              14 December
-            </th>
-
-            <th>
-              15 December
-            </th>
-
-            <th>
-              16 December
-            </th>
-
+            <th>Schedule</th>
+            <th>14 December</th>
+            <th>15 December</th>
+            <th>16 December</th>
           </tr>
-
         </thead>
 
-
-
         <tbody>
-
-
           <tr>
-
-            <td>
-              08h00 – 08h30
-            </td>
-
-            <td class="cell-core">
-              Inauguration
-            </td>
-
+            <td>08h00 – 08h30</td>
+            <td class="cell-core">Inauguration</td>
             <td></td>
-
             <td></td>
-
           </tr>
-
-
 
           <tr>
-
-            <td>
-              08h30 – 10h00
-            </td>
-
-            <td class="cell-core">
-              Intro to Probability:
-              Antonio Villagomez
-            </td>
-
-            <td class="cell-core">
-              Intro to Probability:
-              Antonio Villagomez
-            </td>
-
-            <td class="cell-core">
-              Intro to Probability:
-              Antonio Villagomez
-            </td>
-
+            <td>08h30 – 10h00</td>
+            <td class="cell-core">Intro to Probability: Antonio Villagomez</td>
+            <td class="cell-core">Intro to Probability: Antonio Villagomez</td>
+            <td class="cell-core">Intro to Probability: Antonio Villagomez</td>
           </tr>
-
-
 
           <tr>
-
-            <td>
-              10h00 – 10h30
-            </td>
-
-            <td class="cell-break">
-              Coffee Break
-            </td>
-
-            <td class="cell-break">
-              Coffee Break
-            </td>
-
-            <td class="cell-break">
-              Coffee Break
-            </td>
-
+            <td>10h00 – 10h30</td>
+            <td class="cell-break">Coffee Break</td>
+            <td class="cell-break">Coffee Break</td>
+            <td class="cell-break">Coffee Break</td>
           </tr>
-
-
 
           <tr>
-
-            <td>
-              10h30 – 12h00
-            </td>
-
-            <td class="cell-core">
-              Building Models from Information Principles:
-              Juan Velez
-            </td>
-
-            <td class="cell-core">
-              Building Models from Information Principles:
-              Juan Velez
-            </td>
-
-            <td class="cell-core">
-              Building Models from Information Principles:
-              Juan Velez
-            </td>
-
+            <td>10h30 – 12h00</td>
+            <td class="cell-core">Building Models from Information Principles: Juan Velez</td>
+            <td class="cell-core">Building Models from Information Principles: Juan Velez</td>
+            <td class="cell-core">Building Models from Information Principles: Juan Velez</td>
           </tr>
-
-
 
           <tr>
-
-            <td>
-              12h00 – 14h00
-            </td>
-
-            <td class="cell-lunch">
-              Lunch
-            </td>
-
-            <td class="cell-lunch">
-              Lunch
-            </td>
-
-            <td class="cell-lunch">
-              Lunch
-            </td>
-
+            <td>12h00 – 14h00</td>
+            <td class="cell-lunch">Lunch</td>
+            <td class="cell-lunch">Lunch</td>
+            <td class="cell-lunch">Lunch</td>
           </tr>
-
-
 
           <tr>
-
-            <td>
-              14h00 – 14h50
-            </td>
-
-            <td class="cell-talk">
-              Talk 1: Vinod Menon
-            </td>
-
-            <td class="cell-talk">
-              Talk 2: Matteo Marsili
-            </td>
-
-            <td class="cell-talk">
-              Talk 3: Mateo Carpio
-            </td>
-
+            <td>14h00 – 14h50</td>
+            <td class="cell-talk">Talk 1: Vinod Menon</td>
+            <td class="cell-talk">Talk 2: Matteo Marsili</td>
+            <td class="cell-talk">Talk 3: Mateo Carpio</td>
           </tr>
-
-
 
           <tr>
-
-            <td>
-              14h50 – 15h10
-            </td>
-
-            <td class="cell-break">
-              Coffee Break
-            </td>
-
-            <td class="cell-break">
-              Coffee Break
-            </td>
-
-            <td class="cell-break">
-              Coffee Break
-            </td>
-
+            <td>14h50 – 15h10</td>
+            <td class="cell-break">Coffee Break</td>
+            <td class="cell-break">Coffee Break</td>
+            <td class="cell-break">Coffee Break</td>
           </tr>
-
-
 
           <tr>
-
-            <td>
-              15h10 – 16h00
-            </td>
-
-            <td class="cell-talk">
-              Talk 4: Arianna Paredes
-            </td>
-
-            <td class="cell-talk">
-              Talk 5: Maria Jose
-            </td>
-
-            <td class="cell-talk">
-              Talk 6: Mario Cosenza
-            </td>
-
+            <td>15h10 – 16h00</td>
+            <td class="cell-talk">Talk 4: Arianna Paredes</td>
+            <td class="cell-talk">Talk 5: Maria Jose</td>
+            <td class="cell-talk">Talk 6: Mario Cosenza</td>
           </tr>
-
-
         </tbody>
-
       </table>
-
     </div>
-
   </section>
-
-
-
-  <!-- =====================================================
-       SPEAKERS
-  ====================================================== -->
 
   <section
     class="container"
     id="speakers"
   >
-
-
     <div class="section-head">
-
       <div class="section-kicker">
         People
       </div>
@@ -1770,109 +807,51 @@
       <h2 class="section-title">
         Instructors & speakers
       </h2>
-
     </div>
-
-
 
     <div class="speaker-grid">
 
-
-
-      <!-- ANTONIO -->
-
       <article class="speaker-card">
-
-        <div class="speaker-photo">
-          AV
-        </div>
-
-
+        <div class="speaker-photo">AV</div>
         <div>
-
-          <h4>
-            Antonio Villagomez
-          </h4>
-
-
-          <div class="speaker-role">
-            Intro to Probability
-          </div>
-
-
+          <h4>Antonio Villagomez</h4>
+          <div class="speaker-role">Intro to Probability</div>
           <p class="speaker-bio">
-
             Probability, fluctuations,
             large deviations, and open
             quantum systems.
-
           </p>
-
-
           <div class="speaker-links">
-
             <a
               class="link-chip"
               href="https://www.linkedin.com/in/ntno2627/"
               target="_blank"
               rel="noopener"
             >
-
               LinkedIn
-
             </a>
-
           </div>
-
         </div>
-
       </article>
 
-
-
-      <!-- JUAN -->
-
       <article class="speaker-card">
-
-        <div class="speaker-photo">
-          JV
-        </div>
-
-
+        <div class="speaker-photo">JV</div>
         <div>
-
-          <h4>
-            Juan Velez
-          </h4>
-
-
-          <div class="speaker-role">
-            Information Principles
-          </div>
-
-
+          <h4>Juan Velez</h4>
+          <div class="speaker-role">Information Principles</div>
           <p class="speaker-bio">
-
             Information-theoretic principles,
             probabilistic modeling and learning.
-
           </p>
-
-
           <div class="speaker-links">
-
-
             <a
               class="link-chip"
               href="https://scholar.google.com/citations?user=m6uf3cEAAAAJ&hl=es"
               target="_blank"
               rel="noopener"
             >
-
               Google Scholar
-
             </a>
-
 
             <a
               class="link-chip"
@@ -1880,273 +859,118 @@
               target="_blank"
               rel="noopener"
             >
-
               Website
-
             </a>
-
-
           </div>
-
         </div>
-
       </article>
 
-
-
-      <!-- VINOD MENON -->
-
       <article class="speaker-card">
-
-        <div class="speaker-photo">
-          VM
-        </div>
-
-
+        <div class="speaker-photo">VM</div>
         <div>
-
-          <h4>
-            Vinod Menon
-          </h4>
-
-
-          <div class="speaker-role">
-            Invited Talk
-          </div>
-
-
+          <h4>Vinod Menon</h4>
+          <div class="speaker-role">Invited Talk</div>
           <div class="speaker-links">
-
             <a
               class="link-chip"
               href="https://scholar.google.com/citations?user=QzqctJgAAAAJ&hl=es&oi=sra"
               target="_blank"
               rel="noopener"
             >
-
               Google Scholar
-
             </a>
-
           </div>
-
         </div>
-
       </article>
 
-
-
-      <!-- MATTEO -->
-
       <article class="speaker-card">
-
-        <div class="speaker-photo">
-          MM
-        </div>
-
-
+        <div class="speaker-photo">MM</div>
         <div>
-
-          <h4>
-            Matteo Marsili
-          </h4>
-
-
-          <div class="speaker-role">
-            Invited Talk
-          </div>
-
-
+          <h4>Matteo Marsili</h4>
+          <div class="speaker-role">Invited Talk</div>
           <div class="speaker-links">
-
             <a
               class="link-chip"
               href="https://scholar.google.com/citations?user=utY1nToAAAAJ&hl=es&oi=ao"
               target="_blank"
               rel="noopener"
             >
-
               Google Scholar
-
             </a>
-
           </div>
-
         </div>
-
       </article>
 
-
-
-      <!-- MATEO -->
-
       <article class="speaker-card">
-
-        <div class="speaker-photo">
-          MC
-        </div>
-
-
+        <div class="speaker-photo">MC</div>
         <div>
-
-          <h4>
-            Mateo Carpio
-          </h4>
-
-
-          <div class="speaker-role">
-            Invited Talk
-          </div>
-
-
+          <h4>Mateo Carpio</h4>
+          <div class="speaker-role">Invited Talk</div>
           <div class="speaker-links">
-
             <a
               class="link-chip"
               href="https://scholar.google.com/citations?user=bn6xDbwAAAAJ&hl=es&oi=ao"
               target="_blank"
               rel="noopener"
             >
-
               Google Scholar
-
             </a>
-
           </div>
-
         </div>
-
       </article>
 
-
-
-      <!-- ARIANNA -->
-
       <article class="speaker-card">
-
-        <div class="speaker-photo">
-          AP
-        </div>
-
-
+        <div class="speaker-photo">AP</div>
         <div>
-
-          <h4>
-            Arianna Paredes
-          </h4>
-
-
-          <div class="speaker-role">
-            Invited Talk
-          </div>
-
+          <h4>Arianna Paredes</h4>
+          <div class="speaker-role">Invited Talk</div>
         </div>
-
       </article>
 
-
-
-      <!-- MARIA JOSE -->
-
       <article class="speaker-card">
-
-        <div class="speaker-photo">
-          MJ
-        </div>
-
-
+        <div class="speaker-photo">MJ</div>
         <div>
-
-          <h4>
-            Maria Jose
-          </h4>
-
-
-          <div class="speaker-role">
-            Invited Talk
-          </div>
-
-
+          <h4>Maria Jose</h4>
+          <div class="speaker-role">Invited Talk</div>
           <div class="speaker-links">
-
             <a
               class="link-chip"
               href="https://scholar.google.com/citations?user=ceoZZdcAAAAJ&hl=es&oi=ao"
               target="_blank"
               rel="noopener"
             >
-
               Google Scholar
-
             </a>
-
           </div>
-
         </div>
-
       </article>
 
-
-
-      <!-- MARIO -->
-
       <article class="speaker-card">
-
-        <div class="speaker-photo">
-          MC
-        </div>
-
-
+        <div class="speaker-photo">MC</div>
         <div>
-
-          <h4>
-            Mario Cosenza
-          </h4>
-
-
-          <div class="speaker-role">
-            Invited Talk
-          </div>
-
-
+          <h4>Mario Cosenza</h4>
+          <div class="speaker-role">Invited Talk</div>
           <div class="speaker-links">
-
             <a
               class="link-chip"
               href="https://scholar.google.com/citations?user=wmSC_7EAAAAJ&hl=es&oi=sra"
               target="_blank"
               rel="noopener"
             >
-
               Google Scholar
-
             </a>
-
           </div>
-
         </div>
-
       </article>
 
-
     </div>
-
   </section>
-
-
-
-  <!-- =====================================================
-       VENUE
-  ====================================================== -->
 
   <section
     class="container"
     id="venue"
   >
-
-
     <div class="section-head">
-
       <div class="section-kicker">
         Venue
       </div>
@@ -2154,42 +978,20 @@
       <h2 class="section-title">
         Yachay Tech
       </h2>
-
     </div>
 
-
-
     <div class="simple-grid">
-
-
       <div class="panel">
-
-        <h3>
-          Location
-        </h3>
-
-
+        <h3>Location</h3>
         <p>
-
           Yachay Tech University
-
           <br>
-
           Urcuquí, Imbabura, Ecuador
-
         </p>
-
       </div>
 
-
-
       <div class="panel">
-
-        <h3>
-          Map & contact
-        </h3>
-
-
+        <h3>Map & contact</h3>
         <div
           style="
             display:flex;
@@ -2198,67 +1000,42 @@
             margin-top:18px;
           "
         >
-
           <a
             class="btn btn-primary"
             href="https://www.google.com/maps/search/?api=1&query=Yachay+Tech+Urcuqui+Ecuador"
             target="_blank"
             rel="noopener"
           >
-
             Open map
-
           </a>
-
 
           <a
             class="btn btn-secondary"
             href="mailto:REPLACE_WITH_CONTACT_EMAIL"
           >
-
             Contact
-
           </a>
-
-
         </div>
-
       </div>
-
     </div>
-
   </section>
-
-
-
-  <!-- =====================================================
-       REGISTER
-  ====================================================== -->
 
   <section
     class="container"
     id="register"
     style="padding-top: 0;"
   >
-
-
     <div class="panel">
-
-
       <div class="section-kicker">
         Registration
       </div>
-
 
       <h2
         class="section-title"
         style="margin-bottom: 22px;"
       >
-
         Apply to COSSY²
-
       </h2>
-
 
       <a
         class="btn btn-primary"
@@ -2266,2298 +1043,704 @@
         target="_blank"
         rel="noopener"
       >
-
         Registration form
-
       </a>
-
-
     </div>
-
   </section>
 
-
-
-  <!-- =====================================================
-       FOOTER
-  ====================================================== -->
-
   <footer>
-
     <div class="footer-inner">
-
-      <strong
-        style="color: var(--accent);"
-      >
+      <strong style="color: var(--accent);">
         COSSY²
       </strong>
-
       — From Probability to Information:
       Modeling Complex Systems
-
       <br>
-
       Yachay Tech · Urcuquí, Ecuador ·
       14–16 December 2026
-
     </div>
-
   </footer>
-
-
-
-  <!-- =====================================================
-       JAVASCRIPT
-  ====================================================== -->
 
   <script>
 
-    /* =====================================================
-       DARK / LIGHT MODE
-    ====================================================== */
-
-    const body =
-      document.body;
-
-
-    const themeButton =
-      document.getElementById(
-        "themeToggle"
-      );
-
-
-    const savedTheme =
-      localStorage.getItem(
-        "cossy-theme"
-      );
-
+    const body = document.body;
+    const themeButton = document.getElementById("themeToggle");
+    const savedTheme = localStorage.getItem("cossy-theme");
 
     if (savedTheme) {
-
-      body.dataset.theme =
-        savedTheme;
-
+      body.dataset.theme = savedTheme;
     }
 
+    themeButton.addEventListener("click", () => {
+      const nextTheme = body.dataset.theme === "dark" ? "light" : "dark";
+      body.dataset.theme = nextTheme;
+      localStorage.setItem("cossy-theme", nextTheme);
+    });
 
-    themeButton.addEventListener(
-      "click",
-      () => {
+    const canvas = document.getElementById("heroCanvas");
+    const hero = document.querySelector(".hero");
+    const ctx = canvas.getContext("2d");
 
-        const nextTheme =
+    let width = 0;
+    let height = 0;
+    let dpr = 1;
+    let particles = [];
+    let zones = [];
+    let brain = {};
 
-          body.dataset.theme
-          ===
-          "dark"
+    const PARTICLE_COUNT = 360;
 
-          ? "light"
-
-          : "dark";
-
-
-        body.dataset.theme =
-          nextTheme;
-
-
-        localStorage.setItem(
-          "cossy-theme",
-          nextTheme
-        );
-
-      }
-    );
-
-
-
-    /* =====================================================
-       HERO CANVAS
-    ====================================================== */
-
-    const canvas =
-      document.getElementById(
-        "heroCanvas"
-      );
-
-
-    const hero =
-      document.querySelector(
-        ".hero"
-      );
-
-
-    const ctx =
-      canvas.getContext("2d");
-
-
-    let width =
-      0;
-
-
-    let height =
-      0;
-
-
-    let dpr =
-      1;
-
-
-    let particles =
-      [];
-
-
-    let zones =
-      [];
-
-
-    let brain =
-      {};
-
-
-    const PARTICLE_COUNT =
-      360;
-
-
-
-    /* =====================================================
-       HELPERS
-    ====================================================== */
-
-    function clamp(
-      x,
-      a,
-      b
-    ) {
-
-      return Math.max(
-        a,
-        Math.min(
-          b,
-          x
-        )
-      );
-
+    function clamp(x, a, b) {
+      return Math.max(a, Math.min(b, x));
     }
 
-
-    function lerp(
-      a,
-      b,
-      t
-    ) {
-
-      return (
-        a
-        +
-        (b - a)
-        *
-        t
-      );
-
+    function lerp(a, b, t) {
+      return a + (b - a) * t;
     }
-
 
     function easeOutCubic(t) {
-
-      return (
-        1
-        -
-        Math.pow(
-          1 - t,
-          3
-        )
-      );
-
+      return 1 - Math.pow(1 - t, 3);
     }
-
 
     function randn() {
-
       let u = 0;
-
       let v = 0;
 
+      while (u === 0) u = Math.random();
+      while (v === 0) v = Math.random();
 
-      while (u === 0) {
-
-        u =
-          Math.random();
-
-      }
-
-
-      while (v === 0) {
-
-        v =
-          Math.random();
-
-      }
-
-
-      return (
-
-        Math.sqrt(
-          -2
-          *
-          Math.log(u)
-        )
-
-        *
-
-        Math.cos(
-          2
-          *
-          Math.PI
-          *
-          v
-        )
-
-      );
-
+      return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
     }
 
-
-    function exponentialSample(
-      lambda
-    ) {
-
-      return (
-
-        -Math.log(
-          1
-          -
-          Math.random()
-        )
-
-        /
-
-        lambda
-
-      );
-
+    function exponentialSample(lambda) {
+      return -Math.log(1 - Math.random()) / lambda;
     }
 
-
-    function poissonSample(
-      lambda
-    ) {
-
-      const L =
-        Math.exp(
-          -lambda
-        );
-
-
-      let k =
-        0;
-
-
-      let p =
-        1;
-
+    function poissonSample(lambda) {
+      const L = Math.exp(-lambda);
+      let k = 0;
+      let p = 1;
 
       do {
-
         k++;
+        p *= Math.random();
+      } while (p > L);
 
-        p *=
-          Math.random();
-
-      }
-
-      while (
-        p > L
-      );
-
-
-      return (
-        k - 1
-      );
-
+      return k - 1;
     }
-
 
     function factorial(n) {
-
-      let f =
-        1;
-
-
-      for (
-        let i = 2;
-        i <= n;
-        i++
-      ) {
-
+      let f = 1;
+      for (let i = 2; i <= n; i++) {
         f *= i;
-
       }
-
-
       return f;
-
     }
-
-
-
-    /* =====================================================
-       COLORS
-    ====================================================== */
 
     function colors() {
-
-      const light =
-        body.dataset.theme
-        ===
-        "light";
-
+      const light = body.dataset.theme === "light";
 
       if (light) {
-
         return {
-
-          particle:
-            "rgba(53,126,132,0.66)",
-
-          particleSoft:
-            "rgba(53,126,132,0.10)",
-
-          distribution:
-            "rgba(49,105,204,0.94)",
-
-          connector:
-            "rgba(95,108,114,0.64)",
-
-          brainStroke:
-            "rgba(51,112,118,0.94)",
-
-          brainInner:
-            "rgba(51,112,118,0.45)",
-
-          brainFill:
-            "rgba(51,112,118,0.045)",
-
-          brainNode:
-            "rgba(252,252,248,0.97)",
-
-          brainNodeStroke:
-            "rgba(51,112,118,0.76)"
-
+          particle: "rgba(53,126,132,0.66)",
+          particleSoft: "rgba(53,126,132,0.10)",
+          distribution: "rgba(49,105,204,0.94)",
+          connector: "rgba(95,108,114,0.64)",
+          brainStroke: "rgba(51,112,118,0.94)",
+          brainInner: "rgba(51,112,118,0.45)",
+          brainFill: "rgba(51,112,118,0.045)",
+          brainNode: "rgba(252,252,248,0.97)",
+          brainNodeStroke: "rgba(51,112,118,0.76)"
         };
-
       }
 
-
       return {
-
-        particle:
-          "rgba(126,199,204,0.67)",
-
-        particleSoft:
-          "rgba(126,199,204,0.10)",
-
-        distribution:
-          "rgba(46,108,255,0.95)",
-
-        connector:
-          "rgba(226,235,240,0.62)",
-
-        brainStroke:
-          "rgba(61,120,255,0.96)",
-
-        brainInner:
-          "rgba(126,199,204,0.46)",
-
-        brainFill:
-          "rgba(46,108,255,0.045)",
-
-        brainNode:
-          "rgba(248,249,250,0.97)",
-
-        brainNodeStroke:
-          "rgba(61,120,255,0.76)"
-
+        particle: "rgba(126,199,204,0.67)",
+        particleSoft: "rgba(126,199,204,0.10)",
+        distribution: "rgba(46,108,255,0.95)",
+        connector: "rgba(226,235,240,0.62)",
+        brainStroke: "rgba(61,120,255,0.96)",
+        brainInner: "rgba(126,199,204,0.46)",
+        brainFill: "rgba(46,108,255,0.045)",
+        brainNode: "rgba(248,249,250,0.97)",
+        brainNodeStroke: "rgba(61,120,255,0.76)"
       };
-
     }
-
-
-
-    /* =====================================================
-       CANVAS SETUP
-    ====================================================== */
 
     function resize() {
+      const rect = hero.getBoundingClientRect();
+      width = rect.width;
+      height = rect.height;
+      dpr = window.devicePixelRatio || 1;
 
-      const rect =
-        hero.getBoundingClientRect();
+      canvas.width = Math.floor(width * dpr);
+      canvas.height = Math.floor(height * dpr);
+      canvas.style.width = width + "px";
+      canvas.style.height = height + "px";
 
-
-      width =
-        rect.width;
-
-
-      height =
-        rect.height;
-
-
-      dpr =
-        window.devicePixelRatio
-        ||
-        1;
-
-
-      canvas.width =
-        Math.floor(
-          width
-          *
-          dpr
-        );
-
-
-      canvas.height =
-        Math.floor(
-          height
-          *
-          dpr
-        );
-
-
-      canvas.style.width =
-        width + "px";
-
-
-      canvas.style.height =
-        height + "px";
-
-
-      ctx.setTransform(
-        dpr,
-        0,
-        0,
-        dpr,
-        0,
-        0
-      );
-
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
       buildScene();
-
       buildParticles();
-
     }
 
-
-    window.addEventListener(
-      "resize",
-      resize
-    );
-
-
-
-    /* =====================================================
-       SCENE
-    ====================================================== */
+    window.addEventListener("resize", resize);
 
     function buildScene() {
-
-      const mobile =
-        width < 850;
-
+      const mobile = width < 850;
 
       brain = {
-
-        x:
-          mobile
-          ? width * 0.76
-          : width * 0.76,
-
-        y:
-          height * 0.49,
-
-        scale:
-          Math.min(
-            width,
-            height
-          )
-          *
-          (
-            mobile
-            ? 0.00082
-            : 0.00105
-          )
-
+        x: mobile ? width * 0.76 : width * 0.76,
+        y: height * 0.49,
+        scale: Math.min(width, height) * (mobile ? 0.00082 : 0.00105)
       };
-
 
       zones = [
-
         {
-
-          type:
-            "gaussian",
-
-          x:
-            width * 0.61,
-
-          y:
-            height * 0.19,
-
-          w:
-            120,
-
-          h:
-            88,
-
+          type: "gaussian",
+          x: width * 0.61,
+          y: height * 0.19,
+          w: 120,
+          h: 88,
           anchor: {
-            x:
-              brain.x - 67,
-            y:
-              brain.y - 80
+            x: brain.x - 67,
+            y: brain.y - 80
           }
-
         },
-
-
         {
-
-          type:
-            "poisson",
-
-          x:
-            width * 0.84,
-
-          y:
-            height * 0.18,
-
-          w:
-            110,
-
-          h:
-            84,
-
+          type: "poisson",
+          x: width * 0.84,
+          y: height * 0.18,
+          w: 110,
+          h: 84,
           anchor: {
-            x:
-              brain.x + 53,
-            y:
-              brain.y - 78
+            x: brain.x + 53,
+            y: brain.y - 78
           }
-
         },
-
-
         {
-
-          type:
-            "gaussian",
-
-          x:
-            width * 0.92,
-
-          y:
-            height * 0.51,
-
-          w:
-            115,
-
-          h:
-            86,
-
+          type: "gaussian",
+          x: width * 0.92,
+          y: height * 0.51,
+          w: 115,
+          h: 86,
           anchor: {
-            x:
-              brain.x + 85,
-            y:
-              brain.y
+            x: brain.x + 85,
+            y: brain.y
           }
-
         },
-
-
         {
-
-          type:
-            "exponential",
-
-          x:
-            width * 0.60,
-
-          y:
-            height * 0.74,
-
-          w:
-            124,
-
-          h:
-            88,
-
+          type: "exponential",
+          x: width * 0.60,
+          y: height * 0.74,
+          w: 124,
+          h: 88,
           anchor: {
-            x:
-              brain.x - 68,
-            y:
-              brain.y + 72
+            x: brain.x - 68,
+            y: brain.y + 72
           }
-
         },
-
-
         {
-
-          type:
-            "poisson",
-
-          x:
-            width * 0.87,
-
-          y:
-            height * 0.79,
-
-          w:
-            112,
-
-          h:
-            84,
-
+          type: "poisson",
+          x: width * 0.87,
+          y: height * 0.79,
+          w: 112,
+          h: 84,
           anchor: {
-            x:
-              brain.x + 55,
-            y:
-              brain.y + 78
+            x: brain.x + 55,
+            y: brain.y + 78
           }
-
         }
-
       ];
-
     }
-
-
-
-    /* =====================================================
-       PARTICLES
-    ====================================================== */
 
     function buildParticles() {
+      particles = [];
 
-      particles =
-        [];
-
-
-      for (
-        let i = 0;
-        i < PARTICLE_COUNT;
-        i++
-      ) {
-
-        particles.push(
-          makeParticle(
-            i
-            %
-            zones.length
-          )
-        );
-
+      for (let i = 0; i < PARTICLE_COUNT; i++) {
+        particles.push(makeParticle(i % zones.length));
       }
-
     }
 
+    function makeParticle(zoneIndex) {
+      const zone = zones[zoneIndex];
+      const fromLeft = Math.random() < 0.5;
 
-    function makeParticle(
-      zoneIndex
-    ) {
+      const startX = fromLeft
+        ? (-30 - Math.random() * 170)
+        : (width + 30 + Math.random() * 170);
 
-      const zone =
-        zones[
-          zoneIndex
-        ];
-
-
-      const fromLeft =
-        Math.random()
-        <
-        0.5;
-
-
-      const startX =
-
-        fromLeft
-
-        ? (
-            -30
-            -
-            Math.random()
-            *
-            170
-          )
-
-        : (
-            width
-            +
-            30
-            +
-            Math.random()
-            *
-            170
-          );
-
-
-      const startY =
-
-        zone.y
-        +
-        (
-          Math.random()
-          -
-          0.5
-        )
-        *
-        190;
-
-
-      const target =
-        sampleTargetForZone(
-          zone
-        );
-
+      const startY = zone.y + (Math.random() - 0.5) * 190;
+      const target = sampleTargetForZone(zone);
 
       return {
-
         zoneIndex,
-
         startX,
-
         startY,
-
-        x:
-          startX,
-
-        y:
-          startY,
-
-        tx:
-          target.x,
-
-        ty:
-          target.y,
-
-        size:
-          1.2
-          +
-          Math.random()
-          *
-          2.0,
-
-        progress:
-          -Math.random()
-          *
-          1.5,
-
-        speed:
-          0.006
-          +
-          Math.random()
-          *
-          0.008,
-
-        linger:
-          70
-          +
-          Math.random()
-          *
-          150,
-
-        state:
-          "moving"
-
+        x: startX,
+        y: startY,
+        tx: target.x,
+        ty: target.y,
+        size: 1.2 + Math.random() * 2.0,
+        progress: -Math.random() * 1.5,
+        speed: 0.006 + Math.random() * 0.008,
+        linger: 70 + Math.random() * 150,
+        state: "moving"
       };
-
     }
 
+    function sampleTargetForZone(zone) {
+      if (zone.type === "gaussian") {
+        const sigma = zone.w * 0.22;
 
+        const localX = clamp(
+          randn() * sigma,
+          -zone.w * 0.43,
+          zone.w * 0.43
+        );
 
-    /* =====================================================
-       DISTRIBUTION SAMPLING
-    ====================================================== */
-
-    function sampleTargetForZone(
-      zone
-    ) {
-
-
-      /* GAUSSIAN */
-
-      if (
-        zone.type
-        ===
-        "gaussian"
-      ) {
-
-        const sigma =
-          zone.w
-          *
-          0.22;
-
-
-        const localX =
-
-          clamp(
-            randn()
-            *
-            sigma,
-
-            -zone.w
-            *
-            0.43,
-
-            zone.w
-            *
-            0.43
-          );
-
-
-        const x =
-          zone.x
-          +
-          localX;
-
-
-        const baseline =
-          zone.y
-          +
-          zone.h
-          *
-          0.34;
-
+        const x = zone.x + localX;
+        const baseline = zone.y + zone.h * 0.34;
 
         const curveY =
-
-          baseline
-
-          -
-
-          zone.h
-          *
-          0.72
-          *
-          Math.exp(
-
-            -0.5
-
-            *
-
-            Math.pow(
-              localX
-              /
-              sigma,
-              2
-            )
-
-          );
-
+          baseline -
+          zone.h * 0.72 *
+          Math.exp(-0.5 * Math.pow(localX / sigma, 2));
 
         return {
-
           x,
-
-          y:
-            curveY
-            +
-            randn()
-            *
-            6
-
+          y: curveY + randn() * 6
         };
-
       }
 
+      if (zone.type === "poisson") {
+        const lambda = 3.1;
 
-
-      /* POISSON */
-
-      if (
-        zone.type
-        ===
-        "poisson"
-      ) {
-
-        const lambda =
-          3.1;
-
-
-        const k =
-
-          clamp(
-            poissonSample(
-              lambda
-            ),
-            0,
-            7
-          );
-
-
-        const start =
-          zone.x
-          -
-          zone.w
-          *
-          0.40;
-
-
-        const step =
-          (
-            zone.w
-            *
-            0.80
-          )
-          /
-          8;
-
+        const k = clamp(poissonSample(lambda), 0, 7);
+        const start = zone.x - zone.w * 0.40;
+        const step = (zone.w * 0.80) / 8;
 
         const x =
-
-          start
-
-          +
-          k
-          *
-          step
-
-          +
-          step
-          *
-          0.5
-
-          +
-          randn()
-          *
-          1.8;
-
+          start +
+          k * step +
+          step * 0.5 +
+          randn() * 1.8;
 
         const pmf =
-
-          Math.exp(
-            -lambda
-          )
-
-          *
-
-          Math.pow(
-            lambda,
-            k
-          )
-
-          /
-
+          Math.exp(-lambda) *
+          Math.pow(lambda, k) /
           factorial(k);
 
-
-        const baseline =
-          zone.y
-          +
-          zone.h
-          *
-          0.34;
-
-
-        const top =
-          baseline
-          -
-          pmf
-          *
-          370;
-
+        const baseline = zone.y + zone.h * 0.34;
+        const top = baseline - pmf * 370;
 
         return {
-
           x,
-
-          y:
-            lerp(
-              top,
-              baseline,
-              Math.random()
-            )
-
-            +
-            randn()
-            *
-            2
-
+          y: lerp(top, baseline, Math.random()) + randn() * 2
         };
-
       }
 
+      const lambda = 1 / 29;
 
+      const ex = clamp(
+        exponentialSample(lambda),
+        0,
+        zone.w * 0.82
+      );
 
-      /* EXPONENTIAL */
-
-      const lambda =
-        1
-        /
-        29;
-
-
-      const ex =
-
-        clamp(
-          exponentialSample(
-            lambda
-          ),
-          0,
-          zone.w
-          *
-          0.82
-        );
-
-
-      const startX =
-        zone.x
-        -
-        zone.w
-        *
-        0.43;
-
-
-      const x =
-        startX
-        +
-        ex;
-
-
-      const baseline =
-        zone.y
-        +
-        zone.h
-        *
-        0.34;
-
+      const startX = zone.x - zone.w * 0.43;
+      const x = startX + ex;
+      const baseline = zone.y + zone.h * 0.34;
 
       const curveY =
-
-        baseline
-
-        -
-
-        zone.h
-        *
-        0.77
-        *
-        Math.exp(
-          -ex
-          /
-          31
-        );
-
+        baseline -
+        zone.h * 0.77 *
+        Math.exp(-ex / 31);
 
       return {
-
         x,
-
-        y:
-          curveY
-          +
-          randn()
-          *
-          6
-
+        y: curveY + randn() * 6
       };
-
     }
 
-
-
-    /* =====================================================
-       DRAW GAUSSIAN
-    ====================================================== */
-
-    function drawGaussianZone(
-      zone
-    ) {
-
-      const c =
-        colors();
-
-
-      const sigma =
-        zone.w
-        *
-        0.22;
-
-
-      const baseline =
-        zone.y
-        +
-        zone.h
-        *
-        0.34;
-
+    function drawGaussianZone(zone) {
+      const c = colors();
+      const sigma = zone.w * 0.22;
+      const baseline = zone.y + zone.h * 0.34;
 
       ctx.save();
-
-
-      ctx.strokeStyle =
-        c.distribution;
-
-
-      ctx.lineWidth =
-        4.5;
-
-
-      ctx.lineCap =
-        "round";
-
-
+      ctx.strokeStyle = c.distribution;
+      ctx.lineWidth = 4.5;
+      ctx.lineCap = "round";
       ctx.beginPath();
 
-
-      for (
-        let x =
-          -zone.w * 0.44;
-
-        x <=
-          zone.w * 0.44;
-
-        x += 2
-      ) {
-
+      for (let x = -zone.w * 0.44; x <= zone.w * 0.44; x += 2) {
         const y =
+          baseline -
+          zone.h * 0.72 *
+          Math.exp(-0.5 * Math.pow(x / sigma, 2));
 
-          baseline
-
-          -
-
-          zone.h
-          *
-          0.72
-          *
-          Math.exp(
-
-            -0.5
-
-            *
-
-            Math.pow(
-              x / sigma,
-              2
-            )
-
-          );
-
-
-        if (
-          x
-          ===
-          -zone.w * 0.44
-        ) {
-
-          ctx.moveTo(
-            zone.x + x,
-            y
-          );
-
+        if (x === -zone.w * 0.44) {
+          ctx.moveTo(zone.x + x, y);
+        } else {
+          ctx.lineTo(zone.x + x, y);
         }
-
-        else {
-
-          ctx.lineTo(
-            zone.x + x,
-            y
-          );
-
-        }
-
       }
 
-
       ctx.stroke();
-
       ctx.restore();
-
     }
 
-
-
-    /* =====================================================
-       DRAW POISSON
-    ====================================================== */
-
-    function drawPoissonZone(
-      zone
-    ) {
-
-      const c =
-        colors();
-
-
-      const lambda =
-        3.1;
-
-
-      const start =
-        zone.x
-        -
-        zone.w
-        *
-        0.40;
-
-
-      const step =
-        (
-          zone.w
-          *
-          0.80
-        )
-        /
-        8;
-
-
-      const baseline =
-        zone.y
-        +
-        zone.h
-        *
-        0.34;
-
+    function drawPoissonZone(zone) {
+      const c = colors();
+      const lambda = 3.1;
+      const start = zone.x - zone.w * 0.40;
+      const step = (zone.w * 0.80) / 8;
+      const baseline = zone.y + zone.h * 0.34;
 
       ctx.save();
+      ctx.strokeStyle = c.distribution;
+      ctx.lineWidth = 3.4;
+      ctx.lineCap = "round";
 
-
-      ctx.strokeStyle =
-        c.distribution;
-
-
-      ctx.lineWidth =
-        3.4;
-
-
-      ctx.lineCap =
-        "round";
-
-
-      for (
-        let k = 0;
-        k < 8;
-        k++
-      ) {
-
+      for (let k = 0; k < 8; k++) {
         const pmf =
-
-          Math.exp(
-            -lambda
-          )
-
-          *
-
-          Math.pow(
-            lambda,
-            k
-          )
-
-          /
-
+          Math.exp(-lambda) *
+          Math.pow(lambda, k) /
           factorial(k);
 
-
-        const barHeight =
-          pmf
-          *
-          370;
-
-
-        const x =
-          start
-          +
-          k
-          *
-          step
-          +
-          step
-          *
-          0.5;
-
+        const barHeight = pmf * 370;
+        const x = start + k * step + step * 0.5;
 
         ctx.beginPath();
-
-
-        ctx.moveTo(
-          x,
-          baseline
-        );
-
-
-        ctx.lineTo(
-          x,
-          baseline
-          -
-          barHeight
-        );
-
-
+        ctx.moveTo(x, baseline);
+        ctx.lineTo(x, baseline - barHeight);
         ctx.stroke();
 
-
         ctx.beginPath();
-
-
-        ctx.arc(
-          x,
-          baseline
-          -
-          barHeight,
-          3.2,
-          0,
-          Math.PI
-          *
-          2
-        );
-
-
-        ctx.fillStyle =
-          c.distribution;
-
-
+        ctx.arc(x, baseline - barHeight, 3.2, 0, Math.PI * 2);
+        ctx.fillStyle = c.distribution;
         ctx.fill();
-
       }
-
 
       ctx.restore();
-
     }
 
-
-
-    /* =====================================================
-       DRAW EXPONENTIAL
-    ====================================================== */
-
-    function drawExponentialZone(
-      zone
-    ) {
-
-      const c =
-        colors();
-
-
-      const startX =
-        zone.x
-        -
-        zone.w
-        *
-        0.43;
-
-
-      const endX =
-        zone.x
-        +
-        zone.w
-        *
-        0.43;
-
-
-      const baseline =
-        zone.y
-        +
-        zone.h
-        *
-        0.34;
-
+    function drawExponentialZone(zone) {
+      const c = colors();
+      const startX = zone.x - zone.w * 0.43;
+      const endX = zone.x + zone.w * 0.43;
+      const baseline = zone.y + zone.h * 0.34;
 
       ctx.save();
-
-
-      ctx.strokeStyle =
-        c.distribution;
-
-
-      ctx.lineWidth =
-        4.5;
-
-
-      ctx.lineCap =
-        "round";
-
-
+      ctx.strokeStyle = c.distribution;
+      ctx.lineWidth = 4.5;
+      ctx.lineCap = "round";
       ctx.beginPath();
 
-
-      for (
-        let x = startX;
-        x <= endX;
-        x += 2
-      ) {
-
-        const dx =
-          x
-          -
-          startX;
-
-
+      for (let x = startX; x <= endX; x += 2) {
+        const dx = x - startX;
         const y =
+          baseline -
+          zone.h * 0.77 *
+          Math.exp(-dx / 31);
 
-          baseline
-
-          -
-
-          zone.h
-          *
-          0.77
-          *
-          Math.exp(
-            -dx
-            /
-            31
-          );
-
-
-        if (
-          x
-          ===
-          startX
-        ) {
-
-          ctx.moveTo(
-            x,
-            y
-          );
-
+        if (x === startX) {
+          ctx.moveTo(x, y);
+        } else {
+          ctx.lineTo(x, y);
         }
-
-        else {
-
-          ctx.lineTo(
-            x,
-            y
-          );
-
-        }
-
       }
-
 
       ctx.stroke();
-
       ctx.restore();
-
     }
-
-
 
     function drawZones() {
-
-      zones.forEach(
-        zone => {
-
-          if (
-            zone.type
-            ===
-            "gaussian"
-          ) {
-
-            drawGaussianZone(
-              zone
-            );
-
-          }
-
-
-          else if (
-            zone.type
-            ===
-            "poisson"
-          ) {
-
-            drawPoissonZone(
-              zone
-            );
-
-          }
-
-
-          else {
-
-            drawExponentialZone(
-              zone
-            );
-
-          }
-
+      zones.forEach(zone => {
+        if (zone.type === "gaussian") {
+          drawGaussianZone(zone);
+        } else if (zone.type === "poisson") {
+          drawPoissonZone(zone);
+        } else {
+          drawExponentialZone(zone);
         }
-      );
-
+      });
     }
-
-
-
-    /* =====================================================
-       CONNECTORS
-    ====================================================== */
 
     function drawConnectors() {
-
-      const c =
-        colors();
-
+      const c = colors();
 
       ctx.save();
+      ctx.strokeStyle = c.connector;
+      ctx.lineWidth = 1.55;
+      ctx.setLineDash([8, 10]);
 
+      zones.forEach(zone => {
+        const dx = zone.anchor.x - zone.x;
+        const dy = zone.anchor.y - zone.y;
+        const controlX = zone.x + dx * 0.54;
+        const controlY = zone.y + dy * 0.42;
 
-      ctx.strokeStyle =
-        c.connector;
-
-
-      ctx.lineWidth =
-        1.55;
-
-
-      ctx.setLineDash(
-        [8, 10]
-      );
-
-
-      zones.forEach(
-        zone => {
-
-          const dx =
-            zone.anchor.x
-            -
-            zone.x;
-
-
-          const dy =
-            zone.anchor.y
-            -
-            zone.y;
-
-
-          const controlX =
-            zone.x
-            +
-            dx
-            *
-            0.54;
-
-
-          const controlY =
-            zone.y
-            +
-            dy
-            *
-            0.42;
-
-
-          ctx.beginPath();
-
-
-          ctx.moveTo(
-            zone.x,
-            zone.y
-          );
-
-
-          ctx.quadraticCurveTo(
-
-            controlX,
-            controlY,
-
-            zone.anchor.x,
-            zone.anchor.y
-
-          );
-
-
-          ctx.stroke();
-
-        }
-      );
-
+        ctx.beginPath();
+        ctx.moveTo(zone.x, zone.y);
+        ctx.quadraticCurveTo(
+          controlX,
+          controlY,
+          zone.anchor.x,
+          zone.anchor.y
+        );
+        ctx.stroke();
+      });
 
       ctx.setLineDash([]);
-
       ctx.restore();
-
     }
 
-
-
-    /* =====================================================
-       BRAIN
-    ====================================================== */
-
     function drawBrain() {
-
-      const c =
-        colors();
-
-
-      const cx =
-        brain.x;
-
-
-      const cy =
-        brain.y;
-
-
-      const s =
-        brain.scale;
-
+      const c = colors();
+      const cx = brain.x;
+      const cy = brain.y;
+      const s = brain.scale;
 
       ctx.save();
-
-
-      /*
-        Main brain silhouette
-      */
 
       ctx.beginPath();
 
-
-      ctx.moveTo(
-        cx - 25 * s,
-        cy - 103 * s
-      );
-
+      ctx.moveTo(cx, cy - 112 * s);
 
       ctx.bezierCurveTo(
-
-        cx - 78 * s,
-        cy - 137 * s,
-
-        cx - 132 * s,
-        cy - 94 * s,
-
-        cx - 129 * s,
-        cy - 25 * s
-
+        cx - 34 * s, cy - 132 * s,
+        cx - 88 * s, cy - 128 * s,
+        cx - 118 * s, cy - 92 * s
       );
-
 
       ctx.bezierCurveTo(
-
-        cx - 150 * s,
-        cy + 33 * s,
-
-        cx - 107 * s,
-        cy + 112 * s,
-
-        cx - 52 * s,
-        cy + 119 * s
-
+        cx - 148 * s, cy - 74 * s,
+        cx - 160 * s, cy - 32 * s,
+        cx - 146 * s, cy + 8 * s
       );
-
 
       ctx.bezierCurveTo(
-
-        cx - 17 * s,
-        cy + 124 * s,
-
-        cx - 11 * s,
-        cy + 92 * s,
-
-        cx - 9 * s,
-        cy + 65 * s
-
+        cx - 161 * s, cy + 46 * s,
+        cx - 145 * s, cy + 93 * s,
+        cx - 109 * s, cy + 112 * s
       );
-
 
       ctx.bezierCurveTo(
-
-        cx + 31 * s,
-        cy + 76 * s,
-
-        cx + 92 * s,
-        cy + 42 * s,
-
-        cx + 104 * s,
-        cy - 7 * s
-
+        cx - 82 * s, cy + 132 * s,
+        cx - 38 * s, cy + 130 * s,
+        cx - 11 * s, cy + 102 * s
       );
-
 
       ctx.bezierCurveTo(
-
-        cx + 129 * s,
-        cy - 59 * s,
-
-        cx + 88 * s,
-        cy - 123 * s,
-
-        cx + 25 * s,
-        cy - 108 * s
-
+        cx - 3 * s, cy + 86 * s,
+        cx - 2 * s, cy + 64 * s,
+        cx, cy + 54 * s
       );
-
 
       ctx.bezierCurveTo(
-
-        cx + 3 * s,
-        cy - 101 * s,
-
-        cx - 8 * s,
-        cy - 91 * s,
-
-        cx - 25 * s,
-        cy - 103 * s
-
+        cx + 2 * s, cy + 64 * s,
+        cx + 3 * s, cy + 86 * s,
+        cx + 11 * s, cy + 102 * s
       );
 
+      ctx.bezierCurveTo(
+        cx + 38 * s, cy + 130 * s,
+        cx + 82 * s, cy + 132 * s,
+        cx + 109 * s, cy + 112 * s
+      );
+
+      ctx.bezierCurveTo(
+        cx + 145 * s, cy + 93 * s,
+        cx + 161 * s, cy + 46 * s,
+        cx + 146 * s, cy + 8 * s
+      );
+
+      ctx.bezierCurveTo(
+        cx + 160 * s, cy - 32 * s,
+        cx + 148 * s, cy - 74 * s,
+        cx + 118 * s, cy - 92 * s
+      );
+
+      ctx.bezierCurveTo(
+        cx + 88 * s, cy - 128 * s,
+        cx + 34 * s, cy - 132 * s,
+        cx, cy - 112 * s
+      );
 
       ctx.closePath();
 
-
-      ctx.fillStyle =
-        c.brainFill;
-
-
+      ctx.fillStyle = c.brainFill;
       ctx.fill();
-
-
-      ctx.strokeStyle =
-        c.brainStroke;
-
-
-      ctx.lineWidth =
-        3;
-
-
+      ctx.strokeStyle = c.brainStroke;
+      ctx.lineWidth = 3;
       ctx.stroke();
-
-
-
-      /*
-        Central division / folds
-      */
 
       ctx.beginPath();
-
-
-      ctx.moveTo(
-        cx - 8 * s,
-        cy - 96 * s
-      );
-
+      ctx.moveTo(cx, cy - 104 * s);
 
       ctx.bezierCurveTo(
-
-        cx + 12 * s,
-        cy - 57 * s,
-
-        cx - 11 * s,
-        cy - 10 * s,
-
-        cx + 9 * s,
-        cy + 18 * s
-
+        cx - 8 * s, cy - 76 * s,
+        cx - 10 * s, cy - 38 * s,
+        cx - 2 * s, cy - 8 * s
       );
-
 
       ctx.bezierCurveTo(
-
-        cx + 20 * s,
-        cy + 40 * s,
-
-        cx + 2 * s,
-        cy + 73 * s,
-
-        cx - 8 * s,
-        cy + 105 * s
-
+        cx + 8 * s, cy + 22 * s,
+        cx + 9 * s, cy + 60 * s,
+        cx, cy + 102 * s
       );
 
-
-      ctx.strokeStyle =
-        c.brainInner;
-
-
-      ctx.lineWidth =
-        1.25;
-
-
+      ctx.strokeStyle = c.brainInner;
+      ctx.lineWidth = 1.35;
       ctx.stroke();
 
-
-
-      /*
-        Small internal folds
-      */
-
       const folds = [
-
-        [
-          [-77, -64],
-          [-52, -82],
-          [-29, -69]
-        ],
-
-        [
-          [-101, -23],
-          [-75, -37],
-          [-50, -20]
-        ],
-
-        [
-          [-99, 28],
-          [-69, 12],
-          [-45, 30]
-        ],
-
-        [
-          [36, -69],
-          [64, -83],
-          [79, -56]
-        ],
-
-        [
-          [36, -22],
-          [71, -36],
-          [84, -11]
-        ],
-
-        [
-          [31, 31],
-          [64, 18],
-          [79, 38]
-        ]
-
+        [[-102, -69], [-80, -92], [-48, -82]],
+        [[-118, -18], [-87, -38], [-51, -22]],
+        [[-110, 34], [-78, 15], [-42, 29]],
+        [[-82, 82], [-51, 65], [-25, 79]],
+        [[48, -82], [80, -92], [102, -69]],
+        [[51, -22], [87, -38], [118, -18]],
+        [[42, 29], [78, 15], [110, 34]],
+        [[25, 79], [51, 65], [82, 82]]
       ];
 
+      ctx.strokeStyle = c.brainInner;
+      ctx.lineWidth = 1.05;
 
-      ctx.strokeStyle =
-        c.brainInner;
-
-
-      ctx.lineWidth =
-        1;
-
-
-      folds.forEach(
-        f => {
-
-          ctx.beginPath();
-
-
-          ctx.moveTo(
-            cx + f[0][0] * s,
-            cy + f[0][1] * s
-          );
-
-
-          ctx.quadraticCurveTo(
-
-            cx + f[1][0] * s,
-            cy + f[1][1] * s,
-
-            cx + f[2][0] * s,
-            cy + f[2][1] * s
-
-          );
-
-
-          ctx.stroke();
-
-        }
-      );
-
-
-
-      /*
-        Highlighted projected zones
-      */
+      folds.forEach(fold => {
+        ctx.beginPath();
+        ctx.moveTo(cx + fold[0][0] * s, cy + fold[0][1] * s);
+        ctx.quadraticCurveTo(
+          cx + fold[1][0] * s,
+          cy + fold[1][1] * s,
+          cx + fold[2][0] * s,
+          cy + fold[2][1] * s
+        );
+        ctx.stroke();
+      });
 
       const brainRegions = [
-
         {
-          x: cx - 65 * s,
-          y: cy - 51 * s,
+          x: cx - 58 * s,
+          y: cy - 44 * s,
           r: 10 * s
         },
-
         {
-          x: cx + 43 * s,
-          y: cy - 61 * s,
+          x: cx + 59 * s,
+          y: cy - 55 * s,
           r: 11 * s
         },
-
         {
-          x: cx + 65 * s,
-          y: cy + 2 * s,
+          x: cx + 78 * s,
+          y: cy + 10 * s,
           r: 9 * s
         },
-
         {
-          x: cx - 50 * s,
-          y: cy + 57 * s,
+          x: cx - 42 * s,
+          y: cy + 56 * s,
           r: 10 * s
         },
-
         {
-          x: cx + 28 * s,
-          y: cy + 69 * s,
+          x: cx + 22 * s,
+          y: cy + 70 * s,
           r: 10 * s
         }
-
       ];
 
-
-      brainRegions.forEach(
-        region => {
-
-          ctx.beginPath();
-
-
-          ctx.arc(
-
-            region.x,
-            region.y,
-            region.r,
-
-            0,
-            Math.PI * 2
-
-          );
-
-
-          ctx.fillStyle =
-            c.brainNode;
-
-
-          ctx.fill();
-
-
-          ctx.strokeStyle =
-            c.brainNodeStroke;
-
-
-          ctx.lineWidth =
-            2;
-
-
-          ctx.stroke();
-
-        }
-      );
-
+      brainRegions.forEach(region => {
+        ctx.beginPath();
+        ctx.arc(region.x, region.y, region.r, 0, Math.PI * 2);
+        ctx.fillStyle = c.brainNode;
+        ctx.fill();
+        ctx.strokeStyle = c.brainNodeStroke;
+        ctx.lineWidth = 2;
+        ctx.stroke();
+      });
 
       ctx.restore();
-
     }
-
-
-
-    /* =====================================================
-       PARTICLE MOTION
-    ====================================================== */
 
     function updateAndDrawParticles() {
+      const c = colors();
 
-      const c =
-        colors();
+      particles.forEach(particle => {
+        if (particle.state === "moving") {
+          particle.progress += particle.speed;
 
-
-      particles.forEach(
-        particle => {
-
-
-          if (
-            particle.state
-            ===
-            "moving"
-          ) {
-
-            particle.progress +=
-              particle.speed;
-
-
-            if (
-              particle.progress
-              <
-              0
-            ) {
-
-              return;
-
-            }
-
-
-            const t =
-
-              easeOutCubic(
-
-                clamp(
-                  particle.progress,
-                  0,
-                  1
-                )
-
-              );
-
-
-            particle.x =
-
-              lerp(
-                particle.startX,
-                particle.tx,
-                t
-              );
-
-
-            particle.y =
-
-              lerp(
-                particle.startY,
-                particle.ty,
-                t
-              );
-
-
-            if (
-              particle.progress
-              >=
-              1
-            ) {
-
-              particle.state =
-                "linger";
-
-            }
-
+          if (particle.progress < 0) {
+            return;
           }
 
+          const t = easeOutCubic(clamp(particle.progress, 0, 1));
 
-          else {
+          particle.x = lerp(particle.startX, particle.tx, t);
+          particle.y = lerp(particle.startY, particle.ty, t);
 
-            particle.linger -=
-              1;
-
-
-            particle.x +=
-
-              Math.sin(
-                particle.linger
-                *
-                0.045
-              )
-              *
-              0.045;
-
-
-            particle.y +=
-
-              Math.cos(
-                particle.linger
-                *
-                0.037
-              )
-              *
-              0.045;
-
-
-            if (
-              particle.linger
-              <=
-              0
-            ) {
-
-              const replacement =
-
-                makeParticle(
-                  particle.zoneIndex
-                );
-
-
-              Object.assign(
-                particle,
-                replacement
-              );
-
-            }
-
+          if (particle.progress >= 1) {
+            particle.state = "linger";
           }
+        } else {
+          particle.linger -= 1;
+          particle.x += Math.sin(particle.linger * 0.045) * 0.045;
+          particle.y += Math.cos(particle.linger * 0.037) * 0.045;
 
-
-          ctx.beginPath();
-
-
-          ctx.arc(
-
-            particle.x,
-            particle.y,
-
-            particle.size,
-
-            0,
-            Math.PI * 2
-
-          );
-
-
-          ctx.fillStyle =
-            c.particle;
-
-
-          ctx.fill();
-
+          if (particle.linger <= 0) {
+            const replacement = makeParticle(particle.zoneIndex);
+            Object.assign(particle, replacement);
+          }
         }
-      );
 
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+        ctx.fillStyle = c.particle;
+        ctx.fill();
+      });
     }
 
-
-
-    /* =====================================================
-       AMBIENT PARTICLES
-    ====================================================== */
-
-    const ambient =
-      Array.from(
-        {
-          length: 35
-        }
-      )
-      .map(
-        () => ({
-
-          x:
-            Math.random(),
-
-          y:
-            Math.random(),
-
-          r:
-            0.8
-            +
-            Math.random()
-            *
-            2,
-
-          alpha:
-            0.04
-            +
-            Math.random()
-            *
-            0.09
-
-        })
-      );
-
+    const ambient = Array.from({ length: 35 }).map(() => ({
+      x: Math.random(),
+      y: Math.random(),
+      r: 0.8 + Math.random() * 2,
+      alpha: 0.04 + Math.random() * 0.09
+    }));
 
     function drawAmbient() {
-
-      const c =
-        colors();
-
-
+      const c = colors();
       ctx.save();
 
+      ambient.forEach(particle => {
+        ctx.globalAlpha = particle.alpha;
+        ctx.beginPath();
+        ctx.arc(
+          particle.x * width,
+          particle.y * height,
+          particle.r,
+          0,
+          Math.PI * 2
+        );
+        ctx.fillStyle = c.particle;
+        ctx.fill();
+      });
 
-      ambient.forEach(
-        particle => {
-
-          ctx.globalAlpha =
-            particle.alpha;
-
-
-          ctx.beginPath();
-
-
-          ctx.arc(
-
-            particle.x
-            *
-            width,
-
-            particle.y
-            *
-            height,
-
-            particle.r,
-
-            0,
-            Math.PI
-            *
-            2
-
-          );
-
-
-          ctx.fillStyle =
-            c.particle;
-
-
-          ctx.fill();
-
-        }
-      );
-
-
-      ctx.globalAlpha =
-        1;
-
-
+      ctx.globalAlpha = 1;
       ctx.restore();
-
     }
-
-
-
-    /* =====================================================
-       ANIMATION LOOP
-    ====================================================== */
 
     function loop() {
-
-      ctx.clearRect(
-        0,
-        0,
-        width,
-        height
-      );
-
-
+      ctx.clearRect(0, 0, width, height);
       drawAmbient();
-
-
-      /*
-        Back layer:
-        dashed mappings
-      */
-
       drawConnectors();
-
-
-      /*
-        Distribution curves
-      */
-
       drawZones();
-
-
-      /*
-        Central brain
-      */
-
       drawBrain();
-
-
-      /*
-        Samples continuously arriving
-        and constructing the distributions
-      */
-
       updateAndDrawParticles();
-
-
-      requestAnimationFrame(
-        loop
-      );
-
+      requestAnimationFrame(loop);
     }
 
-
-
     resize();
-
-    requestAnimationFrame(
-      loop
-    );
+    requestAnimationFrame(loop);
 
   </script>
 
