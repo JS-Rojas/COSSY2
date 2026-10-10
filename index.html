@@ -6,50 +6,51 @@
   <title>COSSY² — From Probability to Information</title>
   <meta
     name="description"
-    content="COSSY² — From Probability to Information: Modeling Complex Systems. A minimal 3-day school at Yachay Tech."
+    content="COSSY² — From Probability to Information: Modeling Complex Systems. A 3-day school at Yachay Tech."
   />
   <style>
     :root {
-      --bg: #071827;
-      --bg-soft: #0c2237;
-      --panel: rgba(10, 30, 48, 0.86);
-      --panel-strong: rgba(8, 24, 38, 0.94);
-      --line: rgba(120, 205, 255, 0.16);
-      --line-strong: rgba(120, 205, 255, 0.28);
-      --text: #edf7ff;
-      --muted: #b7c9d9;
-      --cyan: #23d0df;
-      --cyan-soft: #90f5ff;
-      --navy: #0b2f5b;
-      --gold: #f2d44c;
-      --green: #1f9d79;
-      --shadow: 0 18px 55px rgba(0, 0, 0, 0.28);
-      --radius: 22px;
+      --bg: #071018;
+      --bg-soft: #0c1823;
+      --panel: rgba(9, 18, 28, 0.78);
+      --panel-2: rgba(12, 22, 34, 0.9);
+      --line: rgba(148, 174, 192, 0.14);
+      --line-strong: rgba(148, 174, 192, 0.24);
+      --text: #edf1f5;
+      --muted: #a6b1bc;
+      --accent: #7ec7cc;
+      --accent-2: #c5b46a;
+      --accent-3: #8ea7c2;
+      --shadow: 0 20px 45px rgba(0, 0, 0, 0.22);
+      --radius: 20px;
       --radius-sm: 14px;
       --max: 1160px;
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text);
       background:
-        radial-gradient(circle at top, rgba(35, 208, 223, 0.10), transparent 30%),
-        linear-gradient(180deg, #06131f 0%, #071827 30%, #081b2a 100%);
-      line-height: 1.55;
+        radial-gradient(circle at top, rgba(126, 199, 204, 0.08), transparent 28%),
+        linear-gradient(180deg, #060d14 0%, #071018 38%, #09121c 100%);
+      color: var(--text);
+      line-height: 1.5;
     }
 
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
     .topbar {
       position: sticky;
       top: 0;
       z-index: 1000;
-      backdrop-filter: blur(14px);
-      background: rgba(7, 24, 39, 0.82);
+      backdrop-filter: blur(16px);
+      background: rgba(7, 16, 24, 0.82);
       border-bottom: 1px solid var(--line);
     }
 
@@ -58,19 +59,19 @@
       margin: 0 auto;
       padding: 10px 20px;
       display: flex;
-      gap: 16px;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
+      gap: 16px;
       flex-wrap: wrap;
     }
 
     .topbar-note {
-      font-size: 0.95rem;
       color: var(--muted);
+      font-size: 0.96rem;
     }
 
     .topbar-note strong {
-      color: var(--cyan-soft);
+      color: var(--accent);
       font-weight: 700;
     }
 
@@ -80,50 +81,14 @@
       flex-wrap: wrap;
     }
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      border-radius: 999px;
-      padding: 11px 18px;
-      font-weight: 700;
-      transition: 0.25s ease;
-      border: 1px solid transparent;
-      cursor: pointer;
-      white-space: nowrap;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--cyan), #2ab7ff);
-      color: #04121e;
-      box-shadow: 0 10px 26px rgba(35, 208, 223, 0.22);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      filter: brightness(1.05);
-    }
-
-    .btn-secondary {
-      background: rgba(255,255,255,0.02);
-      border-color: var(--line-strong);
-      color: var(--text);
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.05);
-      transform: translateY(-1px);
-    }
-
     .nav {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 14px 20px;
+      padding: 16px 20px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 16px;
+      align-items: center;
+      gap: 18px;
       flex-wrap: wrap;
     }
 
@@ -135,16 +100,16 @@
     }
 
     .brand-mark {
-      width: 42px;
-      height: 42px;
+      width: 46px;
+      height: 46px;
       border-radius: 50%;
       display: grid;
       place-items: center;
-      font-weight: 900;
-      color: #072034;
-      background:
-        radial-gradient(circle at 35% 35%, #b8fbff 0%, var(--cyan) 48%, #1594c9 100%);
-      box-shadow: 0 6px 20px rgba(35, 208, 223, 0.24);
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: #071018;
+      background: linear-gradient(135deg, #d8f4f5, #7ec7cc 45%, #5da0bb 100%);
+      box-shadow: 0 8px 22px rgba(126, 199, 204, 0.22);
       flex-shrink: 0;
     }
 
@@ -155,12 +120,12 @@
     .brand-title {
       font-size: 1rem;
       font-weight: 800;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.02em;
     }
 
     .brand-subtitle {
-      font-size: 0.86rem;
       color: var(--muted);
+      font-size: 0.9rem;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -168,7 +133,7 @@
 
     .nav-links {
       display: flex;
-      gap: 14px;
+      gap: 16px;
       flex-wrap: wrap;
       align-items: center;
     }
@@ -176,20 +141,55 @@
     .nav-links a {
       color: var(--muted);
       font-weight: 600;
-      font-size: 0.96rem;
       transition: 0.2s ease;
     }
 
     .nav-links a:hover {
-      color: var(--cyan-soft);
+      color: var(--text);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.25s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #8fd7da, #73b5c0);
+      color: #071018;
+      box-shadow: 0 10px 24px rgba(126, 199, 204, 0.18);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.03);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.02);
+      color: var(--text);
+      border: 1px solid var(--line-strong);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.04);
+      transform: translateY(-1px);
     }
 
     .hero {
       position: relative;
-      overflow: hidden;
-      min-height: 88vh;
+      min-height: 78vh;
       display: flex;
       align-items: center;
+      overflow: hidden;
       border-bottom: 1px solid var(--line);
     }
 
@@ -199,7 +199,7 @@
       width: 100%;
       height: 100%;
       display: block;
-      opacity: 0.95;
+      opacity: 0.92;
     }
 
     .hero::after {
@@ -207,7 +207,7 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, rgba(7,24,39,0.14) 0%, rgba(7,24,39,0.45) 55%, rgba(7,24,39,0.88) 100%);
+        linear-gradient(180deg, rgba(7,16,24,0.20) 0%, rgba(7,16,24,0.35) 50%, rgba(7,16,24,0.78) 100%);
       pointer-events: none;
     }
 
@@ -216,112 +216,46 @@
       z-index: 1;
       max-width: var(--max);
       margin: 0 auto;
-      padding: 74px 20px 84px;
+      padding: 72px 20px 70px;
       width: 100%;
-      display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      gap: 28px;
-      align-items: end;
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      border: 1px solid rgba(242, 212, 76, 0.25);
-      color: var(--gold);
       border-radius: 999px;
-      padding: 8px 14px;
-      font-size: 0.87rem;
+      padding: 8px 15px;
+      font-size: 0.88rem;
       font-weight: 800;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      background: rgba(242, 212, 76, 0.06);
-      margin-bottom: 20px;
+      color: var(--accent-2);
+      border: 1px solid rgba(197, 180, 106, 0.25);
+      background: rgba(197, 180, 106, 0.06);
+      margin-bottom: 22px;
     }
 
     .hero h1 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2.3rem, 5vw, 4.8rem);
-      line-height: 1.03;
-      margin: 0 0 14px;
-      max-width: 14ch;
-      letter-spacing: -0.03em;
+      font-size: clamp(2.7rem, 7vw, 5.7rem);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      margin: 0 0 18px;
+      max-width: 9ch;
+      font-weight: 800;
     }
 
-    .hero p.lead {
-      font-size: clamp(1.05rem, 2vw, 1.22rem);
+    .hero .lead {
+      font-size: clamp(1.08rem, 2vw, 1.28rem);
       color: var(--muted);
-      max-width: 62ch;
-      margin: 0 0 24px;
+      max-width: 42ch;
+      margin: 0 0 26px;
     }
 
     .hero-actions {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
-      margin-bottom: 22px;
-    }
-
-    .hero-tags {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 0.88rem;
-      color: #d6f7ff;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--line);
-    }
-
-    .hero-panel {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 24px;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(14px);
-    }
-
-    .hero-panel h3 {
-      margin: 0 0 12px;
-      font-size: 1rem;
-      color: var(--cyan-soft);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
-    }
-
-    .mini-card {
-      border: 1px solid var(--line);
-      border-radius: var(--radius-sm);
-      padding: 14px 16px;
-      background: rgba(255,255,255,0.02);
-    }
-
-    .mini-card strong {
-      display: block;
-      font-size: 0.84rem;
-      color: var(--cyan-soft);
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-    }
-
-    .mini-card span {
-      color: var(--text);
-      font-weight: 600;
     }
 
     .container {
@@ -331,34 +265,35 @@
     }
 
     .section-head {
-      margin-bottom: 28px;
+      margin-bottom: 24px;
       display: flex;
-      align-items: end;
       justify-content: space-between;
+      align-items: end;
       gap: 16px;
       flex-wrap: wrap;
     }
 
     .section-kicker {
-      font-size: 0.85rem;
-      color: var(--cyan-soft);
+      font-size: 0.84rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
+      color: var(--accent);
       font-weight: 800;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .section-title {
       margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(1.7rem, 4vw, 2.7rem);
-      line-height: 1.1;
+      font-size: clamp(1.65rem, 4vw, 2.55rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      font-weight: 800;
     }
 
     .section-text {
       margin: 0;
-      max-width: 62ch;
       color: var(--muted);
+      max-width: 60ch;
     }
 
     .panel {
@@ -368,56 +303,12 @@
       box-shadow: var(--shadow);
     }
 
-    .identity-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 28px;
-    }
-
-    .identity-card {
-      padding: 24px;
-    }
-
-    .identity-card h3 {
-      margin: 0 0 10px;
-      font-size: 1.15rem;
-      color: var(--text);
-    }
-
-    .identity-card .icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      margin-bottom: 14px;
-      background: linear-gradient(135deg, rgba(35,208,223,0.22), rgba(35,208,223,0.06));
-      border: 1px solid var(--line);
-      color: var(--cyan-soft);
-      font-weight: 900;
-    }
-
-    .identity-card p {
-      margin: 0 0 14px;
-      color: var(--muted);
-      font-size: 0.97rem;
-    }
-
-    .identity-card ul {
-      margin: 0;
-      padding-left: 18px;
-      color: var(--muted);
-    }
-
-    .identity-card li + li { margin-top: 6px; }
-
     .schedule-wrap {
       overflow-x: auto;
       border-radius: var(--radius);
       border: 1px solid var(--line);
       box-shadow: var(--shadow);
-      background: rgba(255,255,255,0.02);
+      background: rgba(255,255,255,0.015);
     }
 
     table {
@@ -433,41 +324,41 @@
     }
 
     thead th {
-      background: linear-gradient(180deg, rgba(11,47,91,0.95), rgba(9,36,70,0.95));
+      background: linear-gradient(180deg, rgba(57, 29, 73, 0.95), rgba(90, 24, 60, 0.95));
       color: #fff;
-      font-size: 0.98rem;
+      font-size: 1rem;
       text-align: center;
+      font-weight: 800;
     }
 
     thead th:first-child {
-      background: linear-gradient(180deg, rgba(31,157,121,0.98), rgba(24,125,96,0.98));
-      color: #071827;
-      font-weight: 900;
+      background: linear-gradient(180deg, rgba(29, 122, 112, 0.96), rgba(24, 95, 90, 0.96));
+      color: #071018;
       letter-spacing: 0.05em;
     }
 
     tbody td:first-child {
       font-weight: 800;
-      color: #d9eeff;
+      color: #dce5ed;
       background: rgba(255,255,255,0.02);
       white-space: nowrap;
     }
 
     tbody tr:nth-child(even) td {
-      background: rgba(255,255,255,0.02);
+      background: rgba(255,255,255,0.018);
     }
 
     tbody tr:hover td {
-      background: rgba(35,208,223,0.05);
+      background: rgba(126, 199, 204, 0.04);
     }
 
     .cell-core {
       font-weight: 800;
-      color: #eafcff;
+      color: var(--text);
     }
 
     .cell-talk {
-      color: #9fd8ff;
+      color: #a8c2de;
       font-weight: 800;
     }
 
@@ -476,24 +367,9 @@
     }
 
     .cell-lunch {
-      color: var(--gold);
+      color: var(--accent-2);
       font-weight: 800;
       letter-spacing: 0.03em;
-    }
-
-    .speaker-groups {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 26px;
-    }
-
-    .group-title {
-      margin: 0 0 14px;
-      font-size: 1.02rem;
-      font-weight: 800;
-      color: var(--cyan-soft);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
     }
 
     .speaker-grid {
@@ -516,23 +392,23 @@
       flex-shrink: 0;
       display: grid;
       place-items: center;
-      font-size: 1.05rem;
+      font-size: 1rem;
       font-weight: 900;
-      color: #072034;
-      background:
-        radial-gradient(circle at 32% 28%, #dbfbff 0%, #7ee9ff 36%, #27c7db 68%, #118fc4 100%);
-      box-shadow: 0 10px 24px rgba(35,208,223,0.18);
+      color: #071018;
+      background: linear-gradient(135deg, #d5f0f2, #88c8cf 48%, #6b90b5 100%);
+      box-shadow: 0 10px 24px rgba(126, 199, 204, 0.14);
     }
 
     .speaker-card h4 {
-      margin: 2px 0 6px;
-      font-size: 1.08rem;
+      margin: 1px 0 6px;
+      font-size: 1.06rem;
+      font-weight: 800;
     }
 
     .speaker-role {
-      color: var(--cyan-soft);
+      color: var(--accent);
       font-weight: 700;
-      font-size: 0.91rem;
+      font-size: 0.92rem;
       margin-bottom: 8px;
     }
 
@@ -552,54 +428,36 @@
       display: inline-flex;
       padding: 8px 11px;
       border-radius: 999px;
-      font-size: 0.85rem;
-      color: #d9f8ff;
+      font-size: 0.84rem;
+      color: #dde6ee;
       border: 1px solid var(--line);
       background: rgba(255,255,255,0.03);
+      transition: 0.2s ease;
+    }
+
+    .link-chip:hover {
+      background: rgba(255,255,255,0.05);
     }
 
     .simple-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 1fr 1fr;
       gap: 18px;
       align-items: stretch;
     }
 
-    .info-block {
-      padding: 26px;
+    .info-block, .cta-box {
+      padding: 24px;
     }
 
-    .info-block h3 {
-      margin: 0 0 10px;
-      font-size: 1.15rem;
-    }
-
-    .info-block p {
-      margin: 0 0 14px;
-      color: var(--muted);
-    }
-
-    .info-list {
-      margin: 0;
-      padding-left: 18px;
-      color: var(--muted);
-    }
-
-    .info-list li + li { margin-top: 8px; }
-
-    .cta-box {
-      padding: 26px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 18px;
-    }
-
+    .info-block h3,
     .cta-box h3 {
-      margin: 0;
-      font-size: 1.2rem;
+      margin: 0 0 10px;
+      font-size: 1.14rem;
+      font-weight: 800;
     }
 
+    .info-block p,
     .cta-box p {
       margin: 0;
       color: var(--muted);
@@ -607,7 +465,7 @@
 
     .footer {
       border-top: 1px solid var(--line);
-      padding: 34px 20px 46px;
+      padding: 30px 20px 42px;
       color: var(--muted);
     }
 
@@ -620,47 +478,35 @@
       flex-wrap: wrap;
     }
 
-    .muted-small {
-      font-size: 0.92rem;
-      color: var(--muted);
-    }
-
-    .small-note {
-      font-size: 0.88rem;
-      color: var(--muted);
-    }
-
-    @media (max-width: 1080px) {
-      .hero-inner,
-      .simple-grid,
+    @media (max-width: 1024px) {
       .speaker-grid,
-      .identity-grid {
+      .simple-grid {
         grid-template-columns: 1fr;
-      }
-
-      .hero {
-        min-height: auto;
       }
     }
 
     @media (max-width: 720px) {
       .nav {
-        padding-top: 10px;
-        padding-bottom: 10px;
+        padding-top: 12px;
+        padding-bottom: 12px;
       }
 
       .nav-links {
         gap: 10px 12px;
       }
 
+      .hero {
+        min-height: 70vh;
+      }
+
       .hero-inner {
-        padding-top: 52px;
-        padding-bottom: 60px;
+        padding-top: 56px;
+        padding-bottom: 54px;
       }
 
       .container {
-        padding-top: 58px;
-        padding-bottom: 58px;
+        padding-top: 56px;
+        padding-bottom: 56px;
       }
 
       .speaker-card {
@@ -670,7 +516,6 @@
   </style>
 </head>
 <body>
-  <!-- Replace links marked REPLACE_WITH_... before publishing -->
 
   <div class="topbar">
     <div class="topbar-inner">
@@ -693,140 +538,38 @@
       </div>
 
       <div class="nav-links">
-        <a href="#about">About</a>
         <a href="#schedule">Schedule</a>
         <a href="#speakers">Speakers</a>
-        <a href="#materials">Materials</a>
         <a href="#venue">Venue</a>
+        <a href="#register">Register</a>
       </div>
     </nav>
   </div>
 
   <header class="hero" id="home">
-    <canvas id="probabilityCanvas" class="hero-canvas" aria-hidden="true"></canvas>
+    <canvas id="heroCanvas" class="hero-canvas" aria-hidden="true"></canvas>
 
     <div class="hero-inner">
-      <div>
-        <div class="eyebrow">COSSY² • Yachay Tech • 14–16 December 2026</div>
-        <h1>From Probability to Information</h1>
-        <p class="lead">
-          A compact 3-day school on probability, information theory, and principled model building.
-          The core thread of the school is simple and direct:
-          <strong>Probability → Information → Models</strong>.
-        </p>
+      <div class="eyebrow">COSSY² • Yachay Tech • 14–16 December 2026</div>
+      <h1>From Probability to Information</h1>
+      <p class="lead">
+        A compact 3-day school on buildings models from information and probability principles.
+      </p>
 
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="https://forms.gle/REPLACE_WITH_REGISTRATION_LINK" target="_blank" rel="noopener">Registration link</a>
-          <a class="btn btn-secondary" href="#speakers">Meet the speakers</a>
-        </div>
-
-        <div class="hero-tags">
-          <span class="tag">Random Variables</span>
-          <span class="tag">LLN & CLT</span>
-          <span class="tag">Large Deviations</span>
-          <span class="tag">MaxEnt</span>
-          <span class="tag">InfoMax</span>
-          <span class="tag">PredVIB</span>
-          <span class="tag">Max Relevance</span>
-        </div>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://forms.gle/REPLACE_WITH_REGISTRATION_LINK" target="_blank" rel="noopener">Registration link</a>
+        <a class="btn btn-secondary" href="#speakers">Meet the speakers</a>
       </div>
-
-      <aside class="hero-panel">
-        <h3>At a glance</h3>
-        <div class="hero-grid">
-          <div class="mini-card">
-            <strong>When</strong>
-            <span>14–16 December 2026</span>
-          </div>
-          <div class="mini-card">
-            <strong>Where</strong>
-            <span>Yachay Tech, Urcuquí, Ecuador</span>
-          </div>
-          <div class="mini-card">
-            <strong>Core Courses</strong>
-            <span>Intro to Probability • Building Models from Information Principles</span>
-          </div>
-          <div class="mini-card">
-            <strong>Format</strong>
-            <span>Two morning lectures + invited talks in the afternoon</span>
-          </div>
-        </div>
-      </aside>
     </div>
   </header>
 
   <main>
-    <section class="container" id="about">
-      <div class="section-head">
-        <div>
-          <div class="section-kicker">School identity</div>
-          <h2 class="section-title">A minimal school with a clear scientific thread</h2>
-        </div>
-        <p class="section-text">
-          This edition focuses on a precise arc:
-          how probability provides the language of uncertainty,
-          how information theory gives principled objectives,
-          and how both can be used to build useful models.
-        </p>
-      </div>
-
-      <div class="identity-grid">
-        <article class="identity-card panel">
-          <div class="icon">P</div>
-          <h3>Probability</h3>
-          <p>
-            The mathematical language of uncertainty and fluctuations.
-          </p>
-          <ul>
-            <li>Random variables</li>
-            <li>Law of large numbers</li>
-            <li>Central limit theorem</li>
-            <li>Concentration and large deviations</li>
-            <li>Examples in open quantum systems</li>
-          </ul>
-        </article>
-
-        <article class="identity-card panel">
-          <div class="icon">I</div>
-          <h3>Information</h3>
-          <p>
-            The quantities that tell us what should be preserved, compressed, or predicted.
-          </p>
-          <ul>
-            <li>Shannon entropy and converse ideas</li>
-            <li>Maximum Entropy principle</li>
-            <li>InfoMax</li>
-            <li>PredVIB</li>
-            <li>Maximum Relevance principle</li>
-          </ul>
-        </article>
-
-        <article class="identity-card panel">
-          <div class="icon">M</div>
-          <h3>Models</h3>
-          <p>
-            The constructive step: turning principles into concrete rules, algorithms, and code.
-          </p>
-          <ul>
-            <li>Data-driven examples</li>
-            <li>Code notebooks for students</li>
-            <li>GitHub repository for reproducibility</li>
-            <li>Minimal but rigorous derivations</li>
-            <li>Applications across complex systems</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
     <section class="container" id="schedule">
       <div class="section-head">
         <div>
           <div class="section-kicker">Program</div>
           <h2 class="section-title">Tentative schedule</h2>
         </div>
-        <p class="section-text">
-          The two core minicourses run every morning; invited talks take place in the afternoon.
-        </p>
       </div>
 
       <div class="schedule-wrap">
@@ -899,175 +642,121 @@
           <div class="section-kicker">People</div>
           <h2 class="section-title">Instructors & speakers</h2>
         </div>
-        <p class="section-text">
-          Keep each description short. Replace the placeholder Scholar links with the final URLs.
-        </p>
       </div>
 
-      <div class="speaker-groups">
-        <div>
-          <h3 class="group-title">Core instructors</h3>
-          <div class="speaker-grid">
-            <article class="speaker-card panel">
-              <div class="speaker-photo">AV</div>
-              <div>
-                <h4>Antonio Villagomez</h4>
-                <div class="speaker-role">Intro to Probability</div>
-                <p class="speaker-bio">
-                  Probability, random variables, law of large numbers, central limit theorem, concentration bounds,
-                  and large deviation behavior with examples in open quantum systems.
-                </p>
-                <div class="speaker-links">
-                  <a class="link-chip" href="https://scholar.google.com/REPLACE_ANTONIO" target="_blank" rel="noopener">Google Scholar</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="speaker-card panel">
-              <div class="speaker-photo">JV</div>
-              <div>
-                <h4>Juan Velez</h4>
-                <div class="speaker-role">Building Models from Information Principles</div>
-                <p class="speaker-bio">
-                  Maximum Entropy, Shannon ideas, InfoMax, PredVIB, and Maximum Relevance —
-                  with clear examples and runnable code for students.
-                </p>
-                <div class="speaker-links">
-                  <a class="link-chip" href="https://scholar.google.com/REPLACE_JUAN" target="_blank" rel="noopener">Google Scholar</a>
-                  <a class="link-chip" href="https://github.com/REPLACE_WITH_REPO" target="_blank" rel="noopener">GitHub Materials</a>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <div>
-          <h3 class="group-title">Invited speakers</h3>
-          <div class="speaker-grid">
-            <article class="speaker-card panel">
-              <div class="speaker-photo">VM</div>
-              <div>
-                <h4>Vinod Menon</h4>
-                <div class="speaker-role">Invited Talk</div>
-                <p class="speaker-bio">
-                  Short 1–2 line description here. Keep this concise and directly related to the speaker’s theme.
-                </p>
-                <div class="speaker-links">
-                  <a class="link-chip" href="https://scholar.google.com/REPLACE_VINOD" target="_blank" rel="noopener">Google Scholar</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="speaker-card panel">
-              <div class="speaker-photo">MM</div>
-              <div>
-                <h4>Matteo Marsili</h4>
-                <div class="speaker-role">Invited Talk</div>
-                <p class="speaker-bio">
-                  Short 1–2 line description here. Keep this concise and directly related to the speaker’s theme.
-                </p>
-                <div class="speaker-links">
-                  <a class="link-chip" href="https://scholar.google.com/REPLACE_MARSILI" target="_blank" rel="noopener">Google Scholar</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="speaker-card panel">
-              <div class="speaker-photo">MC</div>
-              <div>
-                <h4>Mateo Carpio</h4>
-                <div class="speaker-role">Invited Talk</div>
-                <p class="speaker-bio">
-                  Short 1–2 line description here. Keep this concise and directly related to the speaker’s theme.
-                </p>
-                <div class="speaker-links">
-                  <a class="link-chip" href="https://scholar.google.com/REPLACE_MATEO" target="_blank" rel="noopener">Google Scholar</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="speaker-card panel">
-              <div class="speaker-photo">AP</div>
-              <div>
-                <h4>Arianna Paredes</h4>
-                <div class="speaker-role">Invited Talk</div>
-                <p class="speaker-bio">
-                  Short 1–2 line description here. Keep this concise and directly related to the speaker’s theme.
-                </p>
-                <div class="speaker-links">
-                  <a class="link-chip" href="https://scholar.google.com/REPLACE_ARIANNA" target="_blank" rel="noopener">Google Scholar</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="speaker-card panel">
-              <div class="speaker-photo">MJ</div>
-              <div>
-                <h4>Maria Jose</h4>
-                <div class="speaker-role">Invited Talk</div>
-                <p class="speaker-bio">
-                  Short 1–2 line description here. Keep this concise and directly related to the speaker’s theme.
-                </p>
-                <div class="speaker-links">
-                  <a class="link-chip" href="https://scholar.google.com/REPLACE_MARIAJOSE" target="_blank" rel="noopener">Google Scholar</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="speaker-card panel">
-              <div class="speaker-photo">MCo</div>
-              <div>
-                <h4>Mario Cosenza</h4>
-                <div class="speaker-role">Invited Talk</div>
-                <p class="speaker-bio">
-                  Short 1–2 line description here. Keep this concise and directly related to the speaker’s theme.
-                </p>
-                <div class="speaker-links">
-                  <a class="link-chip" href="https://scholar.google.com/REPLACE_MARIO" target="_blank" rel="noopener">Google Scholar</a>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="container" id="materials">
-      <div class="section-head">
-        <div>
-          <div class="section-kicker">Course material</div>
-          <h2 class="section-title">Slides, code, and reproducible examples</h2>
-        </div>
-        <p class="section-text">
-          Keep this section minimal: one GitHub repository, one short sentence, and nothing else.
-        </p>
-      </div>
-
-      <div class="simple-grid">
-        <div class="panel info-block">
-          <h3>GitHub repository</h3>
-          <p>
-            All course examples, notebooks, and runnable code will be shared here.
-          </p>
-          <ul class="info-list">
-            <li>Probability examples and numerical demos</li>
-            <li>Maximum Entropy and exponential-family constructions</li>
-            <li>InfoMax / PredVIB / Maximum Relevance examples</li>
-            <li>Minimal, student-friendly code</li>
-          </ul>
-        </div>
-
-        <div class="panel cta-box">
+      <div class="speaker-grid">
+        <article class="speaker-card panel">
+          <div class="speaker-photo">AV</div>
           <div>
-            <h3>Repository link</h3>
-            <p>
-              Replace this with the final public repository once it is ready.
+            <h4>Antonio Villagomez</h4>
+            <div class="speaker-role">Intro to Probability</div>
+            <p class="speaker-bio">
+              Probability, random variables, law of large numbers, central limit theorem, concentration bounds, and large deviation behavior with examples in open quantum systems.
             </p>
+            <div class="speaker-links">
+              <a class="link-chip" href="https://www.linkedin.com/in/ntno2627/" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
           </div>
+        </article>
+
+        <article class="speaker-card panel">
+          <div class="speaker-photo">JV</div>
           <div>
-            <a class="btn btn-primary" href="https://github.com/REPLACE_WITH_REPO" target="_blank" rel="noopener">Open GitHub</a>
+            <h4>Juan Velez</h4>
+            <div class="speaker-role">Building Models from Information Principles</div>
+            <p class="speaker-bio">
+              Maximum Entropy, Shannon ideas, InfoMax, PredVIB, and Maximum Relevance, with clear examples and runnable code for students.
+            </p>
+            <div class="speaker-links">
+              <a class="link-chip" href="https://scholar.google.com/citations?user=m6uf3cEAAAAJ&hl=es" target="_blank" rel="noopener">Google Scholar</a>
+              <a class="link-chip" href="https://js-rojas.github.io/jsrojas.github.io/?v=2" target="_blank" rel="noopener">Website</a>
+            </div>
           </div>
-        </div>
+        </article>
+
+        <article class="speaker-card panel">
+          <div class="speaker-photo">VM</div>
+          <div>
+            <h4>Vinod Menon</h4>
+            <div class="speaker-role">Invited Talk</div>
+            <p class="speaker-bio">
+              Invited speaker.
+            </p>
+            <div class="speaker-links">
+              <a class="link-chip" href="https://scholar.google.com/scholar?q=Vinod+Menon" target="_blank" rel="noopener">Google Scholar</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="speaker-card panel">
+          <div class="speaker-photo">MM</div>
+          <div>
+            <h4>Matteo Marsili</h4>
+            <div class="speaker-role">Invited Talk</div>
+            <p class="speaker-bio">
+              Invited speaker.
+            </p>
+            <div class="speaker-links">
+              <a class="link-chip" href="https://scholar.google.com/scholar?q=Matteo+Marsili" target="_blank" rel="noopener">Google Scholar</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="speaker-card panel">
+          <div class="speaker-photo">MC</div>
+          <div>
+            <h4>Mateo Carpio</h4>
+            <div class="speaker-role">Invited Talk</div>
+            <p class="speaker-bio">
+              Invited speaker.
+            </p>
+            <div class="speaker-links">
+              <a class="link-chip" href="https://scholar.google.com/scholar?q=Mateo+Carpio" target="_blank" rel="noopener">Google Scholar</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="speaker-card panel">
+          <div class="speaker-photo">AP</div>
+          <div>
+            <h4>Arianna Paredes</h4>
+            <div class="speaker-role">Invited Talk</div>
+            <p class="speaker-bio">
+              Invited speaker.
+            </p>
+            <div class="speaker-links">
+              <a class="link-chip" href="https://scholar.google.com/scholar?q=Arianna+Paredes" target="_blank" rel="noopener">Google Scholar</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="speaker-card panel">
+          <div class="speaker-photo">MJ</div>
+          <div>
+            <h4>Maria Jose</h4>
+            <div class="speaker-role">Invited Talk</div>
+            <p class="speaker-bio">
+              Invited speaker.
+            </p>
+            <div class="speaker-links">
+              <a class="link-chip" href="https://scholar.google.com/scholar?q=Maria+Jose" target="_blank" rel="noopener">Google Scholar</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="speaker-card panel">
+          <div class="speaker-photo">MCo</div>
+          <div>
+            <h4>Mario Cosenza</h4>
+            <div class="speaker-role">Invited Talk</div>
+            <p class="speaker-bio">
+              Invited speaker.
+            </p>
+            <div class="speaker-links">
+              <a class="link-chip" href="https://scholar.google.com/scholar?q=Mario+Cosenza" target="_blank" rel="noopener">Google Scholar</a>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -1075,35 +764,22 @@
       <div class="section-head">
         <div>
           <div class="section-kicker">Venue</div>
-          <h2 class="section-title">How to get to Yachay Tech</h2>
+          <h2 class="section-title">Yachay Tech</h2>
         </div>
-        <p class="section-text">
-          Keep this practical and short: location, map link, and one contact email.
-        </p>
       </div>
 
       <div class="simple-grid">
         <div class="panel info-block">
           <h3>Location</h3>
           <p>
-            Yachay Tech University<br />
+            Yachay Tech University<br>
             Urcuquí, Imbabura, Ecuador
           </p>
-          <ul class="info-list">
-            <li>Exact room / building: <strong>replace with final venue</strong></li>
-            <li>Registration desk opens before the inauguration</li>
-            <li>We recommend arriving a bit early on the first day</li>
-          </ul>
         </div>
 
         <div class="panel cta-box">
-          <div>
-            <h3>Useful links</h3>
-            <p>
-              Add only the essentials: registration, map, and contact.
-            </p>
-          </div>
-          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <h3>Map & contact</h3>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top: 6px;">
             <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Yachay+Tech+Urcuqui+Ecuador" target="_blank" rel="noopener">Open map</a>
             <a class="btn btn-secondary" href="mailto:REPLACE_WITH_CONTACT_EMAIL">Contact</a>
           </div>
@@ -1113,13 +789,11 @@
 
     <section class="container" id="register" style="padding-top: 0;">
       <div class="panel cta-box" style="padding: 28px;">
-        <div class="section-kicker" style="margin-bottom: 6px;">Registration</div>
-        <h2 class="section-title" style="margin: 0 0 8px;">Apply to COSSY²</h2>
-        <p class="section-text" style="max-width: 70ch;">
-          The school is intentionally small and focused. Show the registration link clearly,
-          early, and often — but keep the page itself minimal.
-        </p>
-        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top: 6px;">
+        <div>
+          <div class="section-kicker" style="margin-bottom: 6px;">Registration</div>
+          <h2 class="section-title" style="margin: 0 0 10px;">Apply to COSSY²</h2>
+        </div>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
           <a class="btn btn-primary" href="https://forms.gle/REPLACE_WITH_REGISTRATION_LINK" target="_blank" rel="noopener">Registration form</a>
           <a class="btn btn-secondary" href="#home">Back to top</a>
         </div>
@@ -1130,178 +804,259 @@
   <footer class="footer">
     <div class="footer-inner">
       <div>
-        <div class="muted-small"><strong style="color: var(--cyan-soft);">COSSY²</strong> — From Probability to Information: Modeling Complex Systems</div>
-        <div class="small-note">Yachay Tech • Urcuquí, Ecuador • 14–16 December 2026</div>
-      </div>
-      <div class="small-note">
-        Minimal page template for GitHub Pages • Replace final links, bios, and venue details before publishing.
+        <div><strong style="color: var(--accent);">COSSY²</strong> — From Probability to Information: Modeling Complex Systems</div>
+        <div style="font-size: 0.92rem;">Yachay Tech • Urcuquí, Ecuador • 14–16 December 2026</div>
       </div>
     </div>
   </footer>
 
   <script>
     (function () {
-      const canvas = document.getElementById('probabilityCanvas');
+      const canvas = document.getElementById('heroCanvas');
       const hero = document.querySelector('.hero');
       const ctx = canvas.getContext('2d');
 
       let w = 0;
       let h = 0;
-      let particles = [];
-      let binsCount = 32;
-      const particlesCount = 150;
+      let dpr = window.devicePixelRatio || 1;
 
-      function randn() {
+      const incoming = [];
+      const ambient = [];
+      const brainCenters = [];
+
+      function gaussian() {
         let u = 0, v = 0;
         while (u === 0) u = Math.random();
         while (v === 0) v = Math.random();
-        return Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v);
+        return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
       }
 
       function resize() {
         const rect = hero.getBoundingClientRect();
-        w = canvas.width = Math.floor(rect.width * devicePixelRatio);
-        h = canvas.height = Math.floor(rect.height * devicePixelRatio);
-        canvas.style.width = rect.width + 'px';
-        canvas.style.height = rect.height + 'px';
-        ctx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
         w = rect.width;
         h = rect.height;
+
+        canvas.width = Math.floor(w * dpr);
+        canvas.height = Math.floor(h * dpr);
+        canvas.style.width = w + 'px';
+        canvas.style.height = h + 'px';
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+        buildBrainCenters();
         initParticles();
       }
 
-      function initParticles() {
-        particles = Array.from({ length: particlesCount }, () => ({
-          x: w * 0.5 + randn() * w * 0.14,
-          y: h * (0.18 + Math.random() * 0.45),
-          vx: (Math.random() - 0.5) * 0.24,
-          vy: (Math.random() - 0.5) * 0.18,
-          r: 1.4 + Math.random() * 2.1,
-          a: 0.24 + Math.random() * 0.55,
-          phase: Math.random() * Math.PI * 2
-        }));
+      function buildBrainCenters() {
+        brainCenters.length = 0;
+        const cx = w * 0.68;
+        const cy = h * 0.40;
+        const rx = w * 0.11;
+        const ry = h * 0.16;
+
+        const template = [
+          [-0.95, -0.15], [-0.75, -0.52], [-0.58, -0.05], [-0.72, 0.32], [-0.4, -0.34],
+          [-0.25, -0.58], [-0.15, -0.18], [-0.28, 0.18], [-0.52, 0.54], [-0.86, 0.58],
+          [ 0.95, -0.15], [ 0.75, -0.52], [ 0.58, -0.05], [ 0.72, 0.32], [ 0.4, -0.34],
+          [ 0.25, -0.58], [ 0.15, -0.18], [ 0.28, 0.18], [ 0.52, 0.54], [ 0.86, 0.58],
+          [0, -0.48], [0, -0.12], [0, 0.28]
+        ];
+
+        template.forEach(([tx, ty], i) => {
+          brainCenters.push({
+            x: cx + tx * rx,
+            y: cy + ty * ry,
+            r: 28 + (i % 4) * 6
+          });
+        });
       }
 
-      function drawChips() {
-        const chips = ['H[X]', 'I(X;Z)', 'max H[p]', 'I(Z;Y)'];
-        ctx.save();
-        ctx.globalAlpha = 0.22;
-        ctx.font = '600 13px Inter, sans-serif';
+      function initParticles() {
+        incoming.length = 0;
+        ambient.length = 0;
 
-        let x = Math.max(18, w - 350);
-        let y = h - 56;
+        for (let i = 0; i < 110; i++) {
+          incoming.push(makeIncoming(i % 2 === 0 ? 'left' : 'right'));
+        }
 
-        chips.forEach((chip, i) => {
-          const width = ctx.measureText(chip).width + 22;
-          const cx = x + i * 84;
+        for (let i = 0; i < 60; i++) {
+          ambient.push({
+            x: Math.random() * w,
+            y: Math.random() * h,
+            r: 1 + Math.random() * 2.2,
+            a: 0.06 + Math.random() * 0.16,
+            vx: (Math.random() - 0.5) * 0.08,
+            vy: (Math.random() - 0.5) * 0.08
+          });
+        }
+      }
 
-          ctx.fillStyle = 'rgba(255,255,255,0.06)';
-          ctx.strokeStyle = 'rgba(144,245,255,0.22)';
-          roundRect(cx, y, width, 28, 14);
-          ctx.fill();
-          ctx.stroke();
+      function makeIncoming(side) {
+        const centerX = w * 0.5;
+        const centerY = h * 0.70;
+        const sigmaX = w * 0.12;
+        const sigmaY = h * 0.05;
 
-          ctx.fillStyle = '#d9f8ff';
-          ctx.fillText(chip, cx + 11, y + 18);
+        const tx = centerX + gaussian() * sigmaX;
+        const ty = centerY + gaussian() * sigmaY * 0.7;
+
+        return {
+          side,
+          x: side === 'left' ? -30 - Math.random() * 80 : w + 30 + Math.random() * 80,
+          y: h * (0.18 + Math.random() * 0.55),
+          tx,
+          ty,
+          r: 1.6 + Math.random() * 2.4,
+          a: 0.18 + Math.random() * 0.28,
+          speed: 0.005 + Math.random() * 0.004,
+          settled: false,
+          jitter: Math.random() * Math.PI * 2
+        };
+      }
+
+      function lerp(a, b, t) {
+        return a + (b - a) * t;
+      }
+
+      function smoothstep(a, b, x) {
+        const t = Math.max(0, Math.min(1, (x - a) / (b - a)));
+        return t * t * (3 - 2 * t);
+      }
+
+      function drawGlow(x, y, r, color, alpha) {
+        const grad = ctx.createRadialGradient(x, y, 0, x, y, r);
+        grad.addColorStop(0, color.replace('ALPHA', alpha));
+        grad.addColorStop(1, color.replace('ALPHA', '0'));
+        ctx.fillStyle = grad;
+        ctx.beginPath();
+        ctx.arc(x, y, r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      function drawBrain(opacity) {
+        brainCenters.forEach((c, i) => {
+          const pulse = 0.92 + 0.08 * Math.sin(performance.now() * 0.00045 + i);
+          drawGlow(c.x, c.y, c.r * pulse, 'rgba(126, 199, 204, ALPHA)', 0.085 * opacity);
         });
 
+        ctx.save();
+        ctx.strokeStyle = 'rgba(166, 177, 188,' + (0.14 * opacity) + ')';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(w * 0.68, h * 0.21);
+        ctx.lineTo(w * 0.68, h * 0.56);
+        ctx.stroke();
         ctx.restore();
       }
 
-      function roundRect(x, y, width, height, radius) {
-        ctx.beginPath();
-        ctx.moveTo(x + radius, y);
-        ctx.arcTo(x + width, y, x + width, y + height, radius);
-        ctx.arcTo(x + width, y + height, x, y + height, radius);
-        ctx.arcTo(x, y + height, x, y, radius);
-        ctx.arcTo(x, y, x + width, y, radius);
-        ctx.closePath();
-      }
+      function drawHistogram(opacity) {
+        const binsCount = 28;
+        const bins = new Array(binsCount).fill(0);
+        const left = w * 0.20;
+        const right = w * 0.80;
+        const bottom = h * 0.82;
+        const histH = h * 0.18;
 
-      function draw() {
-        ctx.clearRect(0, 0, w, h);
+        incoming.forEach(p => {
+          if (p.settled) {
+            const nx = (p.x - left) / (right - left);
+            const idx = Math.floor(nx * binsCount);
+            if (idx >= 0 && idx < binsCount) bins[idx]++;
+          }
+        });
 
-        const grad = ctx.createRadialGradient(w * 0.52, h * 0.30, 10, w * 0.5, h * 0.5, h * 0.9);
-        grad.addColorStop(0, 'rgba(35,208,223,0.09)');
-        grad.addColorStop(0.3, 'rgba(35,208,223,0.04)');
-        grad.addColorStop(1, 'rgba(7,24,39,0)');
-        ctx.fillStyle = grad;
-        ctx.fillRect(0, 0, w, h);
-
-        const baseline = h * 0.80;
-        const histogramHeight = h * 0.19;
-        const sigma = w * 0.14;
-        const center = w * 0.5;
-
-        const bins = Array.from({ length: binsCount }, () => 0);
-
-        for (const p of particles) {
-          p.vx += (center - p.x) * 0.00022 + (Math.random() - 0.5) * 0.015;
-          p.vy += (Math.random() - 0.5) * 0.006;
-          p.x += p.vx;
-          p.y += p.vy + Math.sin(performance.now() * 0.0006 + p.phase) * 0.11;
-
-          if (p.x < 30 || p.x > w - 30) p.vx *= -0.96;
-          if (p.y < h * 0.08 || p.y > h * 0.70) p.vy *= -0.96;
-
-          const idx = Math.max(0, Math.min(binsCount - 1, Math.floor((p.x / w) * binsCount)));
-          bins[idx]++;
-
-          ctx.beginPath();
-          ctx.fillStyle = `rgba(144,245,255,${p.a})`;
-          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-          ctx.fill();
-        }
-
-        // Histogram
-        const barW = w / binsCount;
         const maxBin = Math.max(...bins, 1);
+        const barW = (right - left) / binsCount;
 
         for (let i = 0; i < binsCount; i++) {
           const value = bins[i] / maxBin;
-          const barH = value * histogramHeight;
-          const x = i * barW + 2;
-          const y = baseline - barH;
-          const grd = ctx.createLinearGradient(0, y, 0, baseline);
-          grd.addColorStop(0, 'rgba(35,208,223,0.40)');
-          grd.addColorStop(1, 'rgba(35,208,223,0.06)');
-          ctx.fillStyle = grd;
-          ctx.fillRect(x, y, barW - 4, barH);
+          const barH = value * histH;
+          const x = left + i * barW;
+          const y = bottom - barH;
+          const g = ctx.createLinearGradient(0, y, 0, bottom);
+          g.addColorStop(0, 'rgba(126, 199, 204,' + (0.18 * opacity) + ')');
+          g.addColorStop(1, 'rgba(126, 199, 204,0)');
+          ctx.fillStyle = g;
+          ctx.fillRect(x + 2, y, barW - 4, barH);
         }
 
-        // Baseline
         ctx.beginPath();
-        ctx.moveTo(0, baseline);
-        ctx.lineTo(w, baseline);
-        ctx.strokeStyle = 'rgba(255,255,255,0.14)';
-        ctx.lineWidth = 1;
-        ctx.stroke();
-
-        // Gaussian curve
-        ctx.beginPath();
-        for (let px = 0; px <= w; px += 4) {
-          const y = baseline - histogramHeight * 0.95 * Math.exp(-Math.pow(px - center, 2) / (2 * sigma * sigma));
-          if (px === 0) ctx.moveTo(px, y);
+        for (let px = left; px <= right; px += 4) {
+          const center = (left + right) * 0.5;
+          const sigma = (right - left) * 0.16;
+          const y = bottom - histH * 0.95 * Math.exp(-Math.pow(px - center, 2) / (2 * sigma * sigma));
+          if (px === left) ctx.moveTo(px, y);
           else ctx.lineTo(px, y);
         }
-        ctx.strokeStyle = 'rgba(242,212,76,0.92)';
-        ctx.lineWidth = 2.2;
+        ctx.strokeStyle = 'rgba(197, 180, 106,' + (0.72 * opacity) + ')';
+        ctx.lineWidth = 2;
         ctx.stroke();
+      }
 
-        // Faint axis label
-        ctx.save();
-        ctx.fillStyle = 'rgba(237,247,255,0.34)';
-        ctx.font = '600 12px Inter, sans-serif';
-        ctx.fillText('distribution of samples', 24, baseline - histogramHeight - 16);
-        ctx.restore();
+      function animate() {
+        ctx.clearRect(0, 0, w, h);
 
-        drawChips();
-        requestAnimationFrame(draw);
+        const time = performance.now();
+        const phase = (Math.sin(time * 0.00018) + 1) / 2;
+        const histOpacity = 1 - smoothstep(0.28, 0.78, phase);
+        const brainOpacity = smoothstep(0.18, 0.74, phase);
+
+        const bgGrad = ctx.createRadialGradient(w * 0.45, h * 0.38, 20, w * 0.5, h * 0.5, h * 0.9);
+        bgGrad.addColorStop(0, 'rgba(126, 199, 204, 0.07)');
+        bgGrad.addColorStop(0.4, 'rgba(126, 199, 204, 0.025)');
+        bgGrad.addColorStop(1, 'rgba(7, 16, 24, 0)');
+        ctx.fillStyle = bgGrad;
+        ctx.fillRect(0, 0, w, h);
+
+        ambient.forEach(p => {
+          p.x += p.vx;
+          p.y += p.vy;
+          if (p.x < -10) p.x = w + 10;
+          if (p.x > w + 10) p.x = -10;
+          if (p.y < -10) p.y = h + 10;
+          if (p.y > h + 10) p.y = -10;
+
+          ctx.beginPath();
+          ctx.fillStyle = 'rgba(166, 177, 188,' + p.a + ')';
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fill();
+        });
+
+        incoming.forEach(p => {
+          if (!p.settled) {
+            p.x = lerp(p.x, p.tx, p.speed);
+            p.y = lerp(p.y, p.ty, p.speed);
+
+            const dx = p.tx - p.x;
+            const dy = p.ty - p.y;
+            if (Math.sqrt(dx * dx + dy * dy) < 3.5) {
+              p.settled = true;
+            }
+          } else {
+            p.x += Math.sin(time * 0.001 + p.jitter) * 0.05;
+            p.y += Math.cos(time * 0.001 + p.jitter) * 0.03;
+
+            if (Math.random() < 0.0012) {
+              const side = Math.random() > 0.5 ? 'left' : 'right';
+              Object.assign(p, makeIncoming(side));
+            }
+          }
+
+          const alpha = p.a * (0.35 + 0.65 * histOpacity);
+          ctx.beginPath();
+          ctx.fillStyle = 'rgba(126, 199, 204,' + alpha + ')';
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fill();
+        });
+
+        drawHistogram(histOpacity);
+        drawBrain(brainOpacity);
+
+        requestAnimationFrame(animate);
       }
 
       window.addEventListener('resize', resize);
       resize();
-      draw();
+      animate();
     })();
   </script>
 </body>
