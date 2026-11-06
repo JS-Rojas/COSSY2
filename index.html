@@ -623,7 +623,7 @@
     }
     .hero-topic {
       margin: 0 0 8px;
-      font-size: clamp(1.05rem, 1.8vw, 1.32rem);
+      font-size: clamp(calc(1.05rem - 5pt), calc(1.8vw - 5pt), calc(1.32rem - 5pt));
       color: var(--accent-soft);
       font-weight: 700;
       letter-spacing: 0.025em;
@@ -966,7 +966,6 @@
           <h4>Matteo Marsili</h4>
           <div class="speaker-role">Keynote Lecture 1 · Lost in Retraining</div>
           <div class="speaker-affiliation">ICTP · Italy</div>
-          <p class="speaker-bio">Self-training can amplify initial biases.</p>
           <div class="speaker-links">
             <a
               class="link-chip"
@@ -1133,7 +1132,6 @@
         <div class="registration-info">
           <p class="registration-description">Apply for the 14–16 December 2026 minicourse at Yachay Tech. Use the form below or scan the QR code to apply.</p>
           <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdecKguolMsvP4A8wtK1C8SSI0GHebFiFcnqcMzR7DFqnXU3g/viewform" target="_blank" rel="noopener">Open registration form</a>
-          <p class="registration-hint">The QR code opens the same Google Forms registration page.</p>
         </div>
         <a class="registration-qr" href="https://docs.google.com/forms/d/e/1FAIpQLSdecKguolMsvP4A8wtK1C8SSI0GHebFiFcnqcMzR7DFqnXU3g/viewform" target="_blank" rel="noopener" aria-label="Open Google Forms registration">
           <img src="data:image/png;base64,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" alt="QR code for the minicourse registration form" width="240" height="240" loading="lazy" />
