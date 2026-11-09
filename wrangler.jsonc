@@ -1,0 +1,14 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "cossy-ec",
+  "account_id": "d1c40c320f07922caf801ccfd23f2c2c",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  },
+  "routes": [
+    { "pattern": "cossy-ec.com", "custom_domain": true },
+    { "pattern": "www.cossy-ec.com", "custom_domain": true }
+  ]
+}

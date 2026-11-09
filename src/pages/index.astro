@@ -1,0 +1,918 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script is:inline>try{var t=localStorage.getItem("mc-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<title>Minicourse · From Probability to Information · Modeling Complex Systems</title>
+<meta name="description" content="A three-day minicourse on models built from probability and information principles. 14–16 December 2026, Yachay Tech University, Ecuador.">
+<link rel="canonical" href="https://cossy-ec.com/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#f3f1e9">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cossy-ec.com/">
+<meta property="og:title" content="Knowledge Returns to Yachay · Minicourse, 14–16 December 2026">
+<meta property="og:description" content="A three-day minicourse on models built from probability and information principles. 14–16 December 2026, Yachay Tech University, Ecuador.">
+<meta property="og:image" content="https://cossy-ec.com/assets/Minicourse_light.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter+Tight:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&display=swap" rel="stylesheet">
+<style is:inline>[hidden]{display:none!important}
+/* lenis 1.3.27 */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+  overflow: clip;
+}
+
+.lenis [data-lenis-prevent],
+.lenis [data-lenis-prevent-wheel],
+.lenis [data-lenis-prevent-touch],
+.lenis [data-lenis-prevent-vertical],
+.lenis [data-lenis-prevent-horizontal] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+.lenis.lenis-autoToggle {
+  transition-property: overflow;
+  transition-duration: 1ms;
+  transition-behavior: allow-discrete;
+}
+</style>
+<style is:inline>
+:root{
+  --bg:#f3f1e9; --bg-soft:#e9eee9; --ink:#18272e;
+  /* brand muted (#607177) is 4.4:1 on paper; nudged darker to clear 4.5:1 for body text */
+  --muted:#54656b;
+  --teal:#4e9698; --teal-strong:#2f777a; --teal-ink:#276669;
+  --gold:#98813d; --gold-ink:#7a672b; --blue:#637f9e;
+  --line:rgba(24,39,46,.16);
+  --f-display:"Newsreader",Georgia,serif; --f-text:"Inter Tight",system-ui,sans-serif; --f-mono:"IBM Plex Mono",ui-monospace,monospace;
+  --gutter:16px; --nav-h:58px;
+  --on-accent:#fff; --nav-bg:rgba(243,241,233,.86); --hatch:rgba(24,39,46,.12); --open-bgc:rgba(24,39,46,.07);
+  --course-bgc:rgba(78,150,152,.15); --key-bgc:rgba(152,129,61,.22); --talk-bgc:rgba(99,127,158,.15); --conn:rgba(24,39,46,.5);
+  --globe-fill:rgba(255,255,255,.35); --globe-line:rgba(24,39,46,.3); --globe-grid:rgba(24,39,46,.09); --foot-bg:#18272e; --foot-fg:#f3f1e9;
+  color-scheme:light;
+}
+/* dark theme: --bg is the dark logo's own background, so the logo sits on the page without a box */
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#18272e;--bg-soft:#13212a;--ink:#edf1f5;--muted:#a6b1bc;--teal:#7ec7cc;--teal-strong:#7ec7cc;--teal-ink:#a9e1e3;--gold:#c5b46a;--gold-ink:#d6c57a;--blue:#8ea7c2;--line:rgba(237,241,245,.14);--on-accent:#0b161c;--nav-bg:rgba(24,39,46,.88);--hatch:rgba(237,241,245,.09);--open-bgc:rgba(237,241,245,.07);--course-bgc:rgba(126,199,204,.13);--key-bgc:rgba(197,180,106,.18);--talk-bgc:rgba(142,167,194,.13);--conn:rgba(237,241,245,.42);--globe-fill:rgba(255,255,255,.04);--globe-line:rgba(237,241,245,.28);--globe-grid:rgba(237,241,245,.08);--foot-bg:#0f1a20;--foot-fg:#edf1f5;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#18272e;--bg-soft:#13212a;--ink:#edf1f5;--muted:#a6b1bc;--teal:#7ec7cc;--teal-strong:#7ec7cc;--teal-ink:#a9e1e3;--gold:#c5b46a;--gold-ink:#d6c57a;--blue:#8ea7c2;--line:rgba(237,241,245,.14);--on-accent:#0b161c;--nav-bg:rgba(24,39,46,.88);--hatch:rgba(237,241,245,.09);--open-bgc:rgba(237,241,245,.07);--course-bgc:rgba(126,199,204,.13);--key-bgc:rgba(197,180,106,.18);--talk-bgc:rgba(142,167,194,.13);--conn:rgba(237,241,245,.42);--globe-fill:rgba(255,255,255,.04);--globe-line:rgba(237,241,245,.28);--globe-grid:rgba(237,241,245,.08);--foot-bg:#0f1a20;--foot-fg:#edf1f5;color-scheme:dark}
+.lg-d{display:none}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .lg-l{display:none}:root:not([data-theme="light"]) .lg-d{display:block}}
+:root[data-theme="dark"] .lg-l{display:none}:root[data-theme="dark"] .lg-d{display:block}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.55 var(--f-text);overflow-x:clip;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,p{margin:0}
+:focus-visible{outline:2px solid var(--teal-strong);outline-offset:3px;border-radius:3px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{width:100%;max-width:1360px;margin:0 auto;padding:0 var(--gutter)}
+.mono{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase}
+.label{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-ink)}
+.skip{position:absolute;left:12px;top:-60px;background:var(--ink);color:var(--bg);padding:8px 14px;z-index:100;border-radius:4px}
+.skip:focus{top:10px}
+/* paper grain */
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opacity:.05;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>")}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:.55em;padding:.78em 1.3em;border:1px solid var(--ink);border-radius:999px;background:transparent;color:var(--ink);
+  font:500 .76rem/1 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:transform .25s,background .25s,color .25s}
+.btn:hover{transform:translateY(-2px);background:var(--ink);color:var(--bg)}
+.btn.solid{background:var(--teal-strong);border-color:var(--teal-strong);color:var(--on-accent)}
+.btn.solid:hover{background:var(--ink);border-color:var(--ink)}
+.btn.sm{padding:.62em 1em;font-size:.68rem}
+.btn .ar{transition:transform .25s}.btn:hover .ar{transform:translate(2px,-2px)}
+
+/* nav */
+header.nav{position:fixed;inset:0 0 auto 0;z-index:70;background:var(--nav-bg);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:var(--nav-h);max-width:1360px;margin:0 auto;padding:0 var(--gutter)}
+/* The PNG has generous built-in padding on the paper colour; negative margins let that padding overlap without cropping the file. */
+.nav .logo img{width:128px;height:auto;margin:-18px 0 -18px -11px}
+.nav ul{display:none;list-style:none;margin:0;padding:0;gap:28px}
+.nav ul a{font:500 .74rem var(--f-mono);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:6px 0;background:linear-gradient(var(--teal-strong),var(--teal-strong)) 0 100%/0 1px no-repeat;transition:background-size .3s}
+.nav ul a:hover{background-size:100% 1px}
+.nav .right{display:flex;align-items:center;gap:10px}
+.theme-btn{width:42px;height:42px;border:1px solid var(--ink);border-radius:50%;background:none;color:var(--ink);cursor:pointer;display:grid;place-items:center;padding:0;transition:background .25s,color .25s}
+.theme-btn:hover{background:var(--ink);color:var(--bg)}
+.menu-btn{width:42px;height:42px;border:1px solid var(--ink);border-radius:50%;background:none;cursor:pointer;display:grid;place-items:center;padding:0}
+.menu-btn i{display:block;width:16px;height:1.5px;background:var(--ink);box-shadow:0 5px 0 var(--ink);transform:translateY(-2.5px);transition:.3s}
+.nav.open .menu-btn i{box-shadow:none;transform:rotate(45deg)}
+.nav.open ul{display:flex;flex-direction:column;position:absolute;top:var(--nav-h);left:0;right:0;background:var(--bg);padding:12px var(--gutter) 24px;border-bottom:1px solid var(--line);gap:4px}
+.nav.open ul a{display:block;padding:12px 0;font-size:.85rem}
+@media(min-width:900px){
+  :root{--gutter:32px;--nav-h:64px}
+  .nav ul{display:flex}.menu-btn{display:none}
+  .nav .logo img{width:150px;margin:-21px 0 -21px -13px}
+}
+
+/* hero: copy left, one canvas right (brain + five distributions) */
+.hero{position:relative;min-height:100svh;padding:calc(var(--nav-h) + 8px) 0 20px;overflow:clip;display:flex}
+.hero>.wrap{display:flex}
+.hero-grid{position:relative;display:flex;flex-direction:column;width:100%;gap:8px}
+.hero-copy{position:relative;z-index:3;align-self:center;padding:4px 0}
+/* logo PNG is padded; negative margins trim it. Width follows viewport height so it fits at 570px. */
+.hero-logo{width:min(620px,100%,105vh);height:auto;margin:0 0 4px -2.8%}
+h1.display{margin-top:14px;font:400 clamp(1.75rem,min(2.9vw,6.4vh),2.6rem)/1.08 var(--f-display);letter-spacing:-.03em;margin-left:-.03em}
+h1 .mask{display:block;overflow:hidden;padding:.03em 0 .1em}
+h1 .mask>span{display:inline-block}
+h1 em{font-style:italic;color:var(--teal-ink);letter-spacing:-.035em}
+.dateline{margin-top:6px;color:var(--teal-ink)}
+.secondary{margin-top:12px;font:italic 400 clamp(1.1rem,min(2.2vw,3.4vh),1.4rem)/1.25 var(--f-display);max-width:44ch}
+.when{margin-top:clamp(12px,3vh,26px);display:flex;flex-wrap:wrap;align-items:center;gap:8px 22px}
+.bigdate{font:400 clamp(2rem,min(4.4vw,8.5vh),3.4rem)/1 var(--f-display);letter-spacing:-.025em;border-left:4px solid var(--gold);padding:2px 0 4px 14px;white-space:nowrap}
+.venue-line{max-width:20ch;line-height:1.35;font-weight:500}
+.cta{margin-top:clamp(12px,3vh,24px);display:flex;flex-wrap:wrap;gap:12px}
+.cta .btn{font-size:.92rem;padding:1.05em 1.7em}
+.brain-wrap{position:relative;flex:1;min-height:250px;z-index:1}
+.brain-wrap canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+@media(min-width:900px){
+  .hero-grid{flex-direction:row;gap:0;min-height:calc(100svh - var(--nav-h) - 28px)}
+  .hero-copy{flex:1.05 1 0;min-width:0;padding-right:24px}
+  .brain-wrap{flex:.95 1 0;min-width:0;min-height:0}
+}
+
+/* sections */
+section{position:relative}
+.sec{padding:72px 0}
+.sec.soft{background:var(--bg-soft)}
+.sec-head{display:flex;flex-direction:column;gap:10px;margin-bottom:36px;border-top:1px solid var(--ink);padding-top:14px}
+.sec-head h2{font:400 clamp(1.9rem,3.6vw,2.75rem)/1.05 var(--f-display);letter-spacing:-.02em}
+@media(min-width:900px){.sec-head{flex-direction:row;align-items:baseline;gap:32px}.sec-head .label{min-width:64px}}
+
+/* course */
+.about{display:grid;gap:32px}
+.lede{font:300 clamp(1.3rem,2.2vw,1.75rem)/1.3 var(--f-display);letter-spacing:-.01em;max-width:34ch}
+.facts{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
+.facts div{padding:16px 0;border-bottom:1px solid var(--line)}
+.facts div:nth-child(odd){padding-right:16px;border-right:1px solid var(--line)}.facts div:nth-child(even){padding-left:20px}
+.facts b{display:block;font:300 clamp(2.6rem,5vw,3.8rem)/1 var(--f-display);color:var(--teal-ink)}
+.facts span{color:var(--muted);font-size:.95rem}
+@media(min-width:900px){.about{grid-template-columns:1fr 1.1fr;gap:72px;align-items:end}}
+
+/* speakers: globe + list */
+.spk-wrap{display:grid;gap:28px;align-items:start}
+.spk-intro{color:var(--muted);max-width:46ch;margin-bottom:18px}
+.globe-wrap{position:relative;width:100%;max-width:620px;aspect-ratio:1;margin:0 auto}
+.globe-wrap canvas{position:absolute;inset:0;width:100%;height:100%;cursor:grab;touch-action:pan-y}
+.globe-wrap canvas:active{cursor:grabbing}
+.spk-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.spk-list li{display:grid;grid-template-columns:1fr;gap:8px 16px;align-items:center;padding:14px 10px 14px 14px;border-bottom:1px solid var(--line);border-left:3px solid transparent;transition:background .25s,border-color .25s}
+.spk-list li:hover,.spk-list li:focus-within{background:rgba(152,129,61,.1);border-left-color:var(--gold)}
+.spk-list h3{font:400 1.5rem/1.1 var(--f-display);letter-spacing:-.01em}
+.spk-list .role{display:block;margin-top:4px;color:var(--gold-ink);font-size:.68rem}
+.spk-list .aff{color:var(--muted);font-size:.95rem;margin-top:2px}
+.spk-list .btns{display:flex;flex-wrap:wrap;gap:6px}
+.spk-list li.feat{padding:22px 10px 22px 14px;border-left-color:var(--gold-ink);background:rgba(152,129,61,.07)}
+.spk-list li.feat h3{font-size:clamp(2rem,3.4vw,2.6rem);line-height:1}
+@media(min-width:900px){
+  .spk-wrap{grid-template-columns:1fr 1fr;gap:56px}
+  .globe-wrap{position:sticky;top:calc(var(--nav-h) + 20px)}
+}
+@media(min-width:1100px){.spk-list li{grid-template-columns:1fr auto}.spk-list .btns{justify-content:flex-end}}
+
+/* program: week grid. --ppm is pixels per minute; a block's top and height come from its start minute (--s, after 08:00) and duration (--d). */
+.legend{display:flex;flex-wrap:wrap;gap:6px 20px;margin-bottom:16px;color:var(--muted);font-size:.68rem}
+.legend i{display:inline-block;width:4px;height:12px;margin-right:8px;vertical-align:-2px;background:var(--c)}
+.cal-scroll{overflow-x:auto;border-top:1px solid var(--ink);background:var(--bg)}
+.cal{--ppm:1.8px;--axis:52px;min-width:720px}
+.cal-head,.cal-body{display:grid;grid-template-columns:var(--axis) repeat(3,1fr)}
+.cal-head{border-bottom:1px solid var(--line)}
+.cal-head h3{display:flex;align-items:baseline;gap:10px;padding:14px 12px 12px;font:300 clamp(2.6rem,4.6vw,3.6rem)/1 var(--f-display);letter-spacing:-.02em}
+.cal-head h3 span{font:500 .78rem var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--teal-ink)}
+.cal-body{position:relative;padding:10px 0;background:linear-gradient(var(--line) 1px,transparent 1px) 0 10px/100% calc(60 * var(--ppm)) repeat-y}
+.axis,.cal-body ol{position:relative;height:calc(480 * var(--ppm));margin:0;padding:0;list-style:none}
+.axis span{position:absolute;right:10px;top:calc(var(--m) * var(--ppm));transform:translateY(-50%);font:400 .68rem var(--f-mono);color:var(--muted);background:var(--bg);padding:0 2px}
+.cal-body ol{border-left:1px solid var(--line)}
+.blk{position:absolute;left:6px;right:6px;top:calc(var(--s) * var(--ppm) + 1px);height:calc(var(--d) * var(--ppm) - 2px);overflow:hidden;
+  padding:6px 10px 4px;border-left:4px solid var(--c);background:linear-gradient(var(--bgc),var(--bgc)),var(--bg);line-height:1.2;z-index:1}
+.blk time{display:block;font:500 .68rem var(--f-mono);letter-spacing:.06em;color:var(--muted)}
+.blk b{display:block;font:400 1.15rem/1.12 var(--f-display);margin-top:2px}
+.blk span{display:block;font-size:.84rem;color:var(--muted);margin-top:2px}
+.blk em{font:italic 400 .9rem var(--f-display)}
+.course{--c:var(--teal-strong);--bgc:var(--course-bgc)}
+.keynote{--c:var(--gold);--bgc:var(--key-bgc)}
+.talk{--c:var(--blue);--bgc:var(--talk-bgc)}
+.open{--c:var(--ink);--bgc:var(--open-bgc)}
+.brk{display:flex;align-items:center;gap:10px;padding:0 10px;border:0;background:repeating-linear-gradient(135deg,transparent 0 6px,var(--hatch) 6px 7px),var(--bg);color:var(--muted)}
+.brk time,.brk b{display:inline;margin:0;font:500 .66rem var(--f-mono);letter-spacing:.06em;text-transform:uppercase}
+.lunch{position:absolute;left:calc(var(--axis) + 6px);right:6px;top:calc(10px + 240 * var(--ppm) + 1px);height:calc(120 * var(--ppm) - 2px);display:flex;align-items:center;justify-content:center;gap:12px;
+  background:var(--bg) repeating-linear-gradient(135deg,transparent 0 6px,var(--hatch) 6px 7px);color:var(--muted)}
+.lunch b{font:500 .74rem var(--f-mono);letter-spacing:.14em;text-transform:uppercase;background:var(--bg);padding:3px 8px}
+.note{margin-top:18px;color:var(--muted);font-size:.92rem}
+
+/* committee */
+.com-grid{display:grid;gap:0 32px;grid-template-columns:1fr;border-top:1px solid var(--line)}
+.com{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 0;border-bottom:1px solid var(--line)}
+.com h3{font:400 1.35rem/1.1 var(--f-display)}
+@media(min-width:700px){.com-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:1100px){.com-grid{grid-template-columns:repeat(3,1fr)}}
+
+/* venue */
+.venue{display:grid;gap:36px}
+.venue h3{font:400 clamp(1.5rem,2.4vw,1.9rem)/1.1 var(--f-display);margin:8px 0 10px}
+.venue p{color:var(--muted);max-width:40ch}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.qr{display:flex;gap:20px;align-items:center;flex-wrap:wrap;margin-top:18px}
+.qr img{width:140px;height:140px;border-radius:4px;background:#fff;padding:8px;border:1px solid var(--line)}
+.partners{margin-top:56px}
+.p-grid{display:grid;gap:16px;grid-template-columns:1fr 1fr;margin-top:16px}
+.p-grid figure{margin:0}
+.p-grid .tile{background:#fff;border:1px solid var(--line);border-radius:6px;height:100px;display:grid;place-items:center;padding:12px}
+.p-grid img{max-height:76px;width:auto;object-fit:contain}
+.p-grid figcaption{margin-top:8px;font-size:.85rem;line-height:1.35;color:var(--muted)}
+@media(min-width:900px){.venue{grid-template-columns:1fr 1fr;gap:64px}.p-grid{grid-template-columns:repeat(4,1fr)}}
+
+/* footer */
+footer{background:var(--foot-bg);color:var(--foot-fg);padding:48px 0 52px}
+footer .big{font:300 clamp(1.6rem,3.4vw,2.6rem)/1.1 var(--f-display);letter-spacing:-.02em;max-width:24ch}
+footer .big em{color:#a9d3d4}
+footer .cols{display:flex;flex-wrap:wrap;gap:10px 36px;margin-top:24px;font:500 .74rem var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:#c8d1d4}
+footer .copy{margin-top:28px;padding-top:14px;border-top:1px solid rgba(243,241,233,.2);font:400 .76rem var(--f-mono);color:#c8d1d4}
+
+.proto{position:fixed;left:12px;bottom:12px;z-index:80;background:var(--ink);color:var(--bg);padding:7px 12px;border-radius:999px;font:500 .64rem var(--f-mono);letter-spacing:.12em;text-transform:uppercase}
+
+@media(prefers-reduced-motion:reduce){
+  .btn,.spk-list li{transition:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="logo" href="#top" aria-label="Minicourse home"><img class="lg-l" src="/assets/Minicourse_light.png" width="3200" height="1800" alt="Minicourse: From Probability to Information"><img class="lg-d" src="/assets/Minicourse_dark.png" width="3200" height="1800" alt="Minicourse: From Probability to Information"></a>
+    <nav aria-label="Primary" style="display:contents">
+      <ul id="menu">
+        <li><a href="#speakers">Speakers</a></li>
+        <li><a href="#program">Program</a></li>
+        <li><a href="#venue">Venue</a></li>
+        <li><a href="#register">Register</a></li>
+      </ul>
+    </nav>
+    <div class="right">
+      <button class="theme-btn" id="themeBtn" type="button" aria-pressed="false" aria-label="Switch to dark mode"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg></button>
+      <a class="btn solid sm" href="https://docs.google.com/forms/d/e/1FAIpQLSdecKguolMsvP4A8wtK1C8SSI0GHebFiFcnqcMzR7DFqnXU3g/viewform" target="_blank" rel="noopener">Apply now <span class="ar" aria-hidden="true">↗</span></a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu" aria-label="Menu"><i></i></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <img class="hero-logo lg-l" src="/assets/Minicourse_light_crop.png" width="2789" height="547" alt="Minicourse: From Probability to Information">
+        <img class="hero-logo lg-d" src="/assets/Minicourse_dark_crop.png" width="2789" height="547" alt="Minicourse: From Probability to Information">
+        <h1 class="display">Knowledge Returns to <em>Yachay</em></h1>
+        <p class="secondary">Modeling Complex Systems</p>
+        <div class="when">
+          <p class="bigdate">14–16 Dec 2026</p>
+          <p class="venue-line">Yachay Tech University, Urcuquí, Ecuador</p>
+        </div>
+        <div class="cta">
+          <a class="btn solid" href="https://docs.google.com/forms/d/e/1FAIpQLSdecKguolMsvP4A8wtK1C8SSI0GHebFiFcnqcMzR7DFqnXU3g/viewform" target="_blank" rel="noopener">Apply now <span class="ar" aria-hidden="true">↗</span></a>
+          <a class="btn" href="#program">See the program</a>
+        </div>
+      </div>
+      <div class="brain-wrap">
+        <canvas id="brain" role="img" aria-label="A brain drawn with dots. Five dashed lines link its sampling sites to Gaussian, Poisson and exponential distributions."></canvas>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec soft" id="speakers">
+  <div class="wrap">
+    <div class="sec-head"><span class="label">01</span><h2>Speakers</h2></div>
+    <div class="spk-wrap">
+      <div class="globe-wrap">
+        <canvas id="globe" role="img" aria-label="Dotted globe with arcs from each speaker's institution to Urcuquí, Ecuador. The speaker list beside it has the same information."></canvas>
+      </div>
+      <div>
+        <ol class="spk-list" id="spkList">
+          <li class="feat" data-id="bialek"><div><h3>William Bialek</h3><span class="role mono">Keynote Lecture 2</span><p class="aff">Princeton University, USA</p></div></li>
+          <li class="feat" data-id="marsili"><div><h3>Matteo Marsili</h3><span class="role mono">Keynote Lecture 1 · “Lost in Retraining”</span><p class="aff">ICTP, Italy</p></div>
+            <div class="btns"><a class="btn sm" href="https://scholar.google.com/citations?user=utY1nToAAAAJ&amp;hl=es&amp;oi=ao" target="_blank" rel="noopener">Scholar <span class="ar" aria-hidden="true">↗</span></a></div></li>
+          <li data-id="cosenza"><div><h3>Mario Cosenza</h3><span class="role mono">Talk 2</span><p class="aff">Yachay Tech, Ecuador</p></div>
+            <div class="btns"><a class="btn sm" href="https://scholar.google.com/citations?user=wmSC_7EAAAAJ&amp;hl=es&amp;oi=sra" target="_blank" rel="noopener">Scholar <span class="ar" aria-hidden="true">↗</span></a></div></li>
+          <li data-id="villagomez"><div><h3>Antonio Villagomez</h3><span class="role mono">Intro to Probability, every morning</span><p class="aff">UV, Chile</p></div>
+            <div class="btns"><a class="btn sm" href="https://www.linkedin.com/in/ntno2627/" target="_blank" rel="noopener">LinkedIn <span class="ar" aria-hidden="true">↗</span></a></div></li>
+          <li data-id="velez"><div><h3>Juan Velez</h3><span class="role mono">Models from Information Principles, every morning</span><p class="aff">OIST, Japan</p></div>
+            <div class="btns"><a class="btn sm" href="https://scholar.google.com/citations?user=m6uf3cEAAAAJ&amp;hl=es" target="_blank" rel="noopener">Scholar <span class="ar" aria-hidden="true">↗</span></a>
+              <a class="btn sm" href="https://js-rojas.github.io/jsrojas.github.io/?v=2" target="_blank" rel="noopener">Website <span class="ar" aria-hidden="true">↗</span></a></div></li>
+          <li data-id="paredes"><div><h3>Arianna Paredes</h3><span class="role mono">Talk 1</span><p class="aff">SISSA · OGS, Italy</p></div></li>
+          <li data-id="jose"><div><h3>María José Ayala Bolagay</h3><span class="role mono">Talk 3</span><p class="aff">USP, Brazil</p></div>
+            <div class="btns"><a class="btn sm" href="https://scholar.google.com/citations?user=ceoZZdcAAAAJ&amp;hl=es&amp;oi=ao" target="_blank" rel="noopener">Scholar <span class="ar" aria-hidden="true">↗</span></a></div></li>
+          <li data-id="carpio"><div><h3>Mateo Carpio</h3><span class="role mono">Talk 4</span><p class="aff">IFISC, Spain</p></div>
+            <div class="btns"><a class="btn sm" href="https://scholar.google.com/citations?user=bn6xDbwAAAAJ&amp;hl=es&amp;oi=ao" target="_blank" rel="noopener">Scholar <span class="ar" aria-hidden="true">↗</span></a></div></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="program">
+  <div class="wrap">
+    <div class="sec-head"><span class="label">02</span><h2>Program</h2></div>
+    <p class="legend mono" aria-hidden="true">
+      <span><i style="--c:var(--teal-strong)"></i>Courses</span><span><i style="--c:var(--gold)"></i>Keynotes</span><span><i style="--c:var(--blue)"></i>Talks</span><span>Ecuador time</span>
+    </p>
+    <div class="cal-scroll" tabindex="0" role="region" aria-label="Program calendar, 14 to 16 December 2026. Scrolls sideways on small screens.">
+      <div class="cal" id="cal"></div>
+    </div>
+    <p class="note">Program subject to change.</p>
+  </div>
+</section>
+
+<section class="sec soft" id="committee" hidden>
+  <div class="wrap">
+    <div class="sec-head"><span class="label">03</span><h2>Organizing Committee</h2></div>
+    <div class="com-grid" id="com"></div>
+  </div>
+</section>
+
+<section class="sec" id="venue">
+  <div class="wrap">
+    <div class="sec-head"><span class="label">03</span><h2>Venue and registration</h2></div>
+    <div class="venue">
+      <div>
+        <p class="label">Venue</p>
+        <h3>Yachay Tech University</h3>
+        <p>Urcuquí, Imbabura, Ecuador.</p>
+        <div class="btns"><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Yachay+Tech+Urcuqui+Ecuador" target="_blank" rel="noopener">Open in Google Maps <span class="ar" aria-hidden="true">↗</span></a></div>
+      </div>
+      <div id="register">
+        <p class="label">Register</p>
+        <h3>Apply for the minicourse</h3>
+        <p>Fill in the form or scan the code.</p>
+        <div class="qr">
+          <img src="/assets/registration-qr.png" alt="QR code linking to the registration form" width="140" height="140">
+          <a class="btn solid" href="https://docs.google.com/forms/d/e/1FAIpQLSdecKguolMsvP4A8wtK1C8SSI0GHebFiFcnqcMzR7DFqnXU3g/viewform" target="_blank" rel="noopener">Apply now <span class="ar" aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="partners">
+      <p class="label">Associated groups</p>
+      <div class="p-grid">
+        <figure data-reveal><div class="tile"><img src="/assets/REDU.jpeg" alt="Red Interdisciplinaria de Sistemas Complejos logo"></div><figcaption>Red Interdisciplinaria de Sistemas Complejos</figcaption></figure>
+        <figure data-reveal><div class="tile"><img src="/assets/Maestria.jpeg" alt="Maestría en Física logo"></div><figcaption>Maestría en Física, Mención en Física Fundamental</figcaption></figure>
+        <figure data-reveal><div class="tile"><img src="/assets/GISC.jpeg" alt="Grupo Interdisciplinario de Sistemas Complejos logo"></div><figcaption>Grupo Interdisciplinario de Sistemas Complejos</figcaption></figure>
+        <figure data-reveal><div class="tile"><img src="/assets/ECFYT.jpeg" alt="School of Physical Sciences and Nanotechnology logo"></div><figcaption>School of Physical Sciences and Nanotechnology</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="big">From Probability to Information: <em>Modeling Complex Systems</em></p>
+    <div class="cols"><span>14–16 December 2026</span><span>Yachay Tech University, Urcuquí, Ecuador</span></div>
+    <p class="copy">© 2026 Minicourse · Yachay Tech University</p>
+  </div>
+</footer>
+
+
+<script is:inline src="/vendor/gsap.min.js"></script>
+<script is:inline src="/vendor/ScrollTrigger.min.js"></script>
+<script is:inline src="/vendor/lenis.min.js"></script>
+<script is:inline>
+(() => {
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const clamp = (x, a, b) => Math.max(a, Math.min(b, x));
+const lerp = (a, b, t) => a + (b - a) * t;
+const TAU = Math.PI * 2;
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const hasG = !!window.gsap;
+const hasST = hasG && !!window.ScrollTrigger;
+if (hasST) gsap.registerPlugin(ScrollTrigger);
+
+/* ---------- smooth scroll + anchors ---------- */
+let lenis = null;
+if (!reduce && window.Lenis) {
+  lenis = new Lenis();
+  if (hasST) {
+    lenis.on("scroll", ScrollTrigger.update);
+    gsap.ticker.add(t => lenis.raf(t * 1000));
+    gsap.ticker.lagSmoothing(0);
+  } else {
+    const r = t => { lenis.raf(t); requestAnimationFrame(r); };
+    requestAnimationFrame(r);
+  }
+}
+const nav = $("#nav"), menuBtn = $("#menuBtn");
+menuBtn.addEventListener("click", () => {
+  const open = nav.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded", open);
+});
+document.addEventListener("click", e => {
+  const a = e.target.closest("a");
+  if (!a) return;
+  if (a.dataset.todo) { e.preventDefault(); return; } // LinkedIn URLs not known yet
+  const id = a.getAttribute("href");
+  if (id && id.length > 1 && id[0] === "#") {
+    const el = $(id);
+    if (el) {
+      e.preventDefault();
+      nav.classList.remove("open"); menuBtn.setAttribute("aria-expanded", "false");
+      if (lenis) lenis.scrollTo(el, { offset: -60 });
+      else el.scrollIntoView({ behavior: reduce ? "auto" : "smooth" });
+    }
+  }
+});
+
+/* ---------- canvas helpers ---------- */
+function fit(canvas) {
+  const dpr = Math.min(devicePixelRatio || 1, 2);
+  const r = canvas.getBoundingClientRect();
+  canvas.width = Math.round(r.width * dpr);
+  canvas.height = Math.round(r.height * dpr);
+  const ctx = canvas.getContext("2d");
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  return { ctx, w: r.width, h: r.height };
+}
+// Runs frame(t) only while `el` is on screen and the tab is visible.
+function runWhenVisible(el, frame) {
+  let vis = false, raf = 0;
+  const tick = t => { raf = 0; if (!vis || document.hidden) return; frame(t); raf = requestAnimationFrame(tick); };
+  const kick = () => { if (!raf && vis && !document.hidden) raf = requestAnimationFrame(tick); };
+  new IntersectionObserver(([e]) => { vis = e.isIntersecting; kick(); }).observe(el);
+  document.addEventListener("visibilitychange", kick);
+}
+function onResize(canvas, fn) {
+  new ResizeObserver(fn).observe(canvas);
+}
+
+/* ---------- distribution maths (ported unchanged from assets/current-site.js) ---------- */
+function randn() {
+  let u = 0, v = 0;
+  while (u === 0) u = Math.random();
+  while (v === 0) v = Math.random();
+  return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
+}
+const exponentialSample = lambda => -Math.log(1 - Math.random()) / lambda;
+function poissonSample(lambda) {
+  const L = Math.exp(-lambda);
+  let k = 0, p = 1;
+  do { k++; p *= Math.random(); } while (p > L);
+  return k - 1;
+}
+function factorial(n) { let f = 1; for (let i = 2; i <= n; i++) f *= i; return f; }
+const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
+
+/* ---------- hero: halftone brain + five distributions ----------
+   Brain geometry is the brain from current-site.js (same Path2D strings). It is drawn once into a tiny
+   offscreen canvas with ONE PIXEL PER HALFTONE CELL, so the browser's anti-aliasing gives each cell its
+   ink coverage for free: a pixel with alpha 0.64 -> a dot of radius sqrt(.64)*0.56*g.
+   Example: g=8px, cortex outline cell with alpha 1 -> r=4.5px; cortex interior fill (alpha .3) -> r=2.5px. */
+const STEM = "M 43 67 C 43 83 44 100 55 114 C 64 125 69 138 67 158 C 65 169 73 180 81 191 L 102 191 C 91 167 93 146 102 127 C 111 110 111 94 99 72 Z";
+const CEREB = "M 83 49 C 107 38 145 42 159 57 C 180 78 179 104 159 121 C 138 138 106 127 91 108 C 74 89 70 65 83 49 Z";
+const CORTEX = "M -165 -25 C -181 -43 -167 -73 -141 -78 C -146 -99 -120 -117 -95 -111 C -92 -137 -65 -143 -47 -131 C -27 -151 -4 -145 15 -131 C 34 -151 64 -143 81 -124 C 104 -137 129 -123 133 -105 C 157 -102 172 -80 166 -61 C 185 -47 189 -21 180 -2 C 191 17 179 48 157 59 C 167 85 145 104 119 100 C 106 124 77 130 56 110 C 27 128 -8 126 -27 108 C -54 125 -88 106 -101 88 C -135 102 -156 83 -153 57 C -179 46 -189 14 -171 -5 C -178 -14 -172 -24 -165 -25 Z";
+const SULCI_D = [
+"M -143 -55 C -115 -78 -103 -52 -114 -37 C -127 -18 -104 -9 -88 -21","M -114 -93 C -97 -104 -79 -87 -86 -68 C -92 -52 -79 -40 -62 -46",
+"M -66 -117 C -81 -101 -66 -88 -48 -89 C -23 -92 -19 -71 -32 -60","M -20 -126 C -32 -111 -13 -98 4 -104 C 20 -110 35 -97 25 -80",
+"M 45 -119 C 25 -99 45 -91 59 -96 C 81 -107 94 -88 83 -73","M 108 -112 C 98 -100 111 -86 125 -85 C 139 -84 146 -64 132 -52",
+"M 151 -73 C 133 -65 141 -43 155 -38 C 172 -31 171 -13 154 -3","M -159 -15 C -146 -34 -130 -14 -135 0 C -142 19 -127 29 -109 20",
+"M -114 -35 C -93 -55 -74 -31 -86 -13 C -100 3 -81 19 -61 9","M -62 -73 C -47 -61 -49 -42 -64 -31 C -74 -17 -56 -7 -42 -11",
+"M -14 -92 C -9 -74 -26 -62 -18 -48 C -6 -32 -21 -18 -38 -18","M 41 -85 C 25 -73 38 -58 47 -48 C 60 -34 49 -16 31 -15",
+"M 90 -66 C 75 -51 80 -33 97 -28 C 114 -23 113 -9 98 1","M 128 -38 C 111 -24 127 -9 142 -4 C 158 5 152 21 135 26",
+"M -149 31 C -124 12 -106 43 -120 54 C -132 68 -110 84 -91 67","M -94 18 C -79 28 -85 49 -66 52 C -52 53 -48 70 -61 79",
+"M -52 19 C -35 4 -20 18 -27 38 C -34 58 -17 65 -4 57","M -3 -26 C 13 -13 6 3 -7 11 C -19 24 -8 37 10 33",
+"M 32 9 C 20 21 28 37 43 41 C 62 47 59 62 47 73","M 73 -8 C 60 3 69 21 84 23 C 97 25 101 44 86 53",
+"M -109 83 C -92 70 -73 85 -58 94 C -41 104 -27 88 -31 79","M -15 96 C -1 80 19 85 30 97 C 48 105 62 93 66 80",
+"M 106 49 C 115 62 104 83 89 88 C 81 93 91 102 105 96"];
+const SULCI = SULCI_D.map(d => new Path2D(d));
+const stemP = new Path2D(STEM), cerebP = new Path2D(CEREB), cortexP = new Path2D(CORTEX);
+// Particle brain, as in prototype A: points every 3.4 brain units along each outline. Example: the cortex outline is about 1,100 units long, so it gets about 320 particles.
+const SYL_D = "M -112 48 C -67 30 -30 33 3 38 C 34 42 55 31 83 11";
+const svgNS = "http://www.w3.org/2000/svg", meas = document.createElementNS(svgNS, "svg");
+meas.setAttribute("aria-hidden", "true"); meas.style.cssText = "position:absolute;width:0;height:0;overflow:hidden";
+document.body.appendChild(meas);
+function samplePath(d, step) {
+  const p = document.createElementNS(svgNS, "path"); p.setAttribute("d", d); meas.appendChild(p);
+  const L = p.getTotalLength(), out = [];
+  for (let q = 0; q < L; q += step) { const pt = p.getPointAtLength(q); out.push([pt.x, pt.y]); }
+  meas.removeChild(p); return out;
+}
+const BRAIN_PTS = [STEM, CEREB, CORTEX, SYL_D, ...SULCI_D].flatMap(d => samplePath(d, 3.4));
+
+function paintBrainMask(o) {
+  // Strokes are thicker than on the current site: a dot matrix needs more ink to read.
+  o.lineJoin = o.lineCap = "round";
+  o.fillStyle = "rgba(0,0,0,.3)";
+  for (const [p, lw] of [[stemP, 5], [cerebP, 6], [cortexP, 8]]) {
+    o.fill(p); o.lineWidth = lw; o.strokeStyle = "#000"; o.stroke(p);
+  }
+  o.save(); o.clip(cerebP); o.strokeStyle = "rgba(0,0,0,.6)"; o.lineWidth = 4;
+  for (let k = 0; k < 7; k++) { const y = 59 + k * 8; o.beginPath(); o.moveTo(91, y); o.bezierCurveTo(110, y + 12, 135, y + 15, 170, y - 2); o.stroke(); }
+  o.restore();
+  o.strokeStyle = "rgba(0,0,0,.8)"; o.lineWidth = 4.5;
+  for (const s of SULCI) o.stroke(s);
+  o.lineWidth = 6; o.beginPath(); o.moveTo(-112, 48); o.bezierCurveTo(-67, 30, -30, 33, 3, 38); o.bezierCurveTo(34, 42, 55, 31, 83, 11); o.stroke();
+}
+
+/* Zones in the order of the original site, each tied to one brain sampling site (brain units, as in current-site.js).
+   fx, fy are the zone centre as a fraction of the canvas, so the layout scales with the canvas.
+   Example: canvas 550x480, Gaussian zone 1 -> centre (77, 82); its dashed curve ends at site [-108,-54]. */
+const ZONES = [
+  { type: "gaussian",    fx: .14, fy: .17, site: [-108, -54] },
+  { type: "poisson",     fx: .64, fy: .17, site: [-25, -92] },
+  { type: "gaussian",    fx: .86, fy: .42, site: [112, -55] },
+  { type: "exponential", fx: .15, fy: .87, site: [-54, 73] },
+  { type: "poisson",     fx: .80, fy: .86, site: [106, 32] }];
+const PARTICLE_COUNT = 300;
+
+const hero = $("#top"), bCan = $("#brain");
+let B = null, dots = [], bScale = 1, bcx = 0, bcy = 0, cell = 8, t0 = 0, zones = [], particles = [], zk = 1;
+let mx = -999, my = -999, sx = -999, sy = -999;
+let cInk, cTeal, cTealInk, cGold, cBg, cConn;
+function buildScene() {
+  B = fit(bCan);
+  cInk = css("--ink"); cTeal = css("--teal-strong"); cTealInk = css("--teal-ink"); cGold = css("--gold"); cBg = css("--bg"); cConn = css("--conn");
+  const { w, h } = B;
+  bcx = w * .5; bcy = h * .53;
+  bScale = Math.min(w * .5 / 382, h * .54 / 342);
+  // brain particles: each targets one outline point and starts at a random spot, so they gather on load (only the first time)
+  const pr = clamp(bScale * 2.2, .9, 1.6), settled = t0 > 0 || reduce;
+  dots = BRAIN_PTS.map(([bx, by]) => { const x = bcx + bx * bScale, y = bcy + (by - 20) * bScale;
+    return { x, y, sx0: settled ? x : Math.random() * w, sy0: settled ? y : Math.random() * h, r: pr * (.7 + Math.random() * .6),
+      ph: Math.random() * TAU, f: .6 + Math.random() * 1.2, d: Math.random() * .35, gold: Math.random() < .07, ox: 0, oy: 0 }; });
+  // Original zones were ~115x86px on a 1440px page. zk rescales every pixel constant of the maths to this canvas.
+  const zw = Math.min(w * .22, h * .27);
+  zk = zw / 115;
+  zones = ZONES.map(z => ({
+    type: z.type, x: w * z.fx, y: h * z.fy, w: zw, h: 86 * zk,
+    anchor: { x: bcx + z.site[0] * bScale, y: bcy + (z.site[1] - 20) * bScale }
+  }));
+  particles = [];
+  for (let i = 0; i < PARTICLE_COUNT; i++) particles.push(makeParticle(i % zones.length, reduce));
+  if (reduce) drawHero(0);
+}
+function makeParticle(zoneIndex, settled) {
+  const zone = zones[zoneIndex];
+  const startX = Math.random() < .5 ? -30 - Math.random() * 170 : B.w + 30 + Math.random() * 170;
+  const startY = zone.y + (Math.random() - .5) * 190 * zk;
+  const target = sampleTargetForZone(zone);
+  return {
+    zoneIndex, startX, startY, x: settled ? target.x : startX, y: settled ? target.y : startY, tx: target.x, ty: target.y,
+    size: (1.2 + Math.random() * 2) * Math.max(.7, zk), progress: settled ? 1 : -Math.random() * 1.5,
+    speed: .006 + Math.random() * .008, linger: settled ? 1e9 : 70 + Math.random() * 150, state: settled ? "linger" : "moving"
+  };
+}
+function sampleTargetForZone(zone) {
+  const baseline = zone.y + zone.h * .34;
+  if (zone.type === "gaussian") {
+    const sigma = zone.w * .22;
+    const localX = clamp(randn() * sigma, -zone.w * .43, zone.w * .43);
+    const curveY = baseline - zone.h * .72 * Math.exp(-.5 * Math.pow(localX / sigma, 2));
+    return { x: zone.x + localX, y: curveY + randn() * 6 * zk };
+  }
+  if (zone.type === "poisson") {
+    const lambda = 3.1;
+    const k = clamp(poissonSample(lambda), 0, 7);
+    const start = zone.x - zone.w * .40, step = (zone.w * .80) / 8;
+    const x = start + k * step + step * .5 + randn() * 1.8 * zk;
+    const pmf = Math.exp(-lambda) * Math.pow(lambda, k) / factorial(k);
+    const top = baseline - pmf * 370 * zk;
+    return { x, y: lerp(top, baseline, Math.random()) + randn() * 2 * zk };
+  }
+  const lambda = 1 / (29 * zk);
+  const ex = clamp(exponentialSample(lambda), 0, zone.w * .82);
+  const curveY = baseline - zone.h * .77 * Math.exp(-ex / (31 * zk));
+  return { x: zone.x - zone.w * .43 + ex, y: curveY + randn() * 6 * zk };
+}
+function drawGaussianZone(ctx, zone) {
+  const sigma = zone.w * .22, baseline = zone.y + zone.h * .34;
+  ctx.lineWidth = 4.5 * Math.max(.6, zk); ctx.beginPath();
+  for (let x = -zone.w * .44; x <= zone.w * .44; x += 2) {
+    const y = baseline - zone.h * .72 * Math.exp(-.5 * Math.pow(x / sigma, 2));
+    x === -zone.w * .44 ? ctx.moveTo(zone.x + x, y) : ctx.lineTo(zone.x + x, y);
+  }
+  ctx.stroke();
+}
+function drawPoissonZone(ctx, zone) {
+  const lambda = 3.1, start = zone.x - zone.w * .40, step = (zone.w * .80) / 8, baseline = zone.y + zone.h * .34;
+  ctx.lineWidth = 3.4 * Math.max(.6, zk); ctx.fillStyle = cTealInk;
+  for (let k = 0; k < 8; k++) {
+    const barHeight = Math.exp(-lambda) * Math.pow(lambda, k) / factorial(k) * 370 * zk;
+    const x = start + k * step + step * .5;
+    ctx.beginPath(); ctx.moveTo(x, baseline); ctx.lineTo(x, baseline - barHeight); ctx.stroke();
+    ctx.beginPath(); ctx.arc(x, baseline - barHeight, 3.2 * Math.max(.6, zk), 0, TAU); ctx.fill();
+  }
+}
+function drawExponentialZone(ctx, zone) {
+  const startX = zone.x - zone.w * .43, endX = zone.x + zone.w * .43, baseline = zone.y + zone.h * .34;
+  ctx.lineWidth = 4.5 * Math.max(.6, zk); ctx.beginPath();
+  for (let x = startX; x <= endX; x += 2) {
+    const y = baseline - zone.h * .77 * Math.exp(-(x - startX) / (31 * zk));
+    x === startX ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+  }
+  ctx.stroke();
+}
+function drawConnectors(ctx) {
+  ctx.save();
+  ctx.strokeStyle = cConn; ctx.lineWidth = 1.55; ctx.setLineDash([8, 10]);
+  for (const zone of zones) {
+    const dx = zone.anchor.x - zone.x, dy = zone.anchor.y - zone.y;
+    ctx.beginPath(); ctx.moveTo(zone.x, zone.y);
+    ctx.quadraticCurveTo(zone.x + dx * .54, zone.y + dy * .42, zone.anchor.x, zone.anchor.y);
+    ctx.stroke();
+  }
+  ctx.restore();
+}
+function drawHero(t) {
+  const { ctx, w, h } = B;
+  if (!t0) t0 = t;
+  const rev = reduce ? 2 : (t - t0) / 1500;               // reveal sweep from top-left, then settles
+  sx += (mx - sx) * .16; sy += (my - sy) * .16;
+  ctx.clearRect(0, 0, w, h);
+  drawConnectors(ctx);
+  ctx.save(); ctx.strokeStyle = cTealInk; ctx.lineCap = "round";
+  for (const z of zones) (z.type === "gaussian" ? drawGaussianZone : z.type === "poisson" ? drawPoissonZone : drawExponentialZone)(ctx, z);
+  ctx.restore();
+  // particle brain (prototype A): particles gather onto the outline, jitter, and move away from the cursor
+  const g = reduce ? 1 : clamp((t - t0) / 1800, 0, 1), R2 = 90 * 90, tl = [], gl = [];
+  for (const d of dots) {
+    const e = easeOutCubic(clamp((g - d.d) / (1 - d.d), 0, 1)), j = reduce ? 0 : Math.sin(t / 1000 * d.f + d.ph) * .7;
+    const x = lerp(d.sx0, d.x, e) + j, y = lerp(d.sy0, d.y, e) + j * .6, dx = x - sx, dy = y - sy, d2 = dx * dx + dy * dy;
+    let tx = 0, ty = 0;
+    if (!reduce && d2 < R2 && d2 > .01) { const dd = Math.sqrt(d2), f = Math.pow(1 - dd / 90, 2) * 26; tx = dx / dd * f; ty = dy / dd * f; }
+    d.ox += (tx - d.ox) * .14; d.oy += (ty - d.oy) * .14;
+    (d.gold ? gl : tl).push(x + d.ox, y + d.oy, d.r);
+  }
+  for (const [arr, col, al] of [[tl, cTeal, .85], [gl, cGold, .95]]) {
+    ctx.fillStyle = col; ctx.globalAlpha = al; ctx.beginPath();
+    for (let i = 0; i < arr.length; i += 3) { ctx.moveTo(arr[i] + arr[i + 2], arr[i + 1]); ctx.arc(arr[i], arr[i + 1], arr[i + 2], 0, TAU); }
+    ctx.fill();
+  }
+  ctx.globalAlpha = 1;
+  // five sampling sites, gold rings that pulse
+  const pulse = reduce ? 0 : (t / 1600) % 1;
+  for (const z of zones) {
+    const r = 5.4 * bScale;
+    ctx.fillStyle = cBg; ctx.strokeStyle = cGold; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.arc(z.anchor.x, z.anchor.y, r, 0, TAU); ctx.fill(); ctx.stroke();
+    if (!reduce && rev > 1.5) { ctx.globalAlpha = 1 - pulse; ctx.beginPath(); ctx.arc(z.anchor.x, z.anchor.y, r + pulse * r * 2.4, 0, TAU); ctx.stroke(); ctx.globalAlpha = 1; }
+  }
+  // particles flow in from the canvas edges, settle on their zone's curve, then are replaced
+  ctx.fillStyle = cTeal; ctx.globalAlpha = .45;
+  for (const p of particles) {
+    if (p.state === "moving") {
+      p.progress += p.speed;
+      if (p.progress < 0) continue;
+      const e = easeOutCubic(clamp(p.progress, 0, 1));
+      p.x = lerp(p.startX, p.tx, e); p.y = lerp(p.startY, p.ty, e);
+      if (p.progress >= 1) p.state = "linger";
+    } else if (!reduce) {
+      p.linger -= 1;
+      p.x += Math.sin(p.linger * .045) * .045; p.y += Math.cos(p.linger * .037) * .045;
+      if (p.linger <= 0) Object.assign(p, makeParticle(p.zoneIndex, false));
+    }
+    ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, TAU); ctx.fill();
+  }
+  ctx.globalAlpha = 1;
+}
+hero.addEventListener("pointermove", e => {
+  const c = bCan.getBoundingClientRect();
+  mx = e.clientX - c.left; my = e.clientY - c.top;
+  if (sx < -900) { sx = mx; sy = my; }
+});
+hero.addEventListener("pointerleave", () => { mx = my = -999; });
+buildScene();
+onResize(bCan, buildScene);
+if (!reduce) runWhenVisible(hero, drawHero);
+
+/* ---------- theme: follows the system setting until the visitor picks one ---------- */
+const root = document.documentElement, themeBtn = $("#themeBtn"), mq = matchMedia("(prefers-color-scheme: dark)");
+const isDark = () => root.dataset.theme ? root.dataset.theme === "dark" : mq.matches;
+function syncTheme() {
+  const dark = isDark();
+  themeBtn.setAttribute("aria-pressed", String(dark));
+  themeBtn.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+  buildScene();
+}
+themeBtn.addEventListener("click", () => {
+  root.dataset.theme = isDark() ? "light" : "dark";
+  try { localStorage.setItem("mc-theme", root.dataset.theme); } catch (e) {}
+  syncTheme();
+});
+if (mq.addEventListener) mq.addEventListener("change", syncTheme);
+syncTheme();
+
+/* ---------- globe ---------- */
+// Very coarse continent outlines (lon, lat). Enough to read as land at ~11px dot spacing.
+const LAND = [
+[[-168,66],[-130,70],[-95,72],[-80,68],[-62,58],[-55,48],[-70,42],[-76,35],[-80,25],[-83,29],[-90,29],[-97,26],[-97,19],[-90,16],[-83,9],[-78,8],[-86,12],[-95,16],[-105,20],[-110,24],[-115,30],[-118,34],[-124,40],[-124,48],[-135,58],[-150,60],[-165,60]],
+[[-78,8],[-72,12],[-62,10],[-52,5],[-50,0],[-40,-3],[-35,-8],[-39,-18],[-48,-26],[-58,-35],[-65,-42],[-68,-52],[-72,-52],[-74,-42],[-71,-30],[-70,-18],[-76,-14],[-81,-5],[-80,0],[-77,4]],
+[[-17,15],[-16,22],[-10,30],[-6,35],[10,37],[20,32],[32,31],[35,28],[43,12],[51,12],[40,-3],[40,-15],[35,-25],[27,-34],[18,-34],[12,-18],[13,-6],[9,4],[-8,4],[-15,10]],
+[[-10,36],[-9,43],[-2,44],[-5,48],[2,51],[8,54],[10,58],[5,62],[15,69],[30,71],[60,69],[80,73],[110,77],[140,72],[170,70],[180,66],[160,58],[155,50],[142,46],[135,43],[128,38],[126,35],[122,40],[121,31],[118,24],[108,21],[106,10],[100,13],[103,1],[98,8],[93,18],[88,22],[80,15],[77,8],[72,20],[66,25],[57,26],[50,30],[56,25],[59,22],[52,16],[43,13],[35,28],[34,31],[27,37],[26,40],[23,36],[19,40],[14,45],[12,44],[16,38],[9,44],[3,43],[-2,37]],
+[[130,32],[132,35],[138,38],[141,41],[142,38],[140,35],[135,33]],
+[[114,-22],[122,-18],[130,-12],[137,-12],[142,-11],[146,-19],[153,-27],[150,-37],[141,-38],[135,-34],[116,-35],[114,-27]],
+[[-5,50],[1,51],[-2,56],[-5,58],[-6,55]],
+[[-55,60],[-45,60],[-20,70],[-20,82],[-60,82],[-70,76]]];
+const inPoly = (lon, lat, p) => {
+  let c = false;
+  for (let i = 0, j = p.length - 1; i < p.length; j = i++) {
+    const [xi, yi] = p[i], [xj, yj] = p[j];
+    if ((yi > lat) !== (yj > lat) && lon < (xj - xi) * (lat - yi) / (yj - yi) + xi) c = !c;
+  }
+  return c;
+};
+const D2R = Math.PI / 180;
+// world unit vector for (lat, lon in degrees); x towards (0,0), y towards 90E, z north
+const vec = (lat, lon) => [Math.cos(lat * D2R) * Math.cos(lon * D2R), Math.cos(lat * D2R) * Math.sin(lon * D2R), Math.sin(lat * D2R)];
+const land = [];
+{ // Fibonacci sphere, keep land points only
+  const N = 6500;
+  for (let i = 0; i < N; i++) {
+    const lat = Math.asin(1 - 2 * (i + .5) / N) / D2R, lon = ((i * 137.508) % 360) - 180;
+    if (LAND.some(p => inPoly(lon, lat, p))) land.push(vec(lat, lon));
+  }
+}
+/* One marker per place. `names` lists [speaker id, label] pairs, so Trieste carries two names.
+   Example: hovering the list row data-id="paredes" highlights the Trieste marker, the Trieste arc and the "Paredes · SISSA" line. */
+const PLACES = [
+  { lat: 40.35, lon: -74.66, arc: true, names: [["bialek", "Bialek · Princeton"]] },
+  { lat: -33.05, lon: -71.62, arc: true, names: [["villagomez", "Villagomez · UV"]] },
+  { lat: 26.46, lon: 127.83, arc: true, names: [["velez", "Velez · OIST"]] },
+  { lat: 45.68, lon: 13.75, arc: true, names: [["marsili", "Marsili · ICTP"], ["paredes", "Paredes · SISSA"]] },
+  { lat: -23.56, lon: -46.73, arc: true, names: [["jose", "Ayala · USP"]] },
+  { lat: 39.64, lon: 2.65, arc: true, names: [["carpio", "Carpio · IFISC"]] },
+  { lat: 0.40, lon: -78.17, arc: false, hub: true, names: [["cosenza", "Cosenza · Urcuquí"]] }]; // Urcuquí: the arcs' destination, no arc of its own
+PLACES.forEach(p => p.v = vec(p.lat, p.lon));
+const HUB = PLACES.find(p => p.hub);
+
+const gCan = $("#globe");
+let G = null, lon0 = -60 * D2R, drag = false, hl = null;
+const TILT = 18 * D2R;
+function buildGlobe() { G = fit(gCan); if (reduce) drawGlobe(0); }
+// world vector -> {x,y in unit disc coords, d depth}; viewer sits on +x after rotating by lon0, then tilted.
+// vis means "on the near side" (depth > 0). Points behind the globe are never drawn, even when they project
+// outside the disc: that is what made the OIST arc loop out behind the globe before.
+function view(v) {
+  const c = Math.cos(lon0), s = Math.sin(lon0);
+  const x1 = v[0] * c + v[1] * s, y1 = -v[0] * s + v[1] * c, z1 = v[2];
+  const ct = Math.cos(TILT), st = Math.sin(TILT);
+  const depth = x1 * ct + z1 * st, sy = z1 * ct - x1 * st;
+  return { x: y1, y: sy, d: depth, vis: depth > 0 };
+}
+function line(ctx, pts, R, cx, cy) { // draw polyline, breaking where points are hidden; clipped to the globe disc
+  ctx.save(); ctx.beginPath(); ctx.arc(cx, cy, R, 0, TAU); ctx.clip();
+  let pen = false; ctx.beginPath();
+  for (const p of pts) {
+    if (!p.vis) { pen = false; continue; }
+    const X = cx + p.x * R, Y = cy - p.y * R;
+    pen ? ctx.lineTo(X, Y) : ctx.moveTo(X, Y); pen = true;
+  }
+  ctx.stroke(); ctx.restore();
+}
+function arcPoints(a, b, n) {
+  const om = Math.acos(clamp(a[0] * b[0] + a[1] * b[1] + a[2] * b[2], -1, 1)), so = Math.sin(om);
+  const lift = .32 * Math.min(1, om / 1.6), out = [];
+  for (let i = 0; i <= n; i++) {
+    const t = i / n, k1 = Math.sin((1 - t) * om) / so, k2 = Math.sin(t * om) / so, h = 1 + lift * Math.sin(Math.PI * t);
+    out.push(view([(a[0] * k1 + b[0] * k2) * h, (a[1] * k1 + b[1] * k2) * h, (a[2] * k1 + b[2] * k2) * h]));
+  }
+  return out;
+}
+const placeOn = p => !!hl && p.names.some(n => n[0] === hl);
+function drawGlobe(t) {
+  const { ctx, w, h } = G;
+  const hlPlace = PLACES.find(placeOn);
+  if (hlPlace) { // turn the globe towards the highlighted speaker by the shortest way round
+    const d = hlPlace.lon * D2R - lon0;
+    lon0 += Math.atan2(Math.sin(d), Math.cos(d)) * (reduce ? 1 : .08);
+  } else if (!drag && !reduce) lon0 += .0009;
+  const R = w * .34, cx = w / 2, cy = h / 2;
+  const ink = css("--ink"), teal = css("--teal-strong"), gold = css("--gold-ink");
+  ctx.clearRect(0, 0, w, h);
+  ctx.beginPath(); ctx.arc(cx, cy, R, 0, TAU);
+  ctx.fillStyle = css("--globe-fill"); ctx.fill();
+  ctx.strokeStyle = css("--globe-line"); ctx.lineWidth = 1; ctx.stroke();
+  // graticule every 30 degrees
+  ctx.strokeStyle = css("--globe-grid");
+  for (let lo = -180; lo < 180; lo += 30) { const pts = []; for (let la = -90; la <= 90; la += 6) pts.push(view(vec(la, lo))); line(ctx, pts, R, cx, cy); }
+  for (let la = -60; la <= 60; la += 30) { const pts = []; for (let lo = -180; lo <= 180; lo += 6) pts.push(view(vec(la, lo))); line(ctx, pts, R, cx, cy); }
+  // land dots, fading toward the limb
+  ctx.fillStyle = teal;
+  for (const v of land) {
+    const p = view(v); if (p.d <= 0) continue;
+    ctx.globalAlpha = .25 + .75 * p.d; ctx.beginPath(); ctx.arc(cx + p.x * R, cy - p.y * R, 1.5 + p.d * .6, 0, TAU); ctx.fill();
+  }
+  ctx.globalAlpha = 1;
+  // arcs to Urcuquí; the highlighted one is drawn last and thicker
+  ctx.strokeStyle = gold; ctx.lineCap = "round";
+  const arcs = PLACES.filter(p => p.arc).sort((a, b) => placeOn(a) - placeOn(b));
+  for (const p of arcs) {
+    const on = placeOn(p);
+    ctx.globalAlpha = on ? 1 : hl ? .22 : .6; ctx.lineWidth = on ? 3 : 1.6;
+    line(ctx, arcPoints(p.v, HUB.v, 56), R, cx, cy);
+  }
+  ctx.globalAlpha = 1;
+  // markers, then labels laid out per side so neighbours (Trieste, Palma) do not overlap
+  const small = w < 420, fs = small ? 10 : 11, lh = fs + 3;
+  const items = [];
+  for (const p of PLACES) {
+    const q = view(p.v); if (q.d < .05) continue;
+    const X = cx + q.x * R, Y = cy - q.y * R, on = placeOn(p);
+    const al = clamp(q.d * 3, 0, 1) * (hl && !on ? .4 : 1);
+    ctx.globalAlpha = al;
+    if (p.hub) {
+      const ph = reduce ? 0 : (t / 1800) % 1;
+      ctx.strokeStyle = teal; ctx.lineWidth = 1.5; ctx.globalAlpha = al * (1 - ph); ctx.beginPath(); ctx.arc(X, Y, 6 + ph * 16, 0, TAU); ctx.stroke(); ctx.globalAlpha = al;
+    }
+    ctx.fillStyle = p.hub ? teal : on ? gold : ink; ctx.beginPath(); ctx.arc(X, Y, p.hub ? 6 : on ? 5.5 : 3.5, 0, TAU); ctx.fill();
+    if (on) { ctx.strokeStyle = gold; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(X, Y, 10, 0, TAU); ctx.stroke(); }
+    ctx.globalAlpha = 1;
+    // measure with the bold font so a highlighted label cannot grow past the edge
+    ctx.font = `500 ${fs}px "IBM Plex Mono",monospace`;
+    const tw = Math.max(...p.names.map(n => ctx.measureText(n[1]).width));
+    let side = X > cx ? 1 : -1;
+    if (side === 1 && X + 9 + tw > w - 2) side = -1;
+    else if (side === -1 && X - 9 - tw < 2) side = 1;
+    items.push({ p, X, Y, al, on, side, tw, hgt: p.names.length * lh, yc: Y });
+  }
+  for (const side of [-1, 1]) {
+    const col = items.filter(i => i.side === side).sort((a, b) => a.Y - b.Y);
+    col.forEach((it, i) => { if (i) { const pr = col[i - 1]; it.yc = Math.max(it.yc, pr.yc + pr.hgt / 2 + it.hgt / 2 + 2); } });
+  }
+  ctx.textBaseline = "middle";
+  for (const it of items) {
+    ctx.textAlign = it.side === 1 ? "left" : "right";
+    it.p.names.forEach(([id, label], i) => {
+      const lit = hl === id;
+      ctx.globalAlpha = it.al; ctx.fillStyle = lit ? gold : ink;
+      ctx.font = `${lit || it.p.hub ? 600 : 500} ${fs}px "IBM Plex Mono",monospace`;
+      ctx.fillText(label, it.X + it.side * 10, it.yc - it.hgt / 2 + (i + .5) * lh);
+    });
+  }
+  ctx.globalAlpha = 1;
+}
+let lastX = 0;
+gCan.addEventListener("pointerdown", e => { drag = true; lastX = e.clientX; gCan.setPointerCapture(e.pointerId); });
+gCan.addEventListener("pointermove", e => { if (!drag) return; lon0 -= (e.clientX - lastX) / (G.w * .34); lastX = e.clientX; if (reduce) drawGlobe(0); });
+["pointerup", "pointercancel"].forEach(ev => gCan.addEventListener(ev, () => { drag = false; }));
+buildGlobe();
+onResize(gCan, buildGlobe);
+if (!reduce) runWhenVisible(gCan, drawGlobe);
+// list rows drive the highlight; hovering or focusing a row turns the globe to that speaker
+function setHl(id) { hl = id; if (reduce && G) drawGlobe(0); }
+$$("#spkList li").forEach(li => {
+  li.addEventListener("mouseenter", () => setHl(li.dataset.id));
+  li.addEventListener("mouseleave", () => setHl(null));
+  li.addEventListener("focusin", () => setHl(li.dataset.id));
+  li.addEventListener("focusout", e => { if (!li.contains(e.relatedTarget)) setHl(null); });
+});
+
+/* ---------- program: week grid ----------
+   Times are minutes after 08:00. Example: ["14:00" keynote] is start 360, duration 50, so top = 360 * 1.8px = 648px
+   and height = 90px - 2px inside a 864px day column. The same morning repeats each day; Lunch is drawn once across all columns. */
+const hm = m => { m += 480; return String(m / 60 | 0).padStart(2, "0") + ":" + String(m % 60).padStart(2, "0"); };
+const MORNING = [[30, 90, "course", "Intro to Probability", "Antonio Villagomez (UV, Chile)"], [120, 30, "brk", "Coffee break"],
+  [150, 90, "course", "Models from Information Principles", "Juan Velez (OIST, Japan)"]];
+const DAYS = [
+  { n: 14, dow: "Mon", name: "Monday", pre: [[0, 30, "open", "Opening Ceremony"]], pm: [360, "keynote", "Keynote Lecture 1", "Matteo Marsili (ICTP, Italy)", "Lost in Retraining"], tk: ["Talk 1", "Arianna Paredes (SISSA · OGS, Italy)"] },
+  { n: 15, dow: "Tue", name: "Tuesday", pre: [], pm: [360, "talk", "Talk 2", "Mario Cosenza (Yachay Tech, Ecuador)", ""], tk: ["Talk 3", "María José Ayala Bolagay (USP, Brazil)"] },
+  { n: 16, dow: "Wed", name: "Wednesday", pre: [], pm: [360, "keynote", "Keynote Lecture 2", "William Bialek (Princeton, USA)", ""], tk: ["Talk 4", "Mateo Carpio (IFISC, Spain)"] }];
+function blk([s, d, type, title, who, quote]) {
+  const time = `<time>${hm(s)}–${hm(s + d)}</time>`;
+  if (type === "brk") return `<li class="blk brk" style="--s:${s};--d:${d}">${time}<b>${title}</b></li>`;
+  return `<li class="blk ${type}" style="--s:${s};--d:${d}">${time}<b>${title}</b>${quote ? `<span><em>“${quote}”</em></span>` : ""}${who ? `<span>${who}</span>` : ""}</li>`;
+}
+$("#cal").innerHTML =
+  `<div class="cal-head" aria-hidden="true"><div></div>${DAYS.map(d => `<h3>${d.n}<span>${d.dow}</span></h3>`).join("")}</div>
+   <div class="cal-body"><div class="axis" aria-hidden="true">${Array.from({ length: 9 }, (_, i) => `<span style="--m:${i * 60}">${hm(i * 60)}</span>`).join("")}</div>
+   ${DAYS.map(d => `<ol aria-label="${d.name} ${d.n} December 2026">${[...d.pre, ...MORNING,
+      [d.pm[0], 50, d.pm[1], d.pm[2], d.pm[3], d.pm[4]], [410, 20, "brk", "Coffee break"], [430, 50, "talk", d.tk[0], d.tk[1]]].map(blk).join("")}</ol>`).join("")}
+   <p class="lunch"><b>Lunch</b><time class="mono">12:00–14:00 daily</time></p></div>`;
+
+/* ---------- committee ---------- */
+$("#com").innerHTML = Array.from({ length: 6 }, () =>
+  `<article class="com"><h3>Committee member</h3><a class="btn sm" href="#" data-todo="linkedin">LinkedIn <span class="ar" aria-hidden="true">↗</span></a></article>`).join("");
+
+/* ---------- entrance + scroll reveals ---------- */
+if (hasG && !reduce) {
+  gsap.from("h1.display", { y: 20, opacity: 0, duration: .9, ease: "power3.out", delay: .1 });
+  gsap.from([".hero-logo", ".secondary", ".when", ".cta"], { y: 20, opacity: 0, duration: .8, ease: "power3.out", stagger: .08, delay: .3 });
+  gsap.from(".brain-wrap", { opacity: 0, duration: 1.2, delay: .4 });
+  if (hasST) $$("[data-reveal]").forEach(el => gsap.from(el, { y: 28, opacity: 0, duration: .8, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 92%", once: true } }));
+}
+})();
+</script>
+</body>
+</html>
