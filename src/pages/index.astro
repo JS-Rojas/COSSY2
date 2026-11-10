@@ -17,9 +17,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&text=MODELING%20COMPLEX%20SYSTEMS&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter+Tight:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&display=swap" rel="stylesheet">
-<style is:inline>[hidden]{display:none!important}
-/* lenis 1.3.27 */
+<style is:inline>/* lenis 1.3.27 */
 html.lenis,
 html.lenis body {
   height: auto;
@@ -49,201 +49,287 @@ html.lenis body {
 </style>
 <style is:inline>
 :root{
+  /* Layout: a lecture poster. Brand and hook on the left, the figure on the right, and one ruled row of facts
+     (when, where, who) closing the first screen. Every later section opens with the same ink rule. */
   --bg:#f3f1e9; --bg-soft:#e9eee9; --ink:#18272e;
   /* brand muted (#607177) is 4.4:1 on paper; nudged darker to clear 4.5:1 for body text */
   --muted:#54656b;
   --teal:#4e9698; --teal-strong:#2f777a; --teal-ink:#276669;
-  --gold:#98813d; --gold-ink:#7a672b; --blue:#637f9e;
-  --line:rgba(24,39,46,.16);
+  --gold:#98813d; --gold-ink:#7a672b; --blue:#637f9e; --blue-ink:#47617e;
+  --line:rgba(24,39,46,.16); --dotc:rgba(24,39,46,.42); --hover:rgba(152,129,61,.1); --tag:#2f777a;
+  --dots:radial-gradient(circle,var(--dotc) .9px,transparent 1.3px);
   --f-display:"Newsreader",Georgia,serif; --f-text:"Inter Tight",system-ui,sans-serif; --f-mono:"IBM Plex Mono",ui-monospace,monospace;
   --gutter:16px; --nav-h:58px;
-  --on-accent:#fff; --nav-bg:rgba(243,241,233,.86); --hatch:rgba(24,39,46,.12); --open-bgc:rgba(24,39,46,.07);
+  --on-accent:#fff; --nav-bg:rgba(243,241,233,.88); --hatch:rgba(24,39,46,.12); --open-bgc:rgba(24,39,46,.07);
   --course-bgc:rgba(78,150,152,.15); --key-bgc:rgba(152,129,61,.22); --talk-bgc:rgba(99,127,158,.15); --conn:rgba(24,39,46,.5);
-  --globe-fill:rgba(255,255,255,.35); --globe-line:rgba(24,39,46,.3); --globe-grid:rgba(24,39,46,.09); --foot-bg:#18272e; --foot-fg:#f3f1e9;
+  --globe-fill:rgba(255,255,255,.35); --globe-line:rgba(24,39,46,.3); --globe-grid:rgba(24,39,46,.09);
+  /* the footer and the Apply cell stay dark in both themes; logo tiles stay white because the logos are JPEGs on white */
+  --foot-bg:#18272e; --foot-fg:#f3f1e9; --foot-accent:#a9d3d4; --foot-muted:#c8d1d4; --foot-line:rgba(243,241,233,.2); --tile:#fff; --tile-dim:none;
   color-scheme:light;
 }
 /* dark theme: --bg is the dark logo's own background, so the logo sits on the page without a box */
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#18272e;--bg-soft:#13212a;--ink:#edf1f5;--muted:#a6b1bc;--teal:#7ec7cc;--teal-strong:#7ec7cc;--teal-ink:#a9e1e3;--gold:#c5b46a;--gold-ink:#d6c57a;--blue:#8ea7c2;--line:rgba(237,241,245,.14);--on-accent:#0b161c;--nav-bg:rgba(24,39,46,.88);--hatch:rgba(237,241,245,.09);--open-bgc:rgba(237,241,245,.07);--course-bgc:rgba(126,199,204,.13);--key-bgc:rgba(197,180,106,.18);--talk-bgc:rgba(142,167,194,.13);--conn:rgba(237,241,245,.42);--globe-fill:rgba(255,255,255,.04);--globe-line:rgba(237,241,245,.28);--globe-grid:rgba(237,241,245,.08);--foot-bg:#0f1a20;--foot-fg:#edf1f5;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#18272e;--bg-soft:#13212a;--ink:#edf1f5;--muted:#a6b1bc;--teal:#7ec7cc;--teal-strong:#7ec7cc;--teal-ink:#a9e1e3;--gold:#c5b46a;--gold-ink:#d6c57a;--blue:#8ea7c2;--line:rgba(237,241,245,.14);--on-accent:#0b161c;--nav-bg:rgba(24,39,46,.88);--hatch:rgba(237,241,245,.09);--open-bgc:rgba(237,241,245,.07);--course-bgc:rgba(126,199,204,.13);--key-bgc:rgba(197,180,106,.18);--talk-bgc:rgba(142,167,194,.13);--conn:rgba(237,241,245,.42);--globe-fill:rgba(255,255,255,.04);--globe-line:rgba(237,241,245,.28);--globe-grid:rgba(237,241,245,.08);--foot-bg:#0f1a20;--foot-fg:#edf1f5;color-scheme:dark}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#18272e;--bg-soft:#13212a;--ink:#edf1f5;--muted:#a6b1bc;--teal:#7ec7cc;--teal-strong:#7ec7cc;--teal-ink:#a9e1e3;--gold:#c5b46a;--gold-ink:#d6c57a;--blue:#8ea7c2;--blue-ink:#b3c7dc;--line:rgba(237,241,245,.14);--dotc:rgba(237,241,245,.36);--hover:rgba(197,180,106,.1);--tag:#4e9698;--tile-dim:brightness(.9);--on-accent:#0b161c;--nav-bg:rgba(24,39,46,.9);--hatch:rgba(237,241,245,.09);--open-bgc:rgba(237,241,245,.07);--course-bgc:rgba(126,199,204,.13);--key-bgc:rgba(197,180,106,.18);--talk-bgc:rgba(142,167,194,.13);--conn:rgba(237,241,245,.42);--globe-fill:rgba(255,255,255,.04);--globe-line:rgba(237,241,245,.28);--globe-grid:rgba(237,241,245,.08);--foot-bg:#0f1a20;--foot-fg:#edf1f5;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#18272e;--bg-soft:#13212a;--ink:#edf1f5;--muted:#a6b1bc;--teal:#7ec7cc;--teal-strong:#7ec7cc;--teal-ink:#a9e1e3;--gold:#c5b46a;--gold-ink:#d6c57a;--blue:#8ea7c2;--blue-ink:#b3c7dc;--line:rgba(237,241,245,.14);--dotc:rgba(237,241,245,.36);--hover:rgba(197,180,106,.1);--tag:#4e9698;--tile-dim:brightness(.9);--on-accent:#0b161c;--nav-bg:rgba(24,39,46,.9);--hatch:rgba(237,241,245,.09);--open-bgc:rgba(237,241,245,.07);--course-bgc:rgba(126,199,204,.13);--key-bgc:rgba(197,180,106,.18);--talk-bgc:rgba(142,167,194,.13);--conn:rgba(237,241,245,.42);--globe-fill:rgba(255,255,255,.04);--globe-line:rgba(237,241,245,.28);--globe-grid:rgba(237,241,245,.08);--foot-bg:#0f1a20;--foot-fg:#edf1f5;color-scheme:dark}
+/* .lg-l shows in the light theme, .lg-d in the dark one (logos and the theme button's icon) */
 .lg-d{display:none}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .lg-l{display:none}:root:not([data-theme="light"]) .lg-d{display:block}}
 :root[data-theme="dark"] .lg-l{display:none}:root[data-theme="dark"] .lg-d{display:block}
+
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.55 var(--f-text);overflow-x:clip;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 a{color:inherit}
-h1,h2,h3,p{margin:0}
+h1,h2,h3,p,dl,dd{margin:0}
+[hidden]{display:none!important}
 :focus-visible{outline:2px solid var(--teal-strong);outline-offset:3px;border-radius:3px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.wrap{width:100%;max-width:1360px;margin:0 auto;padding:0 var(--gutter)}
-.mono{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase}
-.label{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-ink)}
+.wrap{width:100%;max-width:1360px;margin:0 auto;padding-inline:var(--gutter)}
+/* small caps label: the same voice as the logo's tagline. Mono is kept for times and dates only. */
+.label{font:600 .72rem/1.25 var(--f-text);letter-spacing:.16em;text-transform:uppercase;color:var(--teal-ink)}
 .skip{position:absolute;left:12px;top:-60px;background:var(--ink);color:var(--bg);padding:8px 14px;z-index:100;border-radius:4px}
 .skip:focus{top:10px}
 /* paper grain */
 body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opacity:.05;
   background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>")}
 
-/* buttons */
-.btn{display:inline-flex;align-items:center;gap:.55em;padding:.78em 1.3em;border:1px solid var(--ink);border-radius:999px;background:transparent;color:var(--ink);
-  font:500 .76rem/1 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:transform .25s,background .25s,color .25s}
-.btn:hover{transform:translateY(-2px);background:var(--ink);color:var(--bg)}
+/* buttons and text links */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;padding:.8em 1.35em;border:1px solid var(--ink);border-radius:999px;background:transparent;color:var(--ink);
+  font:500 .95rem/1 var(--f-text);text-decoration:none;white-space:nowrap;cursor:pointer;transition:background .25s,color .25s,border-color .25s}
+.btn:hover{background:var(--ink);color:var(--bg)}
 .btn.solid{background:var(--teal-strong);border-color:var(--teal-strong);color:var(--on-accent)}
-.btn.solid:hover{background:var(--ink);border-color:var(--ink)}
-.btn.sm{padding:.62em 1em;font-size:.68rem}
-.btn .ar{transition:transform .25s}.btn:hover .ar{transform:translate(2px,-2px)}
+.btn.solid:hover{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.btn.sm{padding:.68em 1.1em;font-size:.875rem}
+.btn.lg{padding:1.02em 1.7em;font-size:1.05rem}
+.ar{display:inline-block;transition:transform .25s}
+a:hover>.ar{transform:translate(2px,-2px)}
+.tlink{display:inline-flex;align-items:baseline;gap:.35em;padding-bottom:2px;font:500 .92rem/1.25 var(--f-text);text-decoration:none;
+  background:linear-gradient(currentColor,currentColor) 0 100%/100% 1px no-repeat;transition:color .2s}
+.tlink:hover{color:var(--teal-ink)}
 
-/* nav */
-header.nav{position:fixed;inset:0 0 auto 0;z-index:70;background:var(--nav-bg);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.nav-in{display:flex;align-items:center;justify-content:space-between;height:var(--nav-h);max-width:1360px;margin:0 auto;padding:0 var(--gutter)}
-/* The PNG has generous built-in padding on the paper colour; negative margins let that padding overlap without cropping the file. */
-.nav .logo img{width:128px;height:auto;margin:-18px 0 -18px -11px}
-.nav ul{display:none;list-style:none;margin:0;padding:0;gap:28px}
-.nav ul a{font:500 .74rem var(--f-mono);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:6px 0;background:linear-gradient(var(--teal-strong),var(--teal-strong)) 0 100%/0 1px no-repeat;transition:background-size .3s}
-.nav ul a:hover{background-size:100% 1px}
-.nav .right{display:flex;align-items:center;gap:10px}
-.theme-btn{width:42px;height:42px;border:1px solid var(--ink);border-radius:50%;background:none;color:var(--ink);cursor:pointer;display:grid;place-items:center;padding:0;transition:background .25s,color .25s}
-.theme-btn:hover{background:var(--ink);color:var(--bg)}
-.menu-btn{width:42px;height:42px;border:1px solid var(--ink);border-radius:50%;background:none;cursor:pointer;display:grid;place-items:center;padding:0}
-.menu-btn i{display:block;width:16px;height:1.5px;background:var(--ink);box-shadow:0 5px 0 var(--ink);transform:translateY(-2.5px);transition:.3s}
-.nav.open .menu-btn i{box-shadow:none;transform:rotate(45deg)}
-.nav.open ul{display:flex;flex-direction:column;position:absolute;top:var(--nav-h);left:0;right:0;background:var(--bg);padding:12px var(--gutter) 24px;border-bottom:1px solid var(--line);gap:4px}
-.nav.open ul a{display:block;padding:12px 0;font-size:.85rem}
+/* nav: clear over the hero, gains its ground once the page moves; the small logo docks in when the big one has left */
+header.nav{position:fixed;inset:0 0 auto 0;z-index:70;border-bottom:1px solid transparent;transition:background .3s,border-color .3s}
+.nav.scrolled,.nav.open{background:var(--nav-bg);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom-color:var(--line)}
+.nav-in{position:relative;display:flex;align-items:center;justify-content:space-between;height:var(--nav-h);max-width:1360px;margin:0 auto;padding-inline:var(--gutter)}
+.nav .logo,.nav .right .btn{opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .3s,transform .3s,visibility .3s,background .25s,color .25s,border-color .25s}
+.nav .logo{display:block;flex:none}
+.nav.docked .logo,.nav.docked .right .btn{opacity:1;visibility:visible;transform:none}
+.nav .logo img{height:28px;width:auto;max-width:none;margin-left:-4px}
+@media(max-width:439px){.nav .now{display:none}}
+.nav nav{display:contents}
+.nav ul{display:none;list-style:none;margin:0;padding:0;gap:32px}
+.nav ul a{display:block;padding:8px 0;font:500 .95rem/1 var(--f-text);text-decoration:none;
+  background:linear-gradient(var(--teal-strong),var(--teal-strong)) 0 100%/0 1.5px no-repeat;transition:background-size .3s}
+.nav ul a:hover,.nav ul a[aria-current="true"]{background-size:100% 1.5px}
+.nav .right{display:flex;align-items:center;gap:8px}
+.theme-btn,.menu-btn{width:40px;height:40px;border:1px solid var(--line);border-radius:50%;background:none;color:var(--ink);cursor:pointer;display:grid;place-items:center;padding:0;transition:border-color .25s,background .25s,color .25s}
+.theme-btn:hover,.menu-btn:hover{border-color:var(--ink)}
+.menu-btn i{position:relative;display:block;width:16px;height:1.5px;background:var(--ink);transform:translateY(-3px);transition:transform .3s}
+.menu-btn i::after{content:"";position:absolute;left:0;top:6px;width:16px;height:1.5px;background:var(--ink);transition:transform .3s}
+.nav.open .menu-btn i{transform:rotate(45deg)}
+.nav.open .menu-btn i::after{transform:translateY(-6px) rotate(-90deg)}
+.nav.open ul{display:flex;flex-direction:column;position:absolute;top:var(--nav-h);left:0;right:0;background:var(--bg);padding:8px var(--gutter) 20px;border-bottom:1px solid var(--line);gap:0}
+.nav.open ul a{padding:14px 0;font-size:1.05rem;background:none;border-bottom:1px solid var(--line)}
 @media(min-width:900px){
   :root{--gutter:32px;--nav-h:64px}
-  .nav ul{display:flex}.menu-btn{display:none}
-  .nav .logo img{width:150px;margin:-21px 0 -21px -13px}
+  .nav ul{display:flex;position:absolute;left:50%;transform:translateX(-50%)}
+  .menu-btn{display:none}
+  .nav .logo img{height:34px}
 }
 
-/* hero: copy left, one canvas right (brain + five distributions) */
-.hero{position:relative;min-height:100svh;padding:calc(var(--nav-h) + 8px) 0 20px;overflow:clip;display:flex}
-.hero>.wrap{display:flex}
-.hero-grid{position:relative;display:flex;flex-direction:column;width:100%;gap:8px}
-.hero-copy{position:relative;z-index:3;align-self:center;padding:4px 0}
-/* logo PNG is padded; negative margins trim it. Width follows viewport height so it fits at 570px. */
-.hero-logo{width:min(620px,100%,105vh);height:auto;margin:0 0 4px -2.8%}
-h1.display{margin-top:14px;font:400 clamp(1.75rem,min(2.9vw,6.4vh),2.6rem)/1.08 var(--f-display);letter-spacing:-.03em;margin-left:-.03em}
-h1 .mask{display:block;overflow:hidden;padding:.03em 0 .1em}
-h1 .mask>span{display:inline-block}
+/* hero: copy and figure share the first screen; the facts row closes it */
+.hero{position:relative;min-height:100svh;padding:calc(var(--nav-h) + 6px) 0 clamp(14px,2.6vh,28px);display:flex;overflow:clip}
+.hero>.wrap{display:grid;grid-template:"copy" auto "facts" auto "fig" minmax(250px,1fr) / minmax(0,1fr);row-gap:clamp(18px,3vh,26px)}
+.hero-copy{grid-area:copy;position:relative;z-index:3;padding-top:4px}
+/* the logo file keeps 2.87% of padding on each side; the shift lines its mark up with the text edge */
+.lockup{width:min(620px,100%,105vh);container-type:inline-size}
+.lockup-in{position:relative;transform:translateX(-2.87%)}
+.hero-logo{width:100%;height:auto}
+/* "Modeling Complex Systems" completes the tagline drawn in the logo. On a wide logo it is set to the artwork's own measures
+   (Inter SemiBold at 2.53% of the logo's width, tracked .32em, starting where the wordmark starts). Example: a 600px logo gives 15px type.
+   On a narrow logo that would be too small to read, so it becomes a plain line under the logo. */
+.lockup-sub{margin:2px 0 0 2.87%;font:600 .74rem/1.25 "Inter",var(--f-text);letter-spacing:.2em;text-transform:uppercase;color:var(--tag)}
+@container (min-width:430px){
+  .lockup-in{padding-bottom:1.6cqw}
+  .lockup-sub{position:absolute;left:25.53cqw;top:18.08cqw;margin:0;font-size:2.53cqw;line-height:1;letter-spacing:.32em;white-space:nowrap}
+}
+h1.display{margin:clamp(12px,2.6vh,24px) 0 0 -.03em;font:400 clamp(1.75rem,min(2.9vw,6.4vh),2.6rem)/1.08 var(--f-display);letter-spacing:-.03em;text-wrap:balance}
 h1 em{font-style:italic;color:var(--teal-ink);letter-spacing:-.035em}
-.dateline{margin-top:6px;color:var(--teal-ink)}
-.secondary{margin-top:12px;font:italic 400 clamp(1.1rem,min(2.2vw,3.4vh),1.4rem)/1.25 var(--f-display);max-width:44ch}
-.when{margin-top:clamp(12px,3vh,26px);display:flex;flex-wrap:wrap;align-items:center;gap:8px 22px}
-.bigdate{font:400 clamp(2rem,min(4.4vw,8.5vh),3.4rem)/1 var(--f-display);letter-spacing:-.025em;border-left:4px solid var(--gold);padding:2px 0 4px 14px;white-space:nowrap}
-.venue-line{max-width:20ch;line-height:1.35;font-weight:500}
-.cta{margin-top:clamp(12px,3vh,24px);display:flex;flex-wrap:wrap;gap:12px}
-.cta .btn{font-size:.92rem;padding:1.05em 1.7em}
-.brain-wrap{position:relative;flex:1;min-height:250px;z-index:1}
+.cta{margin-top:clamp(16px,3.4vh,30px);display:flex;flex-wrap:wrap;gap:10px}
+.brain-wrap{grid-area:fig;position:relative;min-width:0;z-index:1}
 .brain-wrap canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.facts{grid-area:facts;display:grid;grid-template-columns:minmax(0,1fr);border-top:1px solid var(--ink)}
+.fact{display:grid;grid-template-columns:5.4rem minmax(0,1fr);column-gap:12px;padding:12px 0 13px;background:var(--dots) 0 100%/6px 3px repeat-x}
+.fact dt{padding-top:.5em}
+.fact dd b{display:block;font:400 clamp(1.2rem,2.05vw,1.65rem)/1.15 var(--f-display);letter-spacing:-.012em}
+.fact dd span{display:block;margin-top:3px;font-size:.92rem;line-height:1.3;color:var(--muted)}
+.fact.two dt{grid-row:1/3}
+.fact.two dd{grid-column:2}
+.fact.two dd+dd{margin-top:9px}
 @media(min-width:900px){
-  .hero-grid{flex-direction:row;gap:0;min-height:calc(100svh - var(--nav-h) - 28px)}
-  .hero-copy{flex:1.05 1 0;min-width:0;padding-right:24px}
-  .brain-wrap{flex:.95 1 0;min-width:0;min-height:0}
+  .hero>.wrap{grid-template:"copy fig" minmax(0,1fr) "facts facts" auto / minmax(0,1.05fr) minmax(0,.95fr);column-gap:24px;row-gap:clamp(8px,2vh,24px)}
+  .hero-copy{align-self:center;padding:0 0 clamp(0px,2.4vh,26px)}
+  .facts{grid-template-columns:minmax(0,1.1fr) minmax(0,1.1fr) minmax(0,1.8fr)}
+  .fact{display:block;padding:13px 24px 0 0;background:none}
+  .fact+.fact{padding-left:24px;border-left:1px solid var(--line)}
+  .fact dt{padding:0;margin-bottom:8px}
+  .fact.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:24px;padding-right:0}
+  .fact.two dt{grid-row:auto;grid-column:1/-1}
+  .fact.two dd{grid-column:auto}
+  .fact.two dd+dd{margin-top:0}
 }
 
 /* sections */
 section{position:relative}
-.sec{padding:72px 0}
+.sec{padding:clamp(56px,8vw,96px) 0}
 .sec.soft{background:var(--bg-soft)}
-.sec-head{display:flex;flex-direction:column;gap:10px;margin-bottom:36px;border-top:1px solid var(--ink);padding-top:14px}
+.sec-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 24px;margin-bottom:clamp(24px,4vw,40px);border-top:1px solid var(--ink);padding-top:14px}
 .sec-head h2{font:400 clamp(1.9rem,3.6vw,2.75rem)/1.05 var(--f-display);letter-spacing:-.02em}
-@media(min-width:900px){.sec-head{flex-direction:row;align-items:baseline;gap:32px}.sec-head .label{min-width:64px}}
+.sec-head .meta{color:var(--muted);font-size:.95rem}
 
-/* course */
-.about{display:grid;gap:32px}
-.lede{font:300 clamp(1.3rem,2.2vw,1.75rem)/1.3 var(--f-display);letter-spacing:-.01em;max-width:34ch}
-.facts{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
-.facts div{padding:16px 0;border-bottom:1px solid var(--line)}
-.facts div:nth-child(odd){padding-right:16px;border-right:1px solid var(--line)}.facts div:nth-child(even){padding-left:20px}
-.facts b{display:block;font:300 clamp(2.6rem,5vw,3.8rem)/1 var(--f-display);color:var(--teal-ink)}
-.facts span{color:var(--muted);font-size:.95rem}
-@media(min-width:900px){.about{grid-template-columns:1fr 1.1fr;gap:72px;align-items:end}}
-
-/* speakers: globe + list */
-.spk-wrap{display:grid;gap:28px;align-items:start}
-.spk-intro{color:var(--muted);max-width:46ch;margin-bottom:18px}
-.globe-wrap{position:relative;width:100%;max-width:620px;aspect-ratio:1;margin:0 auto}
+/* speakers: globe + list. Row dividers are dotted, like the logo's own dots. */
+.spk-wrap{display:grid;gap:18px;align-items:start}
+.globe-wrap{position:relative;width:100%;max-width:440px;aspect-ratio:1;margin:0 auto}
 .globe-wrap canvas{position:absolute;inset:0;width:100%;height:100%;cursor:grab;touch-action:pan-y}
 .globe-wrap canvas:active{cursor:grabbing}
-.spk-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
-.spk-list li{display:grid;grid-template-columns:1fr;gap:8px 16px;align-items:center;padding:14px 10px 14px 14px;border-bottom:1px solid var(--line);border-left:3px solid transparent;transition:background .25s,border-color .25s}
-.spk-list li:hover,.spk-list li:focus-within{background:rgba(152,129,61,.1);border-left-color:var(--gold)}
-.spk-list h3{font:400 1.5rem/1.1 var(--f-display);letter-spacing:-.01em}
-.spk-list .role{display:block;margin-top:4px;color:var(--gold-ink);font-size:.68rem}
-.spk-list .aff{color:var(--muted);font-size:.95rem;margin-top:2px}
-.spk-list .btns{display:flex;flex-wrap:wrap;gap:6px}
-.spk-list li.feat{padding:22px 10px 22px 14px;border-left-color:var(--gold-ink);background:rgba(152,129,61,.07)}
-.spk-list li.feat h3{font-size:clamp(2rem,3.4vw,2.6rem);line-height:1}
-@media(min-width:900px){
-  .spk-wrap{grid-template-columns:1fr 1fr;gap:56px}
-  .globe-wrap{position:sticky;top:calc(var(--nav-h) + 20px)}
+.spk-list{list-style:none;margin:0;padding:0}
+.spk-list li{position:relative;display:grid;grid-template-columns:minmax(0,1fr);gap:10px 24px;padding:16px 0 18px;background:var(--dots) 0 100%/6px 3px repeat-x}
+.spk-list li::before{content:"";position:absolute;inset:0 -12px 3px;background:var(--hover);opacity:0;transition:opacity .25s;pointer-events:none}
+.spk-list li:hover::before,.spk-list li:focus-within::before{opacity:1}
+.spk-list li>*{position:relative}
+.spk-list h3{font:400 1.5rem/1.1 var(--f-display);letter-spacing:-.012em}
+.spk-list .aff{margin-top:4px;color:var(--muted);font-size:.95rem}
+.spk-list .ttl{margin-top:6px;font:italic 400 1.1rem/1.25 var(--f-display)}
+.spk-list .side{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 18px}
+.spk-list .meta{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px}
+.spk-list .kind{font:600 .7rem/1.25 var(--f-text);letter-spacing:.14em;text-transform:uppercase}
+.k-key{color:var(--gold-ink)}.k-course{color:var(--teal-ink)}.k-talk{color:var(--blue-ink)}
+.spk-list .slot{font:500 .78rem/1.3 var(--f-mono);color:var(--muted);text-decoration:underline;text-decoration-color:var(--dotc);text-underline-offset:3px;transition:color .2s}
+.spk-list .slot:hover{color:var(--ink);text-decoration-color:currentColor}
+/* how each speaker takes part: a filled dot for in person, a ring for online */
+.mode{display:inline-flex;align-items:center;gap:6px;padding:3px 10px 3px 8px;border:1px solid var(--line);border-radius:999px;font:500 .78rem/1.2 var(--f-text);color:var(--muted);white-space:nowrap}
+.mode::before{content:"";width:7px;height:7px;border-radius:50%;border:1.5px solid currentColor}
+.mode.in{border-color:var(--teal-strong);color:var(--teal-ink)}
+.mode.in::before{background:currentColor}
+.spk-list .links{display:flex;gap:14px}
+.spk-list li.key{padding-block:20px 22px}
+.spk-list li.key h3{font-size:clamp(1.9rem,3vw,2.4rem);line-height:1}
+.spk-list li:first-child{padding-top:4px}
+@media(min-width:640px){
+  .spk-list li{grid-template-columns:minmax(0,1fr) auto}
+  .spk-list .side{flex-direction:column;flex-wrap:nowrap;align-items:flex-end;justify-content:flex-start;gap:10px;padding-top:.3em}
+  .spk-list .meta{flex-direction:column;align-items:flex-end;gap:5px}
+  .spk-list li.key .side{padding-top:.75em}
 }
-@media(min-width:1100px){.spk-list li{grid-template-columns:1fr auto}.spk-list .btns{justify-content:flex-end}}
+@media(min-width:900px){
+  .spk-wrap{grid-template-columns:minmax(0,6fr) minmax(0,7fr);gap:40px}
+  .globe-wrap{max-width:none;position:sticky;top:calc(var(--nav-h) + 20px)}
+}
 
 /* program: week grid. --ppm is pixels per minute; a block's top and height come from its start minute (--s, after 08:00) and duration (--d). */
-.legend{display:flex;flex-wrap:wrap;gap:6px 20px;margin-bottom:16px;color:var(--muted);font-size:.68rem}
-.legend i{display:inline-block;width:4px;height:12px;margin-right:8px;vertical-align:-2px;background:var(--c)}
-.cal-scroll{overflow-x:auto;border-top:1px solid var(--ink);background:var(--bg)}
-.cal{--ppm:1.8px;--axis:52px;min-width:720px}
-.cal-head,.cal-body{display:grid;grid-template-columns:var(--axis) repeat(3,1fr)}
-.cal-head{border-bottom:1px solid var(--line)}
-.cal-head h3{display:flex;align-items:baseline;gap:10px;padding:14px 12px 12px;font:300 clamp(2.6rem,4.6vw,3.6rem)/1 var(--f-display);letter-spacing:-.02em}
-.cal-head h3 span{font:500 .78rem var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--teal-ink)}
-.cal-body{position:relative;padding:10px 0;background:linear-gradient(var(--line) 1px,transparent 1px) 0 10px/100% calc(60 * var(--ppm)) repeat-y}
-.axis,.cal-body ol{position:relative;height:calc(480 * var(--ppm));margin:0;padding:0;list-style:none}
-.axis span{position:absolute;right:10px;top:calc(var(--m) * var(--ppm));transform:translateY(-50%);font:400 .68rem var(--f-mono);color:var(--muted);background:var(--bg);padding:0 2px}
-.cal-body ol{border-left:1px solid var(--line)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 22px;margin-bottom:16px;color:var(--muted);font-size:.9rem}
+.legend i{display:inline-block;width:10px;height:10px;margin-right:8px;border-radius:2px;background:var(--c)}
+.cal{--ppm:1.8px;--axis:52px;border-top:1px solid var(--ink)}
+.cal-tabs{display:none}
+/* the day names stay in view while the long grid scrolls under them */
+.cal-head{display:grid;grid-template-columns:var(--axis) repeat(3,minmax(0,1fr));position:sticky;top:var(--nav-h);z-index:4;background:var(--bg);border-bottom:1px solid var(--line)}
+.cal-grid{display:grid;grid-template-columns:var(--axis) minmax(0,1fr)}
+.axis{position:relative;height:calc(480 * var(--ppm));margin-top:12px}
+.axis span{position:absolute;right:10px;top:calc(var(--m) * var(--ppm));transform:translateY(-50%);font:400 .7rem var(--f-mono);color:var(--muted)}
+.days{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.cal-head h3{display:flex;align-items:baseline;gap:10px;padding:12px 12px 10px;font:300 clamp(2.5rem,4.4vw,3.4rem)/1 var(--f-display);letter-spacing:-.02em}
+.cal-head h3 span{font:600 .72rem/1 var(--f-text);letter-spacing:.16em;text-transform:uppercase;color:var(--teal-ink)}
+.day ol{position:relative;height:calc(480 * var(--ppm));margin:12px 0 13px;padding:0;list-style:none;border-left:1px solid var(--line);
+  background:linear-gradient(var(--line) 1px,transparent 1px) 0 0/100% calc(60 * var(--ppm));box-shadow:0 1px 0 var(--line)}
 .blk{position:absolute;left:6px;right:6px;top:calc(var(--s) * var(--ppm) + 1px);height:calc(var(--d) * var(--ppm) - 2px);overflow:hidden;
   padding:6px 10px 4px;border-left:4px solid var(--c);background:linear-gradient(var(--bgc),var(--bgc)),var(--bg);line-height:1.2;z-index:1}
-.blk time{display:block;font:500 .68rem var(--f-mono);letter-spacing:.06em;color:var(--muted)}
+.blk time{display:block;font:500 .7rem var(--f-mono);letter-spacing:.04em;color:var(--muted)}
 .blk b{display:block;font:400 1.15rem/1.12 var(--f-display);margin-top:2px}
 .blk span{display:block;font-size:.84rem;color:var(--muted);margin-top:2px}
-.blk em{font:italic 400 .9rem var(--f-display)}
+.blk em{font:italic 400 .92rem var(--f-display);color:var(--ink)}
 .course{--c:var(--teal-strong);--bgc:var(--course-bgc)}
 .keynote{--c:var(--gold);--bgc:var(--key-bgc)}
 .talk{--c:var(--blue);--bgc:var(--talk-bgc)}
 .open{--c:var(--ink);--bgc:var(--open-bgc)}
 .brk{display:flex;align-items:center;gap:10px;padding:0 10px;border:0;background:repeating-linear-gradient(135deg,transparent 0 6px,var(--hatch) 6px 7px),var(--bg);color:var(--muted)}
-.brk time,.brk b{display:inline;margin:0;font:500 .66rem var(--f-mono);letter-spacing:.06em;text-transform:uppercase}
-.lunch{position:absolute;left:calc(var(--axis) + 6px);right:6px;top:calc(10px + 240 * var(--ppm) + 1px);height:calc(120 * var(--ppm) - 2px);display:flex;align-items:center;justify-content:center;gap:12px;
+.brk time,.brk b{display:inline;margin:0;font:500 .7rem var(--f-mono);letter-spacing:.04em}
+.brk b{font-family:var(--f-text);font-size:.82rem;letter-spacing:0}
+.lunch-d{display:none}
+.lunch{position:absolute;left:6px;right:6px;top:calc(12px + 240 * var(--ppm) + 1px);height:calc(120 * var(--ppm) - 2px);z-index:1;display:flex;align-items:center;justify-content:center;
   background:var(--bg) repeating-linear-gradient(135deg,transparent 0 6px,var(--hatch) 6px 7px);color:var(--muted)}
-.lunch b{font:500 .74rem var(--f-mono);letter-spacing:.14em;text-transform:uppercase;background:var(--bg);padding:3px 8px}
-.note{margin-top:18px;color:var(--muted);font-size:.92rem}
+.lunch span{display:flex;align-items:baseline;gap:10px;background:var(--bg);padding:5px 12px;font-size:.9rem}
+.lunch time{font:500 .74rem var(--f-mono)}
+.blk.flash{animation:flash 2.4s ease-out}
+@keyframes flash{0%,55%{box-shadow:0 0 0 2px var(--gold),0 0 0 7px var(--hover)}100%{box-shadow:0 0 0 2px transparent,0 0 0 7px transparent}}
+.note{margin-top:16px;color:var(--muted);font-size:.92rem}
+/* phones: one day at a time. The three days sit side by side in a snap scroller and the day tabs move it. Wide screens have no tabs. */
+@media(max-width:759px){
+  .cal{--ppm:1.75px;--axis:46px}
+  .cal-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;position:sticky;top:var(--nav-h);z-index:5;padding:10px 0;background:var(--bg)}
+  .cal-tabs button{display:flex;align-items:baseline;justify-content:center;gap:6px;padding:8px 6px 9px;border:1px solid var(--line);border-radius:999px;background:none;color:var(--muted);font:500 .92rem/1 var(--f-text);cursor:pointer}
+  .cal-tabs b{font:400 1.35rem/1 var(--f-display);color:var(--ink)}
+  .cal-tabs button[aria-current="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+  .cal-tabs button[aria-current="true"] b{color:var(--bg)}
+  .days{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
+  .days::-webkit-scrollbar{display:none}
+  .day{flex:0 0 100%;scroll-snap-align:start}
+  .cal-head,.lunch{display:none}
+  .day ol{margin-top:8px}
+  .axis{margin-top:8px}
+  .lunch-d{display:flex}
+}
 
 /* committee */
-.com-grid{display:grid;gap:0 32px;grid-template-columns:1fr;border-top:1px solid var(--line)}
-.com{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 0;border-bottom:1px solid var(--line)}
+.com-grid{display:grid;gap:0 32px;grid-template-columns:1fr}
+.com{padding:16px 0;background:var(--dots) 0 100%/6px 3px repeat-x}
 .com h3{font:400 1.35rem/1.1 var(--f-display)}
 @media(min-width:700px){.com-grid{grid-template-columns:1fr 1fr}}
 @media(min-width:1100px){.com-grid{grid-template-columns:repeat(3,1fr)}}
 
-/* venue */
-.venue{display:grid;gap:36px}
-.venue h3{font:400 clamp(1.5rem,2.4vw,1.9rem)/1.1 var(--f-display);margin:8px 0 10px}
-.venue p{color:var(--muted);max-width:40ch}
-.btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
-.qr{display:flex;gap:20px;align-items:center;flex-wrap:wrap;margin-top:18px}
-.qr img{width:140px;height:140px;border-radius:4px;background:#fff;padding:8px;border:1px solid var(--line)}
-.partners{margin-top:56px}
-.p-grid{display:grid;gap:16px;grid-template-columns:1fr 1fr;margin-top:16px}
+/* venue and registration: one ruled panel, the same three-part grammar as the hero's facts row */
+.close{display:grid;border:1px solid var(--ink)}
+.close>div{display:flex;flex-direction:column;align-items:flex-start;padding:20px 18px 24px}
+.close>div+div{border-top:1px solid var(--ink)}
+.close h3{margin:10px 0 6px;font:400 clamp(1.45rem,2.3vw,1.85rem)/1.12 var(--f-display);letter-spacing:-.012em}
+.close p{color:var(--muted)}
+.close .tlink{margin-top:auto}
+.close p+.tlink{padding-top:0}
+.close>div>p:not(.label){margin-bottom:18px}
+.apply{background:var(--foot-bg);color:var(--foot-fg)}
+.apply .label{color:var(--foot-accent)}
+.apply p{color:var(--foot-muted)}
+.apply-row{display:flex;flex-wrap:wrap;align-items:center;gap:16px 20px;margin-top:12px}
+.apply-row p{margin-bottom:0}
+.apply-row img{width:116px;height:116px;border-radius:4px;background:var(--tile);padding:7px}
+.apply-row .btn{margin-top:12px}
+.apply .btn.solid:hover{background:var(--foot-fg);border-color:var(--foot-fg);color:var(--foot-bg)}
+.partners{margin-top:clamp(40px,6vw,64px)}
+.p-grid{display:grid;gap:14px;grid-template-columns:1fr 1fr;margin-top:14px}
 .p-grid figure{margin:0}
-.p-grid .tile{background:#fff;border:1px solid var(--line);border-radius:6px;height:100px;display:grid;place-items:center;padding:12px}
-.p-grid img{max-height:76px;width:auto;object-fit:contain}
+.p-grid .tile{filter:var(--tile-dim);background:var(--tile);border:1px solid var(--line);border-radius:6px;height:96px;display:grid;place-items:center;padding:12px}
+.p-grid img{max-height:72px;width:auto;object-fit:contain}
 .p-grid figcaption{margin-top:8px;font-size:.85rem;line-height:1.35;color:var(--muted)}
-@media(min-width:900px){.venue{grid-template-columns:1fr 1fr;gap:64px}.p-grid{grid-template-columns:repeat(4,1fr)}}
+@media(min-width:900px){
+  .close{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.35fr)}
+  .close>div{padding:22px 26px 28px}
+  .close>div+div{border-top:0;border-left:1px solid var(--ink)}
+  .p-grid{grid-template-columns:repeat(4,1fr)}
+}
 
 /* footer */
-footer{background:var(--foot-bg);color:var(--foot-fg);padding:48px 0 52px}
-footer .big{font:300 clamp(1.6rem,3.4vw,2.6rem)/1.1 var(--f-display);letter-spacing:-.02em;max-width:24ch}
-footer .big em{color:#a9d3d4}
-footer .cols{display:flex;flex-wrap:wrap;gap:10px 36px;margin-top:24px;font:500 .74rem var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:#c8d1d4}
-footer .copy{margin-top:28px;padding-top:14px;border-top:1px solid rgba(243,241,233,.2);font:400 .76rem var(--f-mono);color:#c8d1d4}
-
-.proto{position:fixed;left:12px;bottom:12px;z-index:80;background:var(--ink);color:var(--bg);padding:7px 12px;border-radius:999px;font:500 .64rem var(--f-mono);letter-spacing:.12em;text-transform:uppercase}
+footer{background:var(--foot-bg);color:var(--foot-fg);padding:clamp(40px,6vw,64px) 0 26px}
+.foot-top{display:grid;gap:28px}
+footer .big{font:300 clamp(1.6rem,3.4vw,2.6rem)/1.1 var(--f-display);letter-spacing:-.02em;text-wrap:balance}
+footer .big em{display:block;color:var(--foot-accent)}
+.foot-facts{margin-top:18px;display:flex;flex-wrap:wrap;gap:6px 28px;font:500 .8rem/1.4 var(--f-mono);color:var(--foot-muted)}
+.foot-nav{display:flex;flex-wrap:wrap;gap:10px 26px;list-style:none;margin:0;padding:0;font-size:.95rem}
+.foot-nav a,footer .copy a{text-decoration:none;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;padding-bottom:2px;transition:background-size .3s}
+.foot-nav a:hover,footer .copy a:hover{background-size:100% 1px}
+footer .copy{margin-top:36px;padding-top:14px;border-top:1px solid var(--foot-line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;font-size:.85rem;color:var(--foot-muted)}
+@media(min-width:900px){.foot-top{grid-template-columns:minmax(0,1fr) auto;align-items:end}}
 
 @media(prefers-reduced-motion:reduce){
-  .btn,.spk-list li{transition:none}
+  .btn,.ar,.spk-list li::before,.nav,.nav .logo,.nav .right .btn{transition:none}
 }
 </style>
 </head>
@@ -252,19 +338,21 @@ footer .copy{margin-top:28px;padding-top:14px;border-top:1px solid rgba(243,241,
 
 <header class="nav" id="nav">
   <div class="nav-in">
-    <a class="logo" href="#top" aria-label="Minicourse home"><img class="lg-l" src="/assets/Minicourse_light.png" width="3200" height="1800" alt="Minicourse: From Probability to Information"><img class="lg-d" src="/assets/Minicourse_dark.png" width="3200" height="1800" alt="Minicourse: From Probability to Information"></a>
-    <nav aria-label="Primary" style="display:contents">
+    <a class="logo" href="#top" aria-label="Minicourse, back to top"><img class="lg-l" src="/assets/Minicourse_light_crop.png" width="2789" height="547" alt=""><img class="lg-d" src="/assets/Minicourse_dark_crop.png" width="2789" height="547" alt=""></a>
+    <nav aria-label="Primary">
       <ul id="menu">
         <li><a href="#speakers">Speakers</a></li>
         <li><a href="#program">Program</a></li>
         <li><a href="#venue">Venue</a></li>
-        <li><a href="#register">Register</a></li>
       </ul>
     </nav>
     <div class="right">
-      <button class="theme-btn" id="themeBtn" type="button" aria-pressed="false" aria-label="Switch to dark mode"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg></button>
-      <a class="btn solid sm" href="https://docs.google.com/forms/d/e/1FAIpQLSdecKguolMsvP4A8wtK1C8SSI0GHebFiFcnqcMzR7DFqnXU3g/viewform" target="_blank" rel="noopener">Apply now <span class="ar" aria-hidden="true">↗</span></a>
-      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu" aria-label="Menu"><i></i></button>
+      <a class="btn solid sm" href="https://docs.google.com/forms/d/e/1FAIpQLSdecKguolMsvP4A8wtK1C8SSI0GHebFiFcnqcMzR7DFqnXU3g/viewform" target="_blank" rel="noopener"><span>Apply<span class="now"> now</span></span> <span class="ar" aria-hidden="true">↗</span></a>
+      <button class="theme-btn" id="themeBtn" type="button" aria-pressed="false" aria-label="Switch to dark mode">
+        <svg class="lg-l" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.2A8 8 0 0 1 9.8 4a8 8 0 1 0 10.2 10.2z"/></svg>
+        <svg class="lg-d" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+      </button>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu"><i></i></button>
     </div>
   </div>
 </header>
@@ -272,121 +360,128 @@ footer .copy{margin-top:28px;padding-top:14px;border-top:1px solid rgba(243,241,
 <main id="main">
 <section class="hero" id="top">
   <div class="wrap">
-    <div class="hero-grid">
-      <div class="hero-copy">
+    <div class="hero-copy">
+      <div class="lockup"><div class="lockup-in">
         <img class="hero-logo lg-l" src="/assets/Minicourse_light_crop.png" width="2789" height="547" alt="Minicourse: From Probability to Information">
         <img class="hero-logo lg-d" src="/assets/Minicourse_dark_crop.png" width="2789" height="547" alt="Minicourse: From Probability to Information">
-        <h1 class="display">Knowledge Returns to <em>Yachay</em></h1>
-        <p class="secondary">Modeling Complex Systems</p>
-        <div class="when">
-          <p class="bigdate">14–16 Dec 2026</p>
-          <p class="venue-line">Yachay Tech University, Urcuquí, Ecuador</p>
-        </div>
-        <div class="cta">
-          <a class="btn solid" href="https://docs.google.com/forms/d/e/1FAIpQLSdecKguolMsvP4A8wtK1C8SSI0GHebFiFcnqcMzR7DFqnXU3g/viewform" target="_blank" rel="noopener">Apply now <span class="ar" aria-hidden="true">↗</span></a>
-          <a class="btn" href="#program">See the program</a>
-        </div>
-      </div>
-      <div class="brain-wrap">
-        <canvas id="brain" role="img" aria-label="A brain drawn with dots. Five dashed lines link its sampling sites to Gaussian, Poisson and exponential distributions."></canvas>
+        <p class="lockup-sub">Modeling Complex Systems</p>
+      </div></div>
+      <h1 class="display">Knowledge Returns to <em>Yachay</em></h1>
+      <div class="cta">
+        <a class="btn solid lg" href="https://docs.google.com/forms/d/e/1FAIpQLSdecKguolMsvP4A8wtK1C8SSI0GHebFiFcnqcMzR7DFqnXU3g/viewform" target="_blank" rel="noopener">Apply now <span class="ar" aria-hidden="true">↗</span></a>
+        <a class="btn lg" href="#program">See the program</a>
       </div>
     </div>
+    <div class="brain-wrap">
+      <canvas id="brain" role="img" aria-label="A brain drawn with dots. Five dashed lines link its sampling sites to Gaussian, Poisson and exponential distributions."></canvas>
+    </div>
+    <dl class="facts">
+      <div class="fact"><dt class="label">When</dt><dd><b>14–16 December 2026</b><span>Monday to Wednesday, 08:00–16:00</span></dd></div>
+      <div class="fact"><dt class="label">Where</dt><dd><b>Yachay Tech University</b><span>Urcuquí, Imbabura, Ecuador</span></dd></div>
+      <div class="fact two"><dt class="label">Keynotes</dt><dd><b>William Bialek</b><span>Princeton University, USA</span></dd><dd><b>Matteo Marsili</b><span>ICTP, Italy</span></dd></div>
+    </dl>
   </div>
 </section>
 
 <section class="sec soft" id="speakers">
   <div class="wrap">
-    <div class="sec-head"><span class="label">01</span><h2>Speakers</h2></div>
+    <div class="sec-head"><h2>Speakers</h2></div>
     <div class="spk-wrap">
       <div class="globe-wrap">
         <canvas id="globe" role="img" aria-label="Dotted globe with arcs from each speaker's institution to Urcuquí, Ecuador. The speaker list beside it has the same information."></canvas>
       </div>
-      <div>
-        <ol class="spk-list" id="spkList">
-          <li class="feat" data-id="bialek">
-            <div><h3>William Bialek</h3><span class="role mono">Keynote Lecture 2</span><p class="aff">Princeton University, USA</p></div>
-            <div class="btns"><a class="btn sm" href="https://scholar.google.com/citations?user=fQ-BSlgAAAAJ&hl=es&oi=ao" target="_blank" rel="noopener">Scholar <span class="ar" aria-hidden="true">↗</span></a></div>
-          </li>
-          <li class="feat" data-id="marsili">
-            <div><h3>Matteo Marsili</h3><span class="role mono">Keynote Lecture 1 · “Lost in Retraining”</span><p class="aff">ICTP, Italy</p></div>
-            <div class="btns"><a class="btn sm" href="https://scholar.google.com/citations?user=utY1nToAAAAJ&hl=es&oi=ao" target="_blank" rel="noopener">Scholar <span class="ar" aria-hidden="true">↗</span></a></div>
-          </li>
-          <li data-id="cosenza">
-            <div><h3>Mario Cosenza</h3><span class="role mono">Talk 2</span><p class="aff">Yachay Tech, Ecuador</p></div>
-            <div class="btns"><a class="btn sm" href="https://scholar.google.com/citations?user=wmSC_7EAAAAJ&hl=es&oi=sra" target="_blank" rel="noopener">Scholar <span class="ar" aria-hidden="true">↗</span></a></div>
-          </li>
-          <li data-id="villagomez">
-            <div><h3>Antonio Villagomez</h3><span class="role mono">Intro to Probability, every morning</span><p class="aff">UV, Chile</p></div>
-            <div class="btns"><a class="btn sm" href="https://www.linkedin.com/in/ntno2627/" target="_blank" rel="noopener">LinkedIn <span class="ar" aria-hidden="true">↗</span></a></div>
-          </li>
-          <li data-id="velez">
-            <div><h3>Juan Velez</h3><span class="role mono">Models from Information Principles, every morning</span><p class="aff">OIST, Japan</p></div>
-            <div class="btns">
-              <a class="btn sm" href="https://scholar.google.com/citations?user=m6uf3cEAAAAJ&hl=es" target="_blank" rel="noopener">Scholar <span class="ar" aria-hidden="true">↗</span></a>
-              <a class="btn sm" href="https://js-rojas.github.io/jsrojas.github.io/?v=2" target="_blank" rel="noopener">Website <span class="ar" aria-hidden="true">↗</span></a>
-            </div>
-          </li>
-          <li data-id="paredes">
-            <div><h3>Arianna Paredes</h3><span class="role mono">Talk 1</span><p class="aff">SISSA · OGS, Italy</p></div>
-            <div class="btns"><a class="btn sm" href="https://www.linkedin.com/in/arianna-jparedes/" target="_blank" rel="noopener">LinkedIn <span class="ar" aria-hidden="true">↗</span></a></div>
-          </li>
-          <li data-id="jose">
-            <div><h3>María José Ayala Bolagay</h3><span class="role mono">Talk 3</span><p class="aff">USP, Brazil</p></div>
-            <div class="btns">
-              <a class="btn sm" href="https://scholar.google.com/citations?user=ceoZZdcAAAAJ&hl=es&oi=ao" target="_blank" rel="noopener">Scholar <span class="ar" aria-hidden="true">↗</span></a>
-              <a class="btn sm" href="https://www.linkedin.com/in/mar%C3%ADa-jos%C3%A9-ayala-bolagay/?locale=en" target="_blank" rel="noopener">LinkedIn <span class="ar" aria-hidden="true">↗</span></a>
-            </div>
-          </li>
-          <li data-id="carpio">
-            <div><h3>Mateo Carpio</h3><span class="role mono">Talk 4</span><p class="aff">IFISC, Spain</p></div>
-            <div class="btns">
-              <a class="btn sm" href="https://scholar.google.com/citations?user=bn6xDbwAAAAJ&hl=es&oi=ao" target="_blank" rel="noopener">Scholar <span class="ar" aria-hidden="true">↗</span></a>
-              <a class="btn sm" href="https://www.linkedin.com/in/mateo-carpio-rivas/" target="_blank" rel="noopener">LinkedIn <span class="ar" aria-hidden="true">↗</span></a>
-            </div>
-          </li>
-        </ol>
-      </div>
+      <ol class="spk-list" id="spkList">
+        <li class="key" data-id="bialek" data-reveal>
+          <div><h3>William Bialek</h3><p class="aff">Princeton University, USA</p></div>
+          <div class="side"><p class="meta"><span class="kind k-key">Keynote lecture 2</span><a class="slot" href="#program" data-go="k2">Wed 16 Dec · 14:00</a><span class="mode on">Online</span></p>
+            <p class="links"><a class="tlink" href="https://scholar.google.com/citations?user=fQ-BSlgAAAAJ&amp;hl=es&amp;oi=ao" target="_blank" rel="noopener">Scholar <span class="ar" aria-hidden="true">↗</span></a></p></div>
+        </li>
+        <li class="key" data-id="marsili" data-reveal>
+          <div><h3>Matteo Marsili</h3><p class="aff">ICTP, Italy</p><p class="ttl">“Lost in Retraining”</p></div>
+          <div class="side"><p class="meta"><span class="kind k-key">Keynote lecture 1</span><a class="slot" href="#program" data-go="k1">Mon 14 Dec · 14:00</a><span class="mode on">Online</span></p>
+            <p class="links"><a class="tlink" href="https://scholar.google.com/citations?user=utY1nToAAAAJ&amp;hl=es&amp;oi=ao" target="_blank" rel="noopener">Scholar <span class="ar" aria-hidden="true">↗</span></a></p></div>
+        </li>
+        <li data-id="cosenza" data-reveal>
+          <div><h3>Mario Cosenza</h3><p class="aff">Yachay Tech, Ecuador</p></div>
+          <div class="side"><p class="meta"><span class="kind k-talk">Talk 2</span><a class="slot" href="#program" data-go="t2">Tue 15 Dec · 14:00</a><span class="mode in">In person</span></p>
+            <p class="links"><a class="tlink" href="https://scholar.google.com/citations?user=wmSC_7EAAAAJ&amp;hl=es&amp;oi=sra" target="_blank" rel="noopener">Scholar <span class="ar" aria-hidden="true">↗</span></a></p></div>
+        </li>
+        <li data-id="villagomez" data-reveal>
+          <div><h3>Antonio Villagomez</h3><p class="aff">UV, Chile</p><p class="ttl">Intro to Probability</p></div>
+          <div class="side"><p class="meta"><span class="kind k-course">Course</span><a class="slot" href="#program" data-go="c1">Every morning · 08:30</a><span class="mode in">In person</span></p>
+            <p class="links"><a class="tlink" href="https://www.linkedin.com/in/ntno2627/" target="_blank" rel="noopener">LinkedIn <span class="ar" aria-hidden="true">↗</span></a></p></div>
+        </li>
+        <li data-id="velez" data-reveal>
+          <div><h3>Juan Velez</h3><p class="aff">OIST, Japan</p><p class="ttl">Models from Information Principles</p></div>
+          <div class="side"><p class="meta"><span class="kind k-course">Course</span><a class="slot" href="#program" data-go="c2">Every morning · 10:30</a><span class="mode in">In person</span></p>
+            <p class="links"><a class="tlink" href="https://scholar.google.com/citations?user=m6uf3cEAAAAJ&amp;hl=es" target="_blank" rel="noopener">Scholar <span class="ar" aria-hidden="true">↗</span></a>
+              <a class="tlink" href="https://js-rojas.github.io/jsrojas.github.io/?v=2" target="_blank" rel="noopener">Website <span class="ar" aria-hidden="true">↗</span></a></p></div>
+        </li>
+        <li data-id="paredes" data-reveal>
+          <div><h3>Arianna Paredes</h3><p class="aff">SISSA · OGS, Italy</p></div>
+          <div class="side"><p class="meta"><span class="kind k-talk">Talk 1</span><a class="slot" href="#program" data-go="t1">Mon 14 Dec · 15:10</a><span class="mode on">Online</span></p>
+            <p class="links"><a class="tlink" href="https://www.linkedin.com/in/arianna-jparedes/" target="_blank" rel="noopener">LinkedIn <span class="ar" aria-hidden="true">↗</span></a></p></div>
+        </li>
+        <li data-id="jose" data-reveal>
+          <div><h3>María José Ayala Bolagay</h3><p class="aff">USP, Brazil</p></div>
+          <div class="side"><p class="meta"><span class="kind k-talk">Talk 3</span><a class="slot" href="#program" data-go="t3">Tue 15 Dec · 15:10</a><span class="mode on">Online</span></p>
+            <p class="links"><a class="tlink" href="https://scholar.google.com/citations?user=ceoZZdcAAAAJ&amp;hl=es&amp;oi=ao" target="_blank" rel="noopener">Scholar <span class="ar" aria-hidden="true">↗</span></a>
+              <a class="tlink" href="https://www.linkedin.com/in/mar%C3%ADa-jos%C3%A9-ayala-bolagay/?locale=en" target="_blank" rel="noopener">LinkedIn <span class="ar" aria-hidden="true">↗</span></a></p></div>
+        </li>
+        <li data-id="carpio" data-reveal>
+          <div><h3>Mateo Carpio</h3><p class="aff">IFISC, Spain</p></div>
+          <div class="side"><p class="meta"><span class="kind k-talk">Talk 4</span><a class="slot" href="#program" data-go="t4">Wed 16 Dec · 15:10</a><span class="mode on">Online</span></p>
+            <p class="links"><a class="tlink" href="https://scholar.google.com/citations?user=bn6xDbwAAAAJ&amp;hl=es&amp;oi=ao" target="_blank" rel="noopener">Scholar <span class="ar" aria-hidden="true">↗</span></a>
+              <a class="tlink" href="https://www.linkedin.com/in/mateo-carpio-rivas/" target="_blank" rel="noopener">LinkedIn <span class="ar" aria-hidden="true">↗</span></a></p></div>
+        </li>
+      </ol>
     </div>
   </div>
 </section>
 
 <section class="sec" id="program">
   <div class="wrap">
-    <div class="sec-head"><span class="label">02</span><h2>Program</h2></div>
-    <p class="legend mono" aria-hidden="true">
-      <span><i style="--c:var(--teal-strong)"></i>Courses</span><span><i style="--c:var(--gold)"></i>Keynotes</span><span><i style="--c:var(--blue)"></i>Talks</span><span>Ecuador time</span>
+    <div class="sec-head"><h2>Program</h2><p class="meta">Ecuador time (UTC−5)</p></div>
+    <p class="legend" aria-hidden="true">
+      <span><i style="--c:var(--teal-strong)"></i>Courses</span><span><i style="--c:var(--gold)"></i>Keynote lectures</span><span><i style="--c:var(--blue)"></i>Talks</span>
     </p>
-    <div class="cal-scroll" tabindex="0" role="region" aria-label="Program calendar, 14 to 16 December 2026. Scrolls sideways on small screens.">
-      <div class="cal" id="cal"></div>
-    </div>
+    <div class="cal" id="cal"></div>
     <p class="note">Program subject to change.</p>
   </div>
 </section>
 
 <section class="sec soft" id="committee" hidden>
   <div class="wrap">
-    <div class="sec-head"><span class="label">03</span><h2>Organizing Committee</h2></div>
+    <div class="sec-head"><h2>Organizing Committee</h2></div>
     <div class="com-grid" id="com"></div>
   </div>
 </section>
 
 <section class="sec" id="venue">
   <div class="wrap">
-    <div class="sec-head"><span class="label">03</span><h2>Venue and registration</h2></div>
-    <div class="venue">
+    <div class="sec-head"><h2>Venue and registration</h2></div>
+    <div class="close" data-reveal>
       <div>
-        <p class="label">Venue</p>
+        <p class="label">When</p>
+        <h3>14–16 December 2026</h3>
+        <p>Monday to Wednesday, 08:00–16:00.</p>
+        <a class="tlink" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Minicourse%3A+From+Probability+to+Information&amp;dates=20261214/20261217&amp;location=Yachay+Tech+University%2C+Urcuqu%C3%AD%2C+Ecuador&amp;details=https%3A%2F%2Fcossy-ec.com" target="_blank" rel="noopener">Add to Google Calendar <span class="ar" aria-hidden="true">↗</span></a>
+      </div>
+      <div>
+        <p class="label">Where</p>
         <h3>Yachay Tech University</h3>
         <p>Urcuquí, Imbabura, Ecuador.</p>
-        <div class="btns"><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Yachay+Tech+Urcuqui+Ecuador" target="_blank" rel="noopener">Open in Google Maps <span class="ar" aria-hidden="true">↗</span></a></div>
+        <a class="tlink" href="https://www.google.com/maps/search/?api=1&amp;query=Yachay+Tech+Urcuqui+Ecuador" target="_blank" rel="noopener">Open in Google Maps <span class="ar" aria-hidden="true">↗</span></a>
       </div>
-      <div id="register">
-        <p class="label">Register</p>
+      <div class="apply" id="register">
+        <p class="label">Registration</p>
         <h3>Apply for the minicourse</h3>
-        <p>Fill in the form or scan the code.</p>
-        <div class="qr">
-          <img src="/assets/registration-qr.png" alt="QR code linking to the registration form" width="140" height="140">
-          <a class="btn solid" href="https://docs.google.com/forms/d/e/1FAIpQLSdecKguolMsvP4A8wtK1C8SSI0GHebFiFcnqcMzR7DFqnXU3g/viewform" target="_blank" rel="noopener">Apply now <span class="ar" aria-hidden="true">↗</span></a>
+        <div class="apply-row">
+          <img src="/assets/registration-qr.png" alt="QR code linking to the registration form" width="116" height="116">
+          <div>
+            <p>Fill in the form or scan the code.</p>
+            <a class="btn solid" href="https://docs.google.com/forms/d/e/1FAIpQLSdecKguolMsvP4A8wtK1C8SSI0GHebFiFcnqcMzR7DFqnXU3g/viewform" target="_blank" rel="noopener">Apply now <span class="ar" aria-hidden="true">↗</span></a>
+          </div>
         </div>
       </div>
     </div>
@@ -405,12 +500,21 @@ footer .copy{margin-top:28px;padding-top:14px;border-top:1px solid rgba(243,241,
 
 <footer>
   <div class="wrap">
-    <p class="big">From Probability to Information: <em>Modeling Complex Systems</em></p>
-    <div class="cols"><span>14–16 December 2026</span><span>Yachay Tech University, Urcuquí, Ecuador</span></div>
-    <p class="copy">© 2026 Minicourse · Yachay Tech University</p>
+    <div class="foot-top">
+      <div>
+        <p class="big">From Probability to Information: <em>Modeling Complex Systems</em></p>
+        <p class="foot-facts"><span>14–16 December 2026</span><span>Yachay Tech University, Urcuquí, Ecuador</span></p>
+      </div>
+      <ul class="foot-nav">
+        <li><a href="#speakers">Speakers</a></li>
+        <li><a href="#program">Program</a></li>
+        <li><a href="#venue">Venue</a></li>
+        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdecKguolMsvP4A8wtK1C8SSI0GHebFiFcnqcMzR7DFqnXU3g/viewform" target="_blank" rel="noopener">Apply now <span class="ar" aria-hidden="true">↗</span></a></li>
+      </ul>
+    </div>
+    <p class="copy"><span>© 2026 Minicourse · Yachay Tech University</span><a href="#top">Back to top <span aria-hidden="true">↑</span></a></p>
   </div>
 </footer>
-
 
 <script is:inline src="/vendor/gsap.min.js"></script>
 <script is:inline src="/vendor/ScrollTrigger.min.js"></script>
@@ -442,24 +546,44 @@ if (!reduce && window.Lenis) {
   }
 }
 const nav = $("#nav"), menuBtn = $("#menuBtn");
+const closeMenu = () => { nav.classList.remove("open"); menuBtn.setAttribute("aria-expanded", "false"); };
 menuBtn.addEventListener("click", () => {
   const open = nav.classList.toggle("open");
   menuBtn.setAttribute("aria-expanded", open);
 });
+// The bar is clear over the hero. It gains its ground once the page moves, and the small logo docks in once the big one has left.
+const heroLogos = $$(".hero-logo");
+function navState() {
+  nav.classList.toggle("scrolled", scrollY > 6);
+  const big = heroLogos.find(el => el.offsetParent);
+  nav.classList.toggle("docked", !big || big.getBoundingClientRect().bottom < nav.offsetHeight);
+}
+addEventListener("scroll", navState, { passive: true });
+addEventListener("resize", navState);
+navState();
+// The menu underlines the section that sits in the middle of the screen. Over the hero, none.
+const spy = $$("#menu a").map(a => [a, $(a.getAttribute("href"))]);
+const spyIO = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) spy.forEach(([a, s]) => a.setAttribute("aria-current", String(s === e.target)));
+}), { rootMargin: "-40% 0px -55% 0px" });
+[$("#top"), ...spy.map(x => x[1])].forEach(s => spyIO.observe(s));
+
+function scrollToEl(el, offset) {
+  if (lenis) lenis.scrollTo(el, { offset });
+  else scrollTo({ top: el.getBoundingClientRect().top + scrollY + offset, behavior: reduce ? "auto" : "smooth" });
+}
+// In-page links. A speaker's time slot (data-go) goes to its block in the program and marks it for a moment.
 document.addEventListener("click", e => {
   const a = e.target.closest("a");
   if (!a) return;
-  if (a.dataset.todo) { e.preventDefault(); return; } // LinkedIn URLs not known yet
   const id = a.getAttribute("href");
-  if (id && id.length > 1 && id[0] === "#") {
-    const el = $(id);
-    if (el) {
-      e.preventDefault();
-      nav.classList.remove("open"); menuBtn.setAttribute("aria-expanded", "false");
-      if (lenis) lenis.scrollTo(el, { offset: -60 });
-      else el.scrollIntoView({ behavior: reduce ? "auto" : "smooth" });
-    }
-  }
+  if (!id || id.length < 2 || id[0] !== "#") return;
+  const block = a.dataset.go ? $("#b-" + a.dataset.go) : null, el = block || $(id);
+  if (!el) return;
+  e.preventDefault();
+  closeMenu();
+  if (block) { showBlock(block); scrollToEl(block, -innerHeight * .34); }
+  else scrollToEl(el, id === "#top" ? 0 : -(nav.offsetHeight + 8));
 });
 
 /* ---------- canvas helpers ---------- */
@@ -571,18 +695,20 @@ function buildScene() {
   B = fit(bCan);
   cInk = css("--ink"); cTeal = css("--teal-strong"); cTealInk = css("--teal-ink"); cGold = css("--gold"); cBg = css("--bg"); cConn = css("--conn");
   const { w, h } = B;
-  bcx = w * .5; bcy = h * .53;
-  bScale = Math.min(w * .5 / 382, h * .54 / 342);
+  // Example: a 604x700 canvas uses a 604x574 box that starts 63px down.
+  const bh = Math.min(h, w * .95), by0 = (h - bh) / 2;
+  bcx = w * .5; bcy = by0 + bh * .53;
+  bScale = Math.min(w * .5 / 382, bh * .54 / 342);
   // brain particles: each targets one outline point and starts at a random spot, so they gather on load (only the first time)
   const pr = clamp(bScale * 2.2, .9, 1.6), settled = t0 > 0 || reduce;
   dots = BRAIN_PTS.map(([bx, by]) => { const x = bcx + bx * bScale, y = bcy + (by - 20) * bScale;
     return { x, y, sx0: settled ? x : Math.random() * w, sy0: settled ? y : Math.random() * h, r: pr * (.7 + Math.random() * .6),
       ph: Math.random() * TAU, f: .6 + Math.random() * 1.2, d: Math.random() * .35, gold: Math.random() < .07, ox: 0, oy: 0 }; });
   // Original zones were ~115x86px on a 1440px page. zk rescales every pixel constant of the maths to this canvas.
-  const zw = Math.min(w * .22, h * .27);
+  const zw = Math.min(w * .22, bh * .27);
   zk = zw / 115;
   zones = ZONES.map(z => ({
-    type: z.type, x: w * z.fx, y: h * z.fy, w: zw, h: 86 * zk,
+    type: z.type, x: w * z.fx, y: by0 + bh * z.fy, w: zw, h: 86 * zk,
     anchor: { x: bcx + z.site[0] * bScale, y: bcy + (z.site[1] - 20) * bScale }
   }));
   particles = [];
@@ -824,8 +950,8 @@ function drawGlobe(t) {
     const d = hlPlace.lon * D2R - lon0;
     lon0 += Math.atan2(Math.sin(d), Math.cos(d)) * (reduce ? 1 : .08);
   } else if (!drag && !reduce) lon0 += .0009;
-  const R = w * .34, cx = w / 2, cy = h / 2;
-  const ink = css("--ink"), teal = css("--teal-strong"), gold = css("--gold-ink");
+  const R = w * .36, cx = w / 2, cy = h / 2;
+  const ink = css("--ink"), teal = css("--teal-strong"), gold = css("--gold-ink"), plate = css("--bg-soft");
   ctx.clearRect(0, 0, w, h);
   ctx.beginPath(); ctx.arc(cx, cy, R, 0, TAU);
   ctx.fillStyle = css("--globe-fill"); ctx.fill();
@@ -882,16 +1008,19 @@ function drawGlobe(t) {
     ctx.textAlign = it.side === 1 ? "left" : "right";
     it.p.names.forEach(([id, label], i) => {
       const lit = hl === id;
-      ctx.globalAlpha = it.al; ctx.fillStyle = lit ? gold : ink;
       ctx.font = `${lit || it.p.hub ? 600 : 500} ${fs}px "IBM Plex Mono",monospace`;
-      ctx.fillText(label, it.X + it.side * 10, it.yc - it.hgt / 2 + (i + .5) * lh);
+      const tx = it.X + it.side * 10, ty = it.yc - it.hgt / 2 + (i + .5) * lh, tw = ctx.measureText(label).width;
+      ctx.globalAlpha = it.al * .8; ctx.fillStyle = plate;
+      ctx.fillRect(it.side === 1 ? tx - 3 : tx - tw - 3, ty - lh / 2, tw + 6, lh);
+      ctx.globalAlpha = it.al; ctx.fillStyle = lit ? gold : ink;
+      ctx.fillText(label, tx, ty);
     });
   }
   ctx.globalAlpha = 1;
 }
 let lastX = 0;
 gCan.addEventListener("pointerdown", e => { drag = true; lastX = e.clientX; gCan.setPointerCapture(e.pointerId); });
-gCan.addEventListener("pointermove", e => { if (!drag) return; lon0 -= (e.clientX - lastX) / (G.w * .34); lastX = e.clientX; if (reduce) drawGlobe(0); });
+gCan.addEventListener("pointermove", e => { if (!drag) return; lon0 -= (e.clientX - lastX) / (G.w * .36); lastX = e.clientX; if (reduce) drawGlobe(0); });
 ["pointerup", "pointercancel"].forEach(ev => gCan.addEventListener(ev, () => { drag = false; }));
 buildGlobe();
 onResize(gCan, buildGlobe);
@@ -906,37 +1035,65 @@ $$("#spkList li").forEach(li => {
 });
 
 /* ---------- program: week grid ----------
-   Times are minutes after 08:00. Example: ["14:00" keynote] is start 360, duration 50, so top = 360 * 1.8px = 648px
-   and height = 90px - 2px inside a 864px day column. The same morning repeats each day; Lunch is drawn once across all columns. */
+   Times are minutes after 08:00. Example: the 14:00 keynote starts at 360 and lasts 50, so its top is 360 * 1.8px = 648px
+   and its height 90px inside an 864px day. The same morning repeats each day. Wide screens draw Lunch once across the
+   three days. Phones show one day at a time, with day tabs, so there each day has its own Lunch block. */
 const hm = m => { m += 480; return String(m / 60 | 0).padStart(2, "0") + ":" + String(m % 60).padStart(2, "0"); };
-const MORNING = [[30, 90, "course", "Intro to Probability", "Antonio Villagomez (UV, Chile)"], [120, 30, "brk", "Coffee break"],
-  [150, 90, "course", "Models from Information Principles", "Juan Velez (OIST, Japan)"]];
+const MORNING = [[30, 90, "course", "Intro to Probability", "Antonio Villagomez (UV, Chile)", "", "c1"], [120, 30, "brk", "Coffee break"],
+  [150, 90, "course", "Models from Information Principles", "Juan Velez (OIST, Japan)", "", "c2"], [240, 120, "brk lunch-d", "Lunch"]];
 const DAYS = [
-  { n: 14, dow: "Mon", name: "Monday", pre: [[0, 30, "open", "Opening Ceremony"]], pm: [360, "keynote", "Keynote Lecture 1", "Matteo Marsili (ICTP, Italy)", "Lost in Retraining"], tk: ["Talk 1", "Arianna Paredes (SISSA · OGS, Italy)"] },
-  { n: 15, dow: "Tue", name: "Tuesday", pre: [], pm: [360, "talk", "Talk 2", "Mario Cosenza (Yachay Tech, Ecuador)", ""], tk: ["Talk 3", "María José Ayala Bolagay (USP, Brazil)"] },
-  { n: 16, dow: "Wed", name: "Wednesday", pre: [], pm: [360, "keynote", "Keynote Lecture 2", "William Bialek (Princeton, USA)", ""], tk: ["Talk 4", "Mateo Carpio (IFISC, Spain)"] }];
-function blk([s, d, type, title, who, quote]) {
+  { n: 14, dow: "Mon", name: "Monday", pre: [[0, 30, "open", "Opening Ceremony"]], pm: ["keynote", "Keynote Lecture 1", "Matteo Marsili (ICTP, Italy)", "Lost in Retraining", "k1"], tk: ["Talk 1", "Arianna Paredes (SISSA · OGS, Italy)", "t1"] },
+  { n: 15, dow: "Tue", name: "Tuesday", pre: [], pm: ["talk", "Talk 2", "Mario Cosenza (Yachay Tech, Ecuador)", "", "t2"], tk: ["Talk 3", "María José Ayala Bolagay (USP, Brazil)", "t3"] },
+  { n: 16, dow: "Wed", name: "Wednesday", pre: [], pm: ["keynote", "Keynote Lecture 2", "William Bialek (Princeton, USA)", "", "k2"], tk: ["Talk 4", "Mateo Carpio (IFISC, Spain)", "t4"] }];
+// A course repeats every day; only its first block carries the id that the speaker list links to.
+function blk([s, d, type, title, who, quote, id], firstDay) {
   const time = `<time>${hm(s)}–${hm(s + d)}</time>`;
-  if (type === "brk") return `<li class="blk brk" style="--s:${s};--d:${d}">${time}<b>${title}</b></li>`;
-  return `<li class="blk ${type}" style="--s:${s};--d:${d}">${time}<b>${title}</b>${quote ? `<span><em>“${quote}”</em></span>` : ""}${who ? `<span>${who}</span>` : ""}</li>`;
+  if (type.startsWith("brk")) return `<li class="blk ${type}" style="--s:${s};--d:${d}">${time}<b>${title}</b></li>`;
+  const anchor = id && (firstDay || id[0] !== "c") ? ` id="b-${id}"` : "";
+  return `<li class="blk ${type}"${anchor} style="--s:${s};--d:${d}">${time}<b>${title}</b>${quote ? `<span><em>“${quote}”</em></span>` : ""}${who ? `<span>${who}</span>` : ""}</li>`;
 }
 $("#cal").innerHTML =
-  `<div class="cal-head" aria-hidden="true"><div></div>${DAYS.map(d => `<h3>${d.n}<span>${d.dow}</span></h3>`).join("")}</div>
-   <div class="cal-body"><div class="axis" aria-hidden="true">${Array.from({ length: 9 }, (_, i) => `<span style="--m:${i * 60}">${hm(i * 60)}</span>`).join("")}</div>
-   ${DAYS.map(d => `<ol aria-label="${d.name} ${d.n} December 2026">${[...d.pre, ...MORNING,
-      [d.pm[0], 50, d.pm[1], d.pm[2], d.pm[3], d.pm[4]], [410, 20, "brk", "Coffee break"], [430, 50, "talk", d.tk[0], d.tk[1]]].map(blk).join("")}</ol>`).join("")}
-   <p class="lunch"><b>Lunch</b><time class="mono">12:00–14:00 daily</time></p></div>`;
+  `<div class="cal-tabs" id="calTabs">${DAYS.map((d, i) => `<button type="button" data-i="${i}" aria-current="${i === 0}"><b>${d.n}</b>${d.dow}<span class="sr"> December</span></button>`).join("")}</div>
+   <div class="cal-head" aria-hidden="true"><span></span>${DAYS.map(d => `<h3>${d.n}<span>${d.name}</span></h3>`).join("")}</div>
+   <div class="cal-grid">
+     <div class="axis" aria-hidden="true">${Array.from({ length: 9 }, (_, i) => `<span style="--m:${i * 60}">${hm(i * 60)}</span>`).join("")}</div>
+     <div class="days" id="days" data-lenis-prevent-horizontal>
+       ${DAYS.map((d, i) => `<section class="day" aria-label="${d.name} ${d.n} December 2026"><ol>${[...d.pre, ...MORNING,
+          [360, 50, ...d.pm], [410, 20, "brk", "Coffee break"], [430, 50, "talk", d.tk[0], d.tk[1], "", d.tk[2]]].map(b => blk(b, i === 0)).join("")}</ol></section>`).join("")}
+       <p class="lunch"><span><b>Lunch</b><time>12:00–14:00, every day</time></span></p>
+     </div>
+   </div>`;
+// Phone only: the tabs move the snap scroller, and swiping it updates the tabs.
+const days = $("#days"), calTabs = $$("#calTabs button");
+const goDay = i => days.scrollTo({ left: i * days.clientWidth, behavior: reduce ? "auto" : "smooth" });
+calTabs.forEach(b => b.addEventListener("click", () => goDay(+b.dataset.i)));
+let dayRaf = 0;
+days.addEventListener("scroll", () => {
+  if (dayRaf) return;
+  dayRaf = requestAnimationFrame(() => {
+    dayRaf = 0;
+    const i = Math.round(days.scrollLeft / days.clientWidth);
+    calTabs.forEach((b, k) => b.setAttribute("aria-current", String(k === i)));
+  });
+}, { passive: true });
+// A speaker's time slot brings its day into view on a phone, then marks the block.
+function showBlock(b) {
+  if (days.scrollWidth > days.clientWidth + 4) goDay([...days.children].indexOf(b.closest(".day")));
+  b.classList.remove("flash"); void b.offsetWidth; b.classList.add("flash");
+}
 
 /* ---------- committee ---------- */
 $("#com").innerHTML = Array.from({ length: 6 }, () =>
-  `<article class="com"><h3>Committee member</h3><a class="btn sm" href="#" data-todo="linkedin">LinkedIn <span class="ar" aria-hidden="true">↗</span></a></article>`).join("");
+  `<article class="com"><h3>Committee member</h3></article>`).join("");
 
 /* ---------- entrance + scroll reveals ---------- */
 if (hasG && !reduce) {
-  gsap.from("h1.display", { y: 20, opacity: 0, duration: .9, ease: "power3.out", delay: .1 });
-  gsap.from([".hero-logo", ".secondary", ".when", ".cta"], { y: 20, opacity: 0, duration: .8, ease: "power3.out", stagger: .08, delay: .3 });
-  gsap.from(".brain-wrap", { opacity: 0, duration: 1.2, delay: .4 });
-  if (hasST) $$("[data-reveal]").forEach(el => gsap.from(el, { y: 28, opacity: 0, duration: .8, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 92%", once: true } }));
+  const tl = gsap.timeline({ defaults: { ease: "power3.out", duration: .8 } });
+  tl.from(".lockup", { y: 18, opacity: 0 }, .1)
+    .from(["h1.display", ".cta"], { y: 16, opacity: 0, stagger: .09 }, .24)
+    .from(".fact", { y: 14, opacity: 0, stagger: .07 }, .45)
+    .from(".brain-wrap", { opacity: 0, duration: 1.2 }, .3);
+  if (hasST) $$("[data-reveal]").forEach(el => gsap.from(el, { y: 22, opacity: 0, duration: .7, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 94%", once: true } }));
 }
 })();
 </script>
