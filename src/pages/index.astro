@@ -141,17 +141,20 @@ header.nav{position:fixed;inset:0 0 auto 0;z-index:70;border-bottom:1px solid tr
 .hero{position:relative;min-height:100svh;padding:calc(var(--nav-h) + 6px) 0 clamp(14px,2.6vh,28px);display:flex;overflow:clip}
 .hero>.wrap{display:grid;grid-template:"copy" auto "facts" auto "fig" minmax(250px,1fr) / minmax(0,1fr);row-gap:clamp(18px,3vh,26px)}
 .hero-copy{grid-area:copy;position:relative;z-index:3;padding-top:4px}
-/* the logo file keeps 2.87% of padding on each side; the shift lines its mark up with the text edge */
-.lockup{width:min(620px,100%,105vh);container-type:inline-size}
-.lockup-in{position:relative;transform:translateX(-2.87%)}
+/* the logo file keeps 2.6% of padding on each side; the shift lines its mark up with the text edge */
+.lockup{width:min(683px,100%,115.7vh);container-type:inline-size}
+.lockup-in{position:relative;transform:translateX(-2.6%)}
 .hero-logo{width:100%;height:auto}
-/* "Modeling Complex Systems" completes the tagline drawn in the logo. On a wide logo it is set to the artwork's own measures
-   (Inter SemiBold at 2.53% of the logo's width, tracked .32em, starting where the wordmark starts). Example: a 600px logo gives 15px type.
+/* "Modeling Complex Systems" sits under the tagline drawn in the logo, in ink so it reads as its own line. On a wide logo it spans
+   the tagline's measure (Inter SemiBold at 2.82% of the logo's width, tracked .32em, from the tagline's start to its end). Example: a 650px logo gives 18px type.
    On a narrow logo that would be too small to read, so it becomes a plain line under the logo. */
-.lockup-sub{margin:2px 0 0 2.87%;font:600 .74rem/1.25 "Inter",var(--f-text);letter-spacing:.2em;text-transform:uppercase;color:var(--tag)}
-@container (min-width:430px){
-  .lockup-in{padding-bottom:1.6cqw}
-  .lockup-sub{position:absolute;left:25.53cqw;top:18.08cqw;margin:0;font-size:2.53cqw;line-height:1;letter-spacing:.32em;white-space:nowrap}
+.lockup-sub{margin:2px 0 0 2.6%;font:600 .74rem/1.25 "Inter",var(--f-text);letter-spacing:.2em;text-transform:uppercase;color:var(--ink)}
+/* "+ invited talks" hangs under the tagline, set in the italic of the talk titles; the plus takes the keynotes' gold */
+.lockup-plus{margin:6px 0 0 2.6%;font:italic 400 1rem/1.3 var(--f-display);color:var(--muted);text-wrap:balance}
+.lockup-plus span{font-style:normal;color:var(--gold-ink)}
+@container (min-width:474px){
+  .lockup-sub{position:absolute;left:23.16cqw;top:17.1cqw;margin:0;font-size:2.823cqw;line-height:1;letter-spacing:.32em;white-space:nowrap}
+  .lockup-plus{margin:3.43cqw 0 0 23.16cqw;font-size:2.98cqw;line-height:1.25}
 }
 h1.display{margin:clamp(12px,2.6vh,24px) 0 0 -.03em;font:400 clamp(1.75rem,min(2.9vw,6.4vh),2.6rem)/1.08 var(--f-display);letter-spacing:-.03em;text-wrap:balance}
 h1 em{font-style:italic;color:var(--teal-ink);letter-spacing:-.035em}
@@ -338,7 +341,7 @@ footer .copy{margin-top:36px;padding-top:14px;border-top:1px solid var(--foot-li
 
 <header class="nav" id="nav">
   <div class="nav-in">
-    <a class="logo" href="#top" aria-label="Minicourse, back to top"><img class="lg-l" src="/assets/Minicourse_light_crop.png" width="2789" height="547" alt=""><img class="lg-d" src="/assets/Minicourse_dark_crop.png" width="2789" height="547" alt=""></a>
+    <a class="logo" href="#top" aria-label="Minicourse II, back to top"><img class="lg-l" src="/assets/Minicourse_light_crop.png" width="3074" height="547" alt=""><img class="lg-d" src="/assets/Minicourse_dark_crop.png" width="3074" height="547" alt=""></a>
     <nav aria-label="Primary">
       <ul id="menu">
         <li><a href="#speakers">Speakers</a></li>
@@ -362,9 +365,10 @@ footer .copy{margin-top:36px;padding-top:14px;border-top:1px solid var(--foot-li
   <div class="wrap">
     <div class="hero-copy">
       <div class="lockup"><div class="lockup-in">
-        <img class="hero-logo lg-l" src="/assets/Minicourse_light_crop.png" width="2789" height="547" alt="Minicourse: From Probability to Information">
-        <img class="hero-logo lg-d" src="/assets/Minicourse_dark_crop.png" width="2789" height="547" alt="Minicourse: From Probability to Information">
+        <img class="hero-logo lg-l" src="/assets/Minicourse_light_crop.png" width="3074" height="547" alt="Minicourse II: From Probability to Information">
+        <img class="hero-logo lg-d" src="/assets/Minicourse_dark_crop.png" width="3074" height="547" alt="Minicourse II: From Probability to Information">
         <p class="lockup-sub">Modeling Complex Systems</p>
+        <p class="lockup-plus"><span>+</span> invited talks by distinguished international researchers</p>
       </div></div>
       <h1 class="display">Knowledge Returns to <em>Yachay</em></h1>
       <div class="cta">
@@ -394,17 +398,17 @@ footer .copy{margin-top:36px;padding-top:14px;border-top:1px solid var(--foot-li
         <li class="key" data-id="bialek" data-reveal>
           <div><h3>William Bialek</h3><p class="aff">Princeton University, USA</p></div>
           <div class="side"><p class="meta"><span class="kind k-key">Keynote lecture 2</span><a class="slot" href="#program" data-go="k2">Wed 16 Dec · 14:00</a><span class="mode on">Online</span></p>
-            <p class="links"><a class="tlink" href="https://scholar.google.com/citations?user=fQ-BSlgAAAAJ&amp;hl=es&amp;oi=ao" target="_blank" rel="noopener">Scholar <span class="ar" aria-hidden="true">↗</span></a></p></div>
+            <p class="links"><a class="tlink" href="https://wbialek.me/" target="_blank" rel="noopener">Website <span class="ar" aria-hidden="true">↗</span></a></p></div>
         </li>
         <li class="key" data-id="marsili" data-reveal>
           <div><h3>Matteo Marsili</h3><p class="aff">ICTP, Italy</p><p class="ttl">“Lost in Retraining”</p></div>
           <div class="side"><p class="meta"><span class="kind k-key">Keynote lecture 1</span><a class="slot" href="#program" data-go="k1">Mon 14 Dec · 14:00</a><span class="mode on">Online</span></p>
-            <p class="links"><a class="tlink" href="https://scholar.google.com/citations?user=utY1nToAAAAJ&amp;hl=es&amp;oi=ao" target="_blank" rel="noopener">Scholar <span class="ar" aria-hidden="true">↗</span></a></p></div>
+            <p class="links"><a class="tlink" href="https://www.ictp.it/member/matteo-marsili#biography" target="_blank" rel="noopener">Website <span class="ar" aria-hidden="true">↗</span></a></p></div>
         </li>
         <li data-id="cosenza" data-reveal>
           <div><h3>Mario Cosenza</h3><p class="aff">Yachay Tech, Ecuador</p></div>
           <div class="side"><p class="meta"><span class="kind k-talk">Talk 2</span><a class="slot" href="#program" data-go="t2">Tue 15 Dec · 14:00</a><span class="mode in">In person</span></p>
-            <p class="links"><a class="tlink" href="https://scholar.google.com/citations?user=wmSC_7EAAAAJ&amp;hl=es&amp;oi=sra" target="_blank" rel="noopener">Scholar <span class="ar" aria-hidden="true">↗</span></a></p></div>
+            <p class="links"><a class="tlink" href="https://yachaytech.edu.ec/perfil/mario-cosenza-ph-d/" target="_blank" rel="noopener">Website <span class="ar" aria-hidden="true">↗</span></a></p></div>
         </li>
         <li data-id="villagomez" data-reveal>
           <div><h3>Antonio Villagomez</h3><p class="aff">UV, Chile</p><p class="ttl">Intro to Probability</p></div>
@@ -414,8 +418,7 @@ footer .copy{margin-top:36px;padding-top:14px;border-top:1px solid var(--foot-li
         <li data-id="velez" data-reveal>
           <div><h3>Juan Velez</h3><p class="aff">OIST, Japan</p><p class="ttl">Models from Information Principles</p></div>
           <div class="side"><p class="meta"><span class="kind k-course">Course</span><a class="slot" href="#program" data-go="c2">Every morning · 10:30</a><span class="mode in">In person</span></p>
-            <p class="links"><a class="tlink" href="https://scholar.google.com/citations?user=m6uf3cEAAAAJ&amp;hl=es" target="_blank" rel="noopener">Scholar <span class="ar" aria-hidden="true">↗</span></a>
-              <a class="tlink" href="https://js-rojas.github.io/jsrojas.github.io/?v=2" target="_blank" rel="noopener">Website <span class="ar" aria-hidden="true">↗</span></a></p></div>
+            <p class="links"><a class="tlink" href="https://js-rojas.github.io/jsrojas.github.io/?v=2" target="_blank" rel="noopener">Website <span class="ar" aria-hidden="true">↗</span></a></p></div>
         </li>
         <li data-id="paredes" data-reveal>
           <div><h3>Arianna Paredes</h3><p class="aff">SISSA · OGS, Italy</p></div>
@@ -425,14 +428,12 @@ footer .copy{margin-top:36px;padding-top:14px;border-top:1px solid var(--foot-li
         <li data-id="jose" data-reveal>
           <div><h3>María José Ayala Bolagay</h3><p class="aff">USP, Brazil</p></div>
           <div class="side"><p class="meta"><span class="kind k-talk">Talk 3</span><a class="slot" href="#program" data-go="t3">Tue 15 Dec · 15:10</a><span class="mode on">Online</span></p>
-            <p class="links"><a class="tlink" href="https://scholar.google.com/citations?user=ceoZZdcAAAAJ&amp;hl=es&amp;oi=ao" target="_blank" rel="noopener">Scholar <span class="ar" aria-hidden="true">↗</span></a>
-              <a class="tlink" href="https://www.linkedin.com/in/mar%C3%ADa-jos%C3%A9-ayala-bolagay/?locale=en" target="_blank" rel="noopener">LinkedIn <span class="ar" aria-hidden="true">↗</span></a></p></div>
+            <p class="links"><a class="tlink" href="https://www.linkedin.com/in/mar%C3%ADa-jos%C3%A9-ayala-bolagay/?locale=en" target="_blank" rel="noopener">LinkedIn <span class="ar" aria-hidden="true">↗</span></a></p></div>
         </li>
         <li data-id="carpio" data-reveal>
           <div><h3>Mateo Carpio</h3><p class="aff">IFISC, Spain</p></div>
           <div class="side"><p class="meta"><span class="kind k-talk">Talk 4</span><a class="slot" href="#program" data-go="t4">Wed 16 Dec · 15:10</a><span class="mode on">Online</span></p>
-            <p class="links"><a class="tlink" href="https://scholar.google.com/citations?user=bn6xDbwAAAAJ&amp;hl=es&amp;oi=ao" target="_blank" rel="noopener">Scholar <span class="ar" aria-hidden="true">↗</span></a>
-              <a class="tlink" href="https://www.linkedin.com/in/mateo-carpio-rivas/" target="_blank" rel="noopener">LinkedIn <span class="ar" aria-hidden="true">↗</span></a></p></div>
+            <p class="links"><a class="tlink" href="https://www.linkedin.com/in/mateo-carpio-rivas/" target="_blank" rel="noopener">LinkedIn <span class="ar" aria-hidden="true">↗</span></a></p></div>
         </li>
       </ol>
     </div>
