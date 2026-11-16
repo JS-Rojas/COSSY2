@@ -145,16 +145,16 @@ header.nav{position:fixed;inset:0 0 auto 0;z-index:70;border-bottom:1px solid tr
 .lockup{width:min(683px,100%,115.7vh);container-type:inline-size}
 .lockup-in{position:relative;transform:translateX(-2.6%)}
 .hero-logo{width:100%;height:auto}
-/* "Modeling Complex Systems" sits under the tagline drawn in the logo, in ink so it reads as its own line. On a wide logo it spans
-   the tagline's measure (Inter SemiBold at 2.82% of the logo's width, tracked .32em, from the tagline's start to its end). Example: a 650px logo gives 18px type.
-   On a narrow logo that would be too small to read, so it becomes a plain line under the logo. */
-.lockup-sub{margin:2px 0 0 2.6%;font:600 .74rem/1.25 "Inter",var(--f-text);letter-spacing:.2em;text-transform:uppercase;color:var(--ink)}
+/* "Modeling Complex Systems" sits under the tagline drawn in the logo, in ink and compact capitals so it reads as its own line.
+   On a wide logo it starts where the tagline starts (Inter SemiBold at 2.75% of the logo's width, tracked .07em). Example: a 650px logo gives 18px type.
+   On a narrow logo it becomes a plain line under the logo. */
+.lockup-sub{margin:2px 0 0 2.6%;font:600 .85rem/1.25 "Inter",var(--f-text);letter-spacing:.07em;text-transform:uppercase;color:var(--ink)}
 /* "+ invited talks" hangs under the tagline, set in the italic of the talk titles; the plus takes the keynotes' gold */
 .lockup-plus{margin:6px 0 0 2.6%;font:italic 400 1rem/1.3 var(--f-display);color:var(--muted);text-wrap:balance}
 .lockup-plus span{font-style:normal;color:var(--gold-ink)}
 @container (min-width:474px){
-  .lockup-sub{position:absolute;left:23.16cqw;top:17.1cqw;margin:0;font-size:2.823cqw;line-height:1;letter-spacing:.32em;white-space:nowrap}
-  .lockup-plus{margin:3.43cqw 0 0 23.16cqw;font-size:2.98cqw;line-height:1.25}
+  .lockup-sub{position:absolute;left:23.16cqw;top:17.2cqw;margin:0;font-size:2.75cqw;line-height:1;letter-spacing:.07em;white-space:nowrap}
+  .lockup-plus{margin:3.4cqw 0 0 23.16cqw;font-size:2.98cqw;line-height:1.25}
 }
 h1.display{margin:clamp(12px,2.6vh,24px) 0 0 -.03em;font:400 clamp(1.75rem,min(2.9vw,6.4vh),2.6rem)/1.08 var(--f-display);letter-spacing:-.03em;text-wrap:balance}
 h1 em{font-style:italic;color:var(--teal-ink);letter-spacing:-.035em}
