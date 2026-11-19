@@ -291,6 +291,10 @@ section{position:relative}
 .com-grid{display:grid;gap:0 32px;grid-template-columns:1fr}
 .com{padding:16px 0;background:var(--dots) 0 100%/6px 3px repeat-x}
 .com h3{font:400 1.35rem/1.1 var(--f-display)}
+.com .aff{margin-top:4px;color:var(--muted);font-size:.95rem}
+/* contact line under the grid */
+.com-contact{margin-top:clamp(24px,4vw,36px);color:var(--muted);text-wrap:balance}
+.com-contact a{display:inline;color:var(--ink);font-size:inherit}
 @media(min-width:700px){.com-grid{grid-template-columns:1fr 1fr}}
 @media(min-width:1100px){.com-grid{grid-template-columns:repeat(3,1fr)}}
 
@@ -456,10 +460,22 @@ footer .copy{margin-top:36px;padding-top:14px;border-top:1px solid var(--foot-li
   </div>
 </section>
 
-<section class="sec soft" id="committee" hidden>
+<section class="sec soft" id="committee">
   <div class="wrap">
     <div class="sec-head"><h2>Organizing Committee</h2></div>
-    <div class="com-grid" id="com"></div>
+    <div class="com-grid" id="com">
+      <article class="com" data-reveal><h3>Mario Cosenza</h3><p class="aff">Yachay Tech</p></article>
+      <article class="com" data-reveal><h3>Juan Velez</h3><p class="aff">OIST</p></article>
+      <article class="com" data-reveal><h3>Mikaela Carrasco</h3><p class="aff">Universidad de Barcelona / Yachay Tech</p></article>
+      <article class="com" data-reveal><h3>Ricardo Velasco</h3><p class="aff">UDLA</p></article>
+      <article class="com" data-reveal><h3>Antonio Acosta</h3><p class="aff">Yachay Tech</p></article>
+      <article class="com" data-reveal><h3>Silvia García</h3><p class="aff">Yachay Tech</p></article>
+      <article class="com" data-reveal><h3>Josué Mantilla</h3><p class="aff">Yachay Tech</p></article>
+      <article class="com" data-reveal><h3>Ricardo Calderón-Álvarez</h3><p class="aff">Yachay Tech</p></article>
+      <article class="com" data-reveal><h3>Ayrton Jarrín</h3><p class="aff">Yachay Tech</p></article>
+      <article class="com" data-reveal><h3>Santiago Reascos</h3><p class="aff">Yachay Tech</p></article>
+    </div>
+    <p class="com-contact" data-reveal>If you have any questions, please write to us <a class="tlink" href="mailto:juansrojas4669@gmail.com" title="juansrojas4669@gmail.com">here</a>.</p>
   </div>
 </section>
 
@@ -1094,10 +1110,6 @@ function showBlock(b) {
   if (days.scrollWidth > days.clientWidth + 4) goDay([...days.children].indexOf(b.closest(".day")));
   b.classList.remove("flash"); void b.offsetWidth; b.classList.add("flash");
 }
-
-/* ---------- committee ---------- */
-$("#com").innerHTML = Array.from({ length: 6 }, () =>
-  `<article class="com"><h3>Committee member</h3></article>`).join("");
 
 /* ---------- entrance + scroll reveals ---------- */
 if (hasG && !reduce) {
